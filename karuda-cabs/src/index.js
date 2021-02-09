@@ -10,6 +10,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+var deviceWidth = window.matchMedia("(max-width: 700px)")
+console.log('1' , deviceWidth)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

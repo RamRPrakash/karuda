@@ -1,0 +1,8 @@
+.setBackground {
+    margin-left:  7%;
+    margin-right: 7%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid';
 import KarudaAppBar from '../../../Component/KarudaAppBar'
+import KarudaFeedback from '../component/karudaFeedback'
 class KarudaAbout extends Component {
     constructor(props) {
         super(props);
@@ -11,7 +12,7 @@ class KarudaAbout extends Component {
             
             <Grid container >
                 <KarudaAppBar props={this.props} />
-               
+                <KarudaFeedback/>
             </Grid>
         );
        

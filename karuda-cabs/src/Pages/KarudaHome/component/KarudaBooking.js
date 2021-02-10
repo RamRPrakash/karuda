@@ -32,6 +32,90 @@ class KarudaBooking extends Component {
     componentWillUnmount() {
         window.removeEventListener("resize", this.updateWindowSize.bind(this));
     }
+    carList(){
+        return(
+            <Grid container xs={12} sm={12} md={12} lg={12} >
+                <Grid item style={{ margin: this.state.windowWidth >= 700 ? '2%' : ''}}>
+                    <Card style={{ marginLeft: '10%', margin: '10%', width: '300px', padding: this.state.windowWidth >= 700 ? '30px' : '10px' }}>
+                        <div>
+                            <img style={{ width: '300px' }} src={car} alt='car'></img>
+                            <div>
+                                <h3>SEDAN</h3>
+                                <h4>Dzire, Sunny, Zest, Xcent</h4>
+                                <h4>One Way Rs. 12/km | Round Trip Rs. 10/km</h4>
+                                <div style={{ display: 'flex', width: '500px' }}>
+                                    <Card style={{ width: '60px' }}>
+                                        <GroupIcon /> 3
+                                            </Card>
+                                    <Card style={{ width: '60px' }}>
+                                        <PersonIcon /> 3
+                                            </Card>
+                                    <Card style={{ width: '60px' }}>
+                                        <BusinessCenterIcon /> 3
+                                            </Card>
+                                    <Card style={{ width: '60px' }}>
+                                        <AcUnitIcon /> 3
+                                            </Card>
+                                </div>
+                            </div>
+                        </div>
+                    </Card>
+                </Grid>
+                    <Grid item style={{ margin: this.state.windowWidth >= 700 ? '2%' : '' }}>
+                        <Card style={{ margin: '10%', width: '300px', padding: this.state.windowWidth >= 700 ? '30px' : '10px' }}>
+                            <div>
+                                <img style={{ width: '300px' }} src={car} alt='car'></img>
+                                <div>
+                                    <h3>SEDAN</h3>
+                                    <h4>Dzire, Sunny, Zest, Xcent</h4>
+                                    <h4>One Way Rs. 12/km | Round Trip Rs. 10/km</h4>
+                                    <div style={{ display: 'flex', width: '500px' }}>
+                                        <Card style={{ width: '60px' }}>
+                                            <GroupIcon /> 3
+                                                </Card>
+                                        <Card style={{ width: '60px' }}>
+                                            <PersonIcon /> 3
+                                                </Card>
+                                        <Card style={{ width: '60px' }}>
+                                            <BusinessCenterIcon /> 3
+                                                </Card>
+                                        <Card style={{ width: '60px' }}>
+                                            <AcUnitIcon /> 3
+                                                </Card>
+                                    </div>
+                                </div>
+                            </div>
+                        </Card>
+                    </Grid>
+                <Grid item style={{ margin: this.state.windowWidth >= 700 ? '2%' : '' }}>
+                    <Card style={{ margin: '10%', width: '300px', padding: this.state.windowWidth >= 700 ? '30px' : '10px' }}>
+                        <div>
+                            <img style={{ width: '300px' }} src={car} alt='car'></img>
+                            <div>
+                                <h3>SEDAN</h3>
+                                <h4>Dzire, Sunny, Zest, Xcent</h4>
+                                <h4>One Way Rs. 12/km | Round Trip Rs. 10/km</h4>
+                                <div style={{ display: 'flex', width: '500px' }}>
+                                    <Card style={{ width: '60px' }}>
+                                        <GroupIcon /> 3
+                                            </Card>
+                                    <Card style={{ width: '60px' }}>
+                                        <PersonIcon /> 3
+                                            </Card>
+                                    <Card style={{ width: '60px' }}>
+                                        <BusinessCenterIcon /> 3
+                                            </Card>
+                                    <Card style={{ width: '60px' }}>
+                                        <AcUnitIcon /> 3
+                                            </Card>
+                                </div>
+                            </div>
+                        </div>
+                    </Card>
+                </Grid>
+            </Grid>
+        )
+    }
     footer(){
         return(
             <React.Fragment>
@@ -184,86 +268,8 @@ class KarudaBooking extends Component {
                             <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '35%' : '' }}>OUTSTATION CAB AVAILABLE SERVICES</h2>
                         </Grid>
                     </Grid>
-                    <Grid container xs={12} sm={12} md={12} lg={12} >
-                        <Grid item style={{ margin: this.state.windowWidth >= 700 ? '2%' : '', marginLeft: this.state.windowWidth >= 700 ? '10%' : '' }}>
-                            <Card style={{ marginLeft: '10%', margin: '10%', width: '300px', padding: this.state.windowWidth >= 700 ? '30px' : '10px' }}>
-                                <div>
-                                    <img style={{ width: '300px' }} src={car} alt='car'></img>
-                                    <div>
-                                        <h3>SEDAN</h3>
-                                        <h4>Dzire, Sunny, Zest, Xcent</h4>
-                                        <h4>One Way Rs. 12/km | Round Trip Rs. 10/km</h4>
-                                        <div style={{ display: 'flex', width: '500px' }}>
-                                            <Card style={{ width: '60px' }}>
-                                                <GroupIcon /> 3
-                                            </Card>
-                                            <Card style={{ width: '60px' }}>
-                                                <PersonIcon /> 3
-                                            </Card>
-                                            <Card style={{ width: '60px' }}>
-                                                <BusinessCenterIcon /> 3
-                                            </Card>
-                                            <Card style={{ width: '60px' }}>
-                                                <AcUnitIcon /> 3
-                                            </Card>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Card>
-                        </Grid>
-                        <Grid item style={{ margin: this.state.windowWidth >= 700 ? '2%' : '' }}>
-                            <Card style={{ margin: '10%', width: '300px', padding: this.state.windowWidth >= 700 ? '30px' : '10px' }}>
-                                <div>
-                                    <img style={{ width: '300px' }} src={car} alt='car'></img>
-                                    <div>
-                                        <h3>SEDAN</h3>
-                                        <h4>Dzire, Sunny, Zest, Xcent</h4>
-                                        <h4>One Way Rs. 12/km | Round Trip Rs. 10/km</h4>
-                                        <div style={{ display: 'flex', width: '500px' }}>
-                                            <Card style={{ width: '60px' }}>
-                                                <GroupIcon /> 3
-                                            </Card>
-                                            <Card style={{ width: '60px' }}>
-                                                <PersonIcon /> 3
-                                            </Card>
-                                            <Card style={{ width: '60px' }}>
-                                                <BusinessCenterIcon /> 3
-                                            </Card>
-                                            <Card style={{ width: '60px' }}>
-                                                <AcUnitIcon /> 3
-                                            </Card>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Card>
-                        </Grid>
-                        <Grid item style={{ margin: this.state.windowWidth >= 700 ? '2%' : '' }}>
-                            <Card style={{ margin: '10%', width: '300px', padding: this.state.windowWidth >= 700 ? '30px' : '10px' }}>
-                                <div>
-                                    <img style={{ width: '300px' }} src={car} alt='car'></img>
-                                    <div>
-                                        <h3>SEDAN</h3>
-                                        <h4>Dzire, Sunny, Zest, Xcent</h4>
-                                        <h4>One Way Rs. 12/km | Round Trip Rs. 10/km</h4>
-                                        <div style={{ display: 'flex', width: '500px' }}>
-                                            <Card style={{ width: '60px' }}>
-                                                <GroupIcon /> 3
-                                            </Card>
-                                            <Card style={{ width: '60px' }}>
-                                                <PersonIcon /> 3
-                                            </Card>
-                                            <Card style={{ width: '60px' }}>
-                                                <BusinessCenterIcon /> 3
-                                            </Card>
-                                            <Card style={{ width: '60px' }}>
-                                                <AcUnitIcon /> 3
-                                            </Card>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Card>
-                        </Grid>
-                    </Grid>
+                    {this.carList()}
+                   
                     <Grid container xs={12} sm={12} md={12} lg={12}>
                         <Grid item xs={12} sm={12} md={12} lg={12}>
                             <Button variant="contained" color="primary" style={{ backgroundColor: '#2c387e', color: 'white', height: '53px', width: this.state.windowWidth >= 700 ? '' : '260px', marginLeft: this.state.windowWidth >= 700 ? '50%' : '10%' }}>

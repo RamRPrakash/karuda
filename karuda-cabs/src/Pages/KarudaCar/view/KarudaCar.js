@@ -1,21 +1,21 @@
-import React , {Component} from 'react'
+
+import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid';
 import KarudaAppBar from '../../../Component/KarudaAppBar'
-import KarudaTariff from '../component/KarudaTariff'
-class Tariff extends Component {
+import KarudaCarList from '../component/KarudaCarList'
+class KarudaCar extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
     render() { 
         return (
-
             <Grid container >
                 <KarudaAppBar props={this.props} />
-                <KarudaTariff />
+                <KarudaCarList />
             </Grid>
         );
     }
 }
  
-export default Tariff;
+export default KarudaCar;

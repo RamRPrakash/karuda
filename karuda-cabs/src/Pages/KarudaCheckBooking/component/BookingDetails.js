@@ -76,7 +76,7 @@ class BookingDetails extends Component {
                         <div style={{ display: 'flex', width: '100%' }}>
                             <div style={{ height: '100px', lineHeight: '2' }}>
                                 <p style={{ fontWeight: '600' }}>CALL US 24x7</p>
-                                <h1>7904740907 | 7010900496</h1>
+                                <h1>9384841107 | 9940035922</h1>
                             </div>
 
                         </div>
@@ -85,7 +85,7 @@ class BookingDetails extends Component {
                         <div style={{ display: 'flex', width: '100%' }}>
                             <div style={{ height: '100px', lineHeight: '2' }}>
                                 <p style={{ fontWeight: '600' }}>FOR WHATSAPP</p>
-                                <h1>7010900496</h1>
+                                <h1>9384841107</h1>
                             </div>
 
                         </div>
@@ -93,11 +93,11 @@ class BookingDetails extends Component {
                 </Grid>
 
                 <Grid style={{ backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
-                    <p style={{ marginLeft: this.state.windowWidth >= 700 ? '35%' : '' }}>Address: 39/30, 4th St, Govindhasamy Nagar, Perungudi, Ch - 600096</p>
+                    <p style={{ marginLeft: this.state.windowWidth >= 700 ? '35%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</p>
                 </Grid>
 
                 <Grid style={{ backgroundColor: '#00695c', color: 'white' }} container xs={12} sm={12} md={12} lg={12}>
-                    <p style={{ marginLeft: this.state.windowWidth >= 700 ? '40%' : '' }}>© 2020 by EMSR Travels. All rights reserved.</p>
+                    <p style={{ marginLeft: this.state.windowWidth >= 700 ? '40%' : '' }}>© 2021 by Karuda Cabs. All rights reserved.</p>
                 </Grid>
             </React.Fragment>
         )

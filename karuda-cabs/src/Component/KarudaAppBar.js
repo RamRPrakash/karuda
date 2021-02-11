@@ -47,7 +47,7 @@ class KarudaAppBar extends Component {
     render() { 
         return ( 
            <React.Fragment> 
-            <div className='web-ui' style={{ width: '100%', height: '100px', backgroundColor: '#00695c' , lineHeight : '100px' , }}>
+                <div className='web-ui' style={{ width: '100%', height: '100px', backgroundColor: '#252525' , color : 'white', lineHeight : '100px' , }}>
                 <div style={{ display: 'flex', justifyContent: 'space-around',  width : '100%'}}>
                 {
                         menuBars.map((item , index)=>{
@@ -62,7 +62,7 @@ class KarudaAppBar extends Component {
                                                 <span style={{marginLeft : '4%' , marginTop : '2%'}}> 
                                                 <PhoneIcon />
                                                 </span>  
-                                                <span style={{ fontWeight: '500' }}>+91 9876543210</span>
+                                                    <span style={{ fontWeight: '500', color: '#252525' }}>+91 9384841107</span>
                                                 </div> 
                                                 : 
                                                 <p style={{ fontWeight: '500' }} onClick={()=>this.changePage(item)}>{ item }</p>
@@ -75,8 +75,8 @@ class KarudaAppBar extends Component {
                 }
                 </div>
             </div>
-                <div className='mobile-ui' style={{ width: '100%', backgroundColor: '#00695c'}}>
-                    <div style={{ display: 'flex', justifyContent : 'space-around', width : '100%', backgroundColor: '#00695c' }}>
+                <div className='mobile-ui' style={{ width: '100%', backgroundColor: '#252525'}}>
+                    <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%', backgroundColor: '#252525' }}>
                         <ListIcon style={{ fontSize: '70px', color: '#ff9800' , marginTop : '6%'}} onClick={()=>{
                             this.setState({
                                 open : !this.state.open

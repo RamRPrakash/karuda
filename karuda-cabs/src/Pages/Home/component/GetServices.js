@@ -9,10 +9,7 @@ class GetServices extends Component {
     render() { 
         return (
             <React.Fragment>
-                <div className='setBackground' style={{
-                    height: '400px',
-                    backgroundImage: `url(services.jpg)`,
-                }}>
+                <div className='setBackground'>
 
                     <h1 style={{marginLeft : '40%'}}>OUR SERVICES</h1>
                     <Grid container>

@@ -3,12 +3,17 @@ import KarudaHome from '../Pages/KarudaHome/view/KarudaHome'
 import KarudaAbout from '../Pages/karudaAbout/view/KarudaAbout'
 import KarudaCheckBooking from '../Pages/KarudaCheckBooking/view/KarudaCheckBooking'
 import KarudaCar from '../Pages/KarudaCar/view/KarudaCar'
+import Home from '../Pages/Home/view/Home'
 
 export default [
     {
         path: '/',
-        component: KarudaHome,
+        component: Home,
         exact: true
+    },
+    {
+        path: '/Home',
+        component: Home
     },
     {
         path: '/Tariff',

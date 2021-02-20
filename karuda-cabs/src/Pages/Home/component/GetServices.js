@@ -6,12 +6,25 @@ class GetServices extends Component {
         super(props);
         this.state = {  }
     }
+    updateWindowSize() {
+        this.setState({
+            windowWidth: window.innerWidth
+        });
+    }
+    componentDidMount() {
+        this.updateWindowSize();
+        window.addEventListener("resize", this.updateWindowSize.bind(this));
+    }
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateWindowSize.bind(this));
+
+    }
     render() { 
         return (
             <React.Fragment>
                 <div className='setBackground'>
 
-                    <h1 style={{marginLeft : '40%'}}>OUR SERVICES</h1>
+                    <h1 style={{ marginLeft: this.state.windowWidth >= 700 ? '40%' : '10%'}}>OUR SERVICES</h1>
                     <Grid container>
                         <Grid item xs={12} sm={6} md={4} lg={4}>
                             <h2 style={{margin : '10%' , fontSize : '18px' }}>SECURE BOOKING</h2>

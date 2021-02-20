@@ -14,12 +14,7 @@ class GetContact extends Component {
     render() { 
         return (
             <React.Fragment>
-                <div className='setBackground' style={{
-                    height: '350px',
-                    backgroundImage: `url(contact.jpg)`, 
-                    color : 'white' ,
-                    
-                }}>
+                <div style={{backgroundColor : 'black' , color : 'white'}}>
                     <Grid container>
                         <Grid item xs={12} sm={6} md={4} lg={4}>
                             <img style={{ width: '200px', margin: '2%', marginLeft : '20%'}} src={karudaLogo} alt="Karuda"/>

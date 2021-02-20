@@ -1,26 +1,15 @@
-import React , {Component} from 'react'
-import GetTexi from '../component/GetTexi'
-import GetServices from '../component/GetServices'
-import GetBookTaxi from '../component/GetBookTaxi'
-import GetDrivers from '../component/GetDrivers'
-import GetTestimonials from '../component/GetTestimonials'
-import GetContact from '../component/GetContact'
-import GetCopyRight from '../component/GetCopyRight'
-import TopBannerList from '../component/TopBannerList'
+import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid';
 import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 
 import KarudaAppBar from '../../../Component/KarudaAppBar'
-import ReactWhatsapp from 'react-whatsapp';
-class Home extends Component {
+import GetBookTaxi from '../../Home/component/GetBookTaxi'
+class OnlineBooking extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
-    }
-    check=()=>{
-        alert('Hii')
     }
     updateWindowSize() {
         this.setState({
@@ -115,22 +104,13 @@ class Home extends Component {
         )
     }
     render() { 
-        return (
-           <div>
-                <KarudaAppBar props={this.props} />
-                
-                <TopBannerList props={this.props}/>
-                {/* <GetTexi/> */}
-                <GetServices/>
-                <GetBookTaxi/><br></br>
-                <GetDrivers/>
-                {/* {this.footer()}
-                <GetTestimonials/> */}
-                <GetContact/>
-                <GetCopyRight/>
-          </div>
-          );
+        return ( 
+            <React.Fragment>
+                <GetBookTaxi/>
+                {this.footer()}
+            </React.Fragment>
+         );
     }
 }
  
-export default Home;
+export default OnlineBooking;

@@ -5,15 +5,26 @@ class GetCopyRight extends Component {
         super(props);
         this.state = {  }
     }
+    updateWindowSize() {
+        this.setState({
+            windowWidth: window.innerWidth
+        });
+    }
+    componentDidMount() {
+        this.updateWindowSize();
+        window.addEventListener("resize", this.updateWindowSize.bind(this));
+    }
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateWindowSize.bind(this));
+    }
     render() { 
         return (
             <React.Fragment>
-                <div className='setBackground' style={{
-                    height: '70px',
-                    backgroundImage: `url(copyright.jpg)`,
+                <div style={{
+                    backgroundColor: '#2C2C2C'
                 }}>
                     <div style={{display :'flex' , fontSize : '22px' , color : 'gray'}}>
-                        <div style={{width : '50%' , marginLeft : '10%'}}>
+                        <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%'}}>
                             <p>karunyacabs.com Copyright @ All rights reserved 2021</p>
                         </div>
                         <div style={{width : '50%'}}>

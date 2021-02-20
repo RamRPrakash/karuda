@@ -4,6 +4,7 @@ import KarudaAbout from '../Pages/karudaAbout/view/KarudaAbout'
 import KarudaCheckBooking from '../Pages/KarudaCheckBooking/view/KarudaCheckBooking'
 import KarudaCar from '../Pages/KarudaCar/view/KarudaCar'
 import Home from '../Pages/Home/view/Home'
+import OnlineBooking from '../Pages/KarudaOnlineBooking/view/KarudaOnlineBooking'
 
 export default [
     {
@@ -33,7 +34,7 @@ export default [
     },
     {
         path: '/KarudaOnlineBooking',
-        component: KarudaHome
+        component: OnlineBooking
     },
     {
         path: '/KarudaCheckBooking',

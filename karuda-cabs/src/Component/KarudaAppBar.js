@@ -47,25 +47,25 @@ class KarudaAppBar extends Component {
     render() { 
         return ( 
            <React.Fragment> 
-                <div className='web-ui' style={{ width: '100%', height: '100px', backgroundColor: '#252525' , color : 'white', lineHeight : '100px' , }}>
-                <div style={{ display: 'flex', justifyContent: 'space-around',  width : '100%'}}>
+                <div className='web-ui' style={{ width: '100%', height: '130px', backgroundColor: '#252525' , color : 'white', lineHeight : '100px' , }}>
+                <div style={{ display: 'flex',   width : '100%'}}>
                 {
                         menuBars.map((item , index)=>{
                             return (
-                                <div style={{width : '200px' , cursor : 'pointer'}} item >
+                                <div style={{ width: item == 'HOME' || item == 'CARS' ? '100px' : '200px', cursor: 'pointer', marginLeft: item == 'MOBILE' ? '7%' : item == 'LOGO' ?  '2%' : item =='HOME' ? '8%' : ''}} item >
                                     {
                                         item === 'LOGO'?
-                                             <img style={{width : '150px' , height : '90px'}} src={karudaLogo} alt="Karuda Cabs"></img> 
+                                             <img style={{width : '230px' , height : '90px' , lineHeight : '100px' , marginTop : '20px'}} src={karudaLogo} alt="Karuda Cabs"></img> 
                                              : 
                                             item === 'MOBILE' ?
-                                                <div style={{ borderRadius: '88px', background: '#ffea00', height: '40px', lineHeight: '42px', marginTop: '46px' }}> 
-                                                <span style={{marginLeft : '4%' , marginTop : '2%'}}> 
-                                                <PhoneIcon />
-                                                </span>  
-                                                    <span style={{ fontWeight: '500', color: '#252525' }}>+91 9384841107</span>
+                                                <div style={{ borderRadius: '88px', background: '#ffea00', height: '40px', lineHeight: '42px', marginTop: '46px' , display : 'flex'  }}> 
+                                                    <div style={{ marginLeft: '10%', marginTop: '3%', color:'#cc0021' }}> 
+                                                        <PhoneIcon />
+                                                    </div>  
+                                                    <div style={{ fontWeight: '500', marginLeft: '10px', color: '#252525' }}>+91 9384841107</div>
                                                 </div> 
                                                 : 
-                                                <p style={{ fontWeight: '500' }} onClick={()=>this.changePage(item)}>{ item }</p>
+                                                <p style={{ fontWeight: '500' , textAlign : 'center' }} onClick={()=>this.changePage(item)}>{ item }</p>
 
                                     }
                                    

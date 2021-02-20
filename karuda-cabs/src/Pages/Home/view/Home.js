@@ -117,16 +117,16 @@ class Home extends Component {
     render() { 
         return (
            <div>
-                <KarudaAppBar props={this.props} />
+                <KarudaAppBar props={this.props} /><br></br><br></br>
                 
-                <TopBannerList props={this.props}/>
+                <TopBannerList props={this.props} /><br></br><br></br><br></br><br></br>
                 {/* <GetTexi/> */}
-                <GetServices/>
+                <GetServices /><br></br><br></br><br></br><br></br>
                 <GetBookTaxi/><br></br>
-                <GetDrivers/>
+                <GetDrivers /><br></br><br></br><br></br>
                 {/* {this.footer()}
                 <GetTestimonials/> */}
-                <GetContact/>
+                <GetContact />
                 <GetCopyRight/>
           </div>
           );

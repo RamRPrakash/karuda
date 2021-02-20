@@ -4,6 +4,7 @@ import carList from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/car.png'
 import ReactWhatsapp from 'react-whatsapp';
 import Button from '@material-ui/core/Button';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import { DriveEta } from '@material-ui/icons';
 class TopBannerList extends Component {
     constructor(props) {
         super(props);
@@ -52,20 +53,21 @@ class TopBannerList extends Component {
                         )}
                 </Carousel>
                 <div style={{display : 'flex' , marginTop : '3%'}}>
-                    <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '35%' : '5%', color: 'white', backgroundColor: 'red', borderColor: 'red' , width : '200px' }} variant="outlined" size="medium"  onClick={()=>{
+                    <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '32%' : '5%', color: 'white', backgroundColor: '#cc0021', borderRadius: '10px' , width : '200px' }} variant="outlined" size="medium"  onClick={()=>{
                         this.props.props.history.push('/KarudaOnlineBooking')
                     }} >
-                        Get Texi Now !!!
+                        <span style={{ fontWeight: '500' , fontSize : '30px' , fontWeight : 'bold' ,  }}>Get Taxi </span>
                                     </Button>
                     
                    
-                        
-                         <ReactWhatsapp number="9787436363" message="Chat with karuda cabs!!!" style={{ backgroundColor: 'red',marginLeft : '5%' , width : '200px' }} >
-                            <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '3%' : '15%', color: 'white', backgroundColor: 'red', borderColor: 'red' }} variant="outlined" size="medium"  >
-                            <WhatsAppIcon style={{ color: '#e8ff00' }} />Chat With Us 
+                   
+                    <ReactWhatsapp number="9787436363" message="Chat with karuda cabs!!!" style={{ backgroundColor: '#cc0021', width: '330px', borderRadius: '10px', borderColor: '#cc0021' , marginLeft : '5%'}} >
+                        <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '3%' : '15%', color: 'white', backgroundColor: '#cc0021', borderColor:'#cc0021' }} variant="outlined" size="medium"  >
+                            <WhatsAppIcon style={{ color: '#FFFF00' , fontSize : '30px' }} />
+                            <span style={{ fontWeight: '500', fontSize: '30px', fontWeight: 'bold', marginLeft : '5px' }}>Chat With Us </span> 
                             </Button>
-                        </ReactWhatsapp>
-                       
+                    </ReactWhatsapp>
+                
                         
                                   
                 </div>

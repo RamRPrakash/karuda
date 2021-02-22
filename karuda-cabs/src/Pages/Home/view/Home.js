@@ -13,7 +13,9 @@ import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 
 import KarudaAppBar from '../../../Component/KarudaAppBar'
+import KarudaCabApp from '../../../Component/KarudaCabApp'
 import ReactWhatsapp from 'react-whatsapp';
+import KarudaFooter from '../../../Component/karudaFooter'
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -117,8 +119,14 @@ class Home extends Component {
     render() { 
         return (
            <div>
-                <KarudaAppBar props={this.props} /><br></br><br></br>
-                
+                <KarudaAppBar props={this.props} />
+                <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b' }}>
+                    <marquee behavior="scroll" direction="left">
+                        <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telungana.</h3>
+                    </marquee>
+                </div>
+                <br></br><br></br>
+                {/* <KarudaCabApp props={this.props}/> */}
                 <TopBannerList props={this.props} /><br></br><br></br><br></br><br></br>
                 {/* <GetTexi/> */}
                 <GetServices /><br></br><br></br><br></br><br></br>
@@ -126,6 +134,7 @@ class Home extends Component {
                 <GetDrivers /><br></br><br></br><br></br>
                 {/* {this.footer()}
                 <GetTestimonials/> */}
+                <KarudaFooter/>
                 <GetContact />
                 <GetCopyRight/>
           </div>

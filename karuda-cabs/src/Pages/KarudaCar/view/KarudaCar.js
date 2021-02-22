@@ -12,7 +12,12 @@ class KarudaCar extends Component {
         return (
             <Grid container >
                 <KarudaAppBar props={this.props} />
-                <KarudaCarList />
+                <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b' }}>
+                    <marquee behavior="scroll" direction="left">
+                        <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telungana.</h3>
+                    </marquee>
+                </div>
+                <KarudaCarList props={this.props} />
             </Grid>
         );
     }

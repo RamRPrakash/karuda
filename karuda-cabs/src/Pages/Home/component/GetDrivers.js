@@ -24,7 +24,7 @@ class GetDrivers extends Component {
             <React.Fragment>
                 <div style={{marginLeft : '3%'}}>
                     <Grid container>
-                        <Grid item xs={12} sm={6} md={4} lg={8}>
+                        <Grid item xs={12} sm={6} md={6} lg={6}>
                             <h1 style={{ color: '#FEBC03'}}>FOR DRIVERS</h1>
                             <h1>DO YOU WANT TO EARN WITH US?</h1>
                             <p style={{fontSize : '20px'}}>A taxicab, also known as a taxi or a cab, is a type of vehicle for hire with a driver, used by a single passenger or small group of passengers, often for a non-shared ride. A taxicab conveys passengers between locations of their choice</p>
@@ -41,7 +41,7 @@ class GetDrivers extends Component {
                                 <div style={{ width: '50%', fontSize: '20px' }}>Stable orders</div>
                             </div>
                         </Grid>
-                        <Grid item xs={12} sm={12} md={12} lg={4} >
+                        <Grid item xs={12} sm={6} md={6} lg={6} style={{textAlign : 'right' , marginTop : '3%'}} >
                             <img alt="Car" style={{ alignContent: 'right', height: this.state.windowWidth >= 700 ?  '350px' : '200px' }} src={HalfCar}></img>
                         </Grid>
 

@@ -6,6 +6,16 @@ import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 import Card from '@material-ui/core/Card';
 import car from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/carTaxi.png'
+import Dzire from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/Dzire.png'
+import ETIOS from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/ETIOS.png'
+import Sunny from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/Sunny.png'
+import xcent from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/xcent.png'
+import zest from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/zest.png'
+import INNOVA from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/INNOVA.png'
+import LODGY from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/LODGY.png'
+import MARAZZO from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/MARAZZO.png'
+import TAVERA from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/TAVERA.png'
+import XYLO from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/XYLO.png'
 import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import GetContact from '../../Home/component/GetContact'
@@ -30,11 +40,17 @@ class KarudaCarList extends Component {
     }
 
     singleCar(type , data){
+        
         return(
             
                 <Card style={{ marginLeft: '10%', margin: '10%', width: '300px', padding: this.state.windowWidth >= 700 ? '30px' : '10px' }}>
                     <div>
-                        <img style={{ width: '300px' }} src={car} alt='car'></img>
+                    <img style={{ width: '300px' }} src={
+                        data == 'Dzire' ? Dzire : data == 'Sunny' ? Sunny : data == 'Xcent' ? xcent :
+                            data == 'Zest' ? zest : data == 'Only Etios' ? ETIOS :
+                                data == 'Xylo' ? XYLO : data == 'Marazzo' ? MARAZZO : data == 'Loggy' ? LODGY :
+                                    data == 'Tavera' ? TAVERA : INNOVA
+                        } alt='car'></img>
                         <div>
                             <h3>{type}</h3>
                         <h4>{data}</h4> Xylo, Marazzo, Loggy, Tavera

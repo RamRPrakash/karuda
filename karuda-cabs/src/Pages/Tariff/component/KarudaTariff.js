@@ -5,10 +5,24 @@ import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import GetContact from '../../Home/component/GetContact'
 import GetCopyRight from '../../Home/component/GetCopyRight'
+import KarudaSelectField from '../../../Component/KarudaSelectField'
+import TextField from '@material-ui/core/TextField';
+
+var CarList = ['Sedan (Dzire, Sunny, Xcent, Zest)', 'Sedan (Only Etios)', 'SUV (Xylo, Marazzo, Loggy, Tavera)', 'SUV (Only Innova)']
+var DropList = ['ONE WAY DROP', 'ROUND TRIP']
+var rate = {
+    'Sedan (Dzire, Sunny, Xcent, Zest)' : [12 , 10] ,
+    'Sedan (Only Etios)' : [13,11],
+    'SUV (Xylo, Marazzo, Loggy, Tavera)' : [15,13],
+    'SUV (Only Innova)' : [16,14]
+}
 class KarudaTariff extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            checkRate : '' , 
+            KiloMetre : 0
+         }
     }
     updateWindowSize() {
         this.setState({
@@ -183,18 +197,98 @@ class KarudaTariff extends Component {
 
                
                    <h1 style={{width : '100%'}}> Additional charges details</h1>
-              
-                <ul style={{fontSize : '20px' }}>
-                    <li>Toll Fees, Inter-State Permit charges (if any) are extra.</li>
-                    <li>One way - Driver Bata Rs. 400. (If more than 400 km driver bata Rs.600).</li>
-                    <li>Round Trip - Driver Bata Rs. 400 Per Day.</li>
-                    <li>Tempo Traveler - Driver Bata Rs. 600.</li>
-                    <li>Hill Station Charges - Rs. 400.</li>
-                    <li> One way - Minimum running must be 130 km per day.</li>
-                    <li>Round Trips - Minimum running must be 250km per day.</li>
-                    <li> 1 day means 1 Calender day (from midnight 12 to Next Midnight 12)</li>
-                    <li>Max lagguage capacity by vehicle type - Sedan - 3 suitcases, Suv - 4 suitcases</li>
-                </ul>
+                <Grid container xs={12} sm={12} md={12} lg={12}>
+                    <Grid item xs={12} sm={12} md={6} lg={6}>
+                        <ul style={{fontSize : '20px' }}>
+                            <li>Toll Fees, Inter-State Permit charges (if any) are extra.</li>
+                            <li>One way - Driver Bata Rs. 400. (If more than 400 km driver bata Rs.600).</li>
+                            <li>Round Trip - Driver Bata Rs. 400 Per Day.</li>
+                            <li>Tempo Traveler - Driver Bata Rs. 600.</li>
+                            <li>Hill Station Charges - Rs. 400.</li>
+                            <li> One way - Minimum running must be 130 km per day.</li>
+                            <li>Round Trips - Minimum running must be 250km per day.</li>
+                            <li> 1 day means 1 Calender day (from midnight 12 to Next Midnight 12)</li>
+                            <li>Max lagguage capacity by vehicle type - Sedan - 3 suitcases, Suv - 4 suitcases</li>
+                        </ul>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={6} lg={6} style={{ margin: this.state.windowWidth >= 700 ? '0%' : '5%'}}>
+                        <h3>Trip Calculation</h3>
+                        <Grid container>
+                            <Grid item xs={12} sm={12} md={12} lg={6}>
+
+                                <KarudaSelectField
+                                    lebel='Select Car'
+                                    value={this.state.SelectedCar}
+                                    menuData={CarList}
+                                    onChange={(e) => {
+                                        console.log(e)
+
+                                       
+                                        
+                                        this.setState({
+                                            SelectedCar: e.target.value
+                                        })
+                                        if (this.state.SelectedCar && this.state.SelectedTrip) {
+                                            this.setState({
+                                                checkRate: +(this.state.KiloMetre) * rate[e.target.value][this.state.SelectedTrip == 'ONE WAY DROP' ? 0 : 1]
+                                            })
+                                        }
+                                    }}
+                                /> <br></br>
+                                <KarudaSelectField
+                                    lebel='Trip'
+                                    value={this.state.SelectedTrip}
+                                    menuData={DropList}
+                                    onChange={(e) => {
+                                        console.log(e)
+                                    
+                                       
+                                        this.setState({
+                                            SelectedTrip: e.target.value
+                                        })
+                                        if (this.state.SelectedCar && this.state.SelectedTrip) {
+                                            this.setState({
+                                                checkRate: +(this.state.KiloMetre) * rate[this.state.SelectedCar][e.target.value == 'ONE WAY DROP' ? 0 : 1]
+                                            })
+                                        }
+                                    }}
+                                /><br></br><br></br>
+                                <TextField style={{ width: '300px' }} id="outlined-basic" variant="outlined" label="Distance (in km)" value={this.state.KiloMetre} onChange={(e) => {
+                                    var content = e.target.value
+                                    content = content.replace(/[^0-9.]/gi, '')
+                                    console.log(content)
+                                    console.log(this.state.SelectedCar)
+                                    console.log(this.state.SelectedTrip)
+                                   
+                                    console.log(rate[this.state.SelectedCar])
+                                   
+                                    
+                                    this.setState({
+                                        KiloMetre: content 
+                                    })
+                                    if (this.state.SelectedCar && this.state.SelectedTrip) {
+                                        this.setState({
+                                            checkRate: +(content) * rate[this.state.SelectedCar][this.state.SelectedTrip == 'ONE WAY DROP' ? 0 : 1]
+                                        })
+                                    }
+                                }}
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={6} style={{  border: '2px solid #ffea00'}}>
+                                <div style={{padding : '10%'}}>
+                                    <h3>
+                                        {
+                                            this.state.checkRate ?  ` Total Charge : Rs.${this.state.checkRate} !!!` : 'Check Rate !!!'
+                                        }
+                                       
+                                    </h3>
+                                </div>
+                            </Grid>
+
+                        </Grid>
+                        
+                    </Grid>
+                </Grid>
 
                 {this.footer()}
             </React.Fragment>

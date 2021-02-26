@@ -5,13 +5,29 @@ import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 import {
     MuiPickersUtilsProvider,
-
+    KeyboardTimePicker,
     KeyboardDatePicker,
 } from '@material-ui/pickers';
 import TextField from '@material-ui/core/TextField';
 import CustomerCare from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/caller.png'
 import Button from '@material-ui/core/Button';
 import api from 'axios';
+import KarudaSelectField from '../../../Component/KarudaSelectField'
+
+var carListItem = [
+    "Sedan - Dzire" ,
+    "Sedan - Sunny" ,
+    "Sedan - Xcent" ,
+    "Sedan - Zest" ,
+    "Sedan - Only Etios" ,
+    "SUV - Xylo" ,
+    "SUV - Marazzo" ,
+    "SUV - Loggy" ,
+    "SUV - Tavera" ,
+    "SUV - Only Innova" ,
+   
+    
+]
 
 
 class GetBookTaxi extends Component {
@@ -19,7 +35,7 @@ class GetBookTaxi extends Component {
         super(props);
         this.state = {
             selectedDate: new Date() , 
-            hour : '',
+            hour: new Date(),
             startDestination : '',
             endDestination : '',
             vehicle : '',
@@ -57,9 +73,49 @@ class GetBookTaxi extends Component {
             phone: this.state.phone,
             email: this.state.email
         }
-        api.post('http://localhost:1330/sendMail', data).then(response=>{
-            console.log('sasffa')
-        })
+        if (this.state.selectedDate.length == ''){
+            alert('Please Fill Date')
+            return
+        }
+        else if (this.state.hour.length == ''){
+            alert('Please Fill Time')
+            return
+        }
+        else if (this.state.startDestination.length == ''){
+            alert('Please Fill Start Destination')
+            return
+        }
+        else if (this.state.endDestination.length == ''){
+            alert('Please Fill End Destination')
+            return
+        }
+        else if (this.state.vehicle.length == ''){
+            alert('Please Select vehicle')
+            return
+        }
+        else if (this.state.phone.length == ''){
+            alert('Please Fill Phone')
+            return
+        }
+        else if (this.state.email.length == ''){
+            alert('Please Fill Email')
+            return
+        }
+        else{
+            alert('Thanks you Booking karuacabs. Our Manager will contact you soon !!!')
+            this.setState({
+                selectedDate: new Date(),
+                hour: new Date(),
+                startDestination: '',
+                endDestination: '',
+                vehicle: '',
+                phone: '',
+                email: ''
+            })
+        }
+        // api.post('http://localhost:1330/sendMail', data).then(response=>{
+        //     console.log('sasffa')
+        // })
     }
     render() {
      //height: this.state.windowWidth >= 700 ? '900px' : '1500px'
@@ -75,7 +131,7 @@ class GetBookTaxi extends Component {
                                     <div style={{ color: 'yellow', width: '50%', }}>
                                         <h2 style={{ marginLeft: this.state.windowWidth >= 700 ?'30%' : '15%'}}>Date</h2>
                                     </div>
-                                    <div style={{  backgroundColor: 'white' , width : '374px' , borderRadius : '10px' }}>
+                                    <div style={{  backgroundColor: 'white' ,  borderRadius : '10px' }}>
                                       
                                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                             <KeyboardDatePicker
@@ -83,7 +139,7 @@ class GetBookTaxi extends Component {
                                                 variant="inline"
                                                 format="MM/dd/yyyy"
                                                 color ="white"
-                                                style={{width : '370px' , color : 'white'}}
+                                                style={{ width: this.state.windowWidth >= 700 ? '370px' : '195px' , color : 'white'}}
                                                 margin="normal"
                                                 id="date-picker-inline"
                                                 label=""
@@ -103,7 +159,7 @@ class GetBookTaxi extends Component {
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
                                         <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>Time</h2></div>
-                                    <div style={{ }}>
+                                    <div style={{ backgroundColor: 'white', borderRadius: '10px' }}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929', color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px' }} 
                                         onChange={(e)=>{
                                             this.setState({
@@ -111,13 +167,31 @@ class GetBookTaxi extends Component {
                                             })
                                         }} 
                                         ></input> */}
-                                        <TextField id="outlined-basic" variant="outlined" onChange={(e) => {
+                                        <MuiPickersUtilsProvider utils={DateFnsUtils} >
+                                        <KeyboardTimePicker
+                                            margin="normal"
+                                            id="time-picker"
+                                            label=""
+                                            value={this.state.hour}
+                                            onChange={(e) => {
+                                                console.log(e)
+                                                this.setState({
+                                                    hour: e
+                                                })
+                                            }} 
+                                            KeyboardButtonProps={{
+                                                'aria-label': 'change time',
+                                            }}
+                                            style={{ color: 'white', backgroundColor: 'white', borderRadius: '10px', width: this.state.windowWidth >= 700 ? '370px' : '195px' , height : '56px'}}
+                                        />
+                                        </MuiPickersUtilsProvider>
+                                        {/* <TextField id="outlined-basic" variant="outlined" onChange={(e) => {
                                             this.setState({
                                                 hour: e.target.value
                                             })
                                         }} 
                                            
-                                            style={{ color: 'white', backgroundColor: 'white', borderRadius: '10px' ,  width: this.state.windowWidth >= 700 ?'370px' : '' }} />
+                                            style={{ color: 'white', backgroundColor: 'white', borderRadius: '10px' ,  width: this.state.windowWidth >= 700 ?'370px' : '' }} /> */}
                                     </div>
                                 </div> <br></br>
                                 <div style={{ display: 'flex', width: '100%' }}>
@@ -131,7 +205,7 @@ class GetBookTaxi extends Component {
                                                 })
                                             }} ></input> */}
 
-                                        <TextField id="outlined-basic" onChange={(e) => {
+                                        <TextField value={this.state.startDestination} id="outlined-basic" onChange={(e) => {
                                             this.setState({
                                                 startDestination: e.target.value
                                             })
@@ -150,7 +224,7 @@ class GetBookTaxi extends Component {
                                             }}
                                         ></input> */}
 
-                                        <TextField onChange={(e) => {
+                                        <TextField value={this.state.endDestination} onChange={(e) => {
                                             this.setState({
                                                 endDestination: e.target.value
                                             })
@@ -160,7 +234,7 @@ class GetBookTaxi extends Component {
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
                                         <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>choose vehicle</h2></div>
-                                    <div style={{  }}>
+                                    <div style={{  borderRadius: '10px'  }}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929',  color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px' }} 
                                             onChange={(e) => {
                                                 this.setState({
@@ -168,11 +242,29 @@ class GetBookTaxi extends Component {
                                                 })
                                             }}
                                             ></input> */}
-                                        <TextField onChange={(e) => {
+                                            <KarudaSelectField 
+                                            lebel=''
+                                            backgroundColor = 'white'
+                                            borderRadius= '10px'
+                                            width={ this.state.windowWidth >= 700 ? '370px' : '190px' }
+                                            height = '60px'
+                                            value={this.state.vehicle}
+                                            menuData={carListItem}
+                                            onChange={(e) => {
+                                                console.log(e)
+
+
+                                                this.setState({
+                                                    vehicle: e.target.value
+                                                })
+                                              
+                                            }}
+                                            />
+                                        {/* <TextField onChange={(e) => {
                                             this.setState({
                                                 vehicle: e.target.value
                                             })
-                                        }} id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '', backgroundColor: 'white', borderRadius: '10px' }} />
+                                        }} id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '', backgroundColor: 'white', borderRadius: '10px' }} /> */}
                                     </div>
                                 </div><br></br>
                                 <div style={{ display: 'flex', width: '100%' }}>
@@ -185,9 +277,11 @@ class GetBookTaxi extends Component {
                                                 phone: e.target.value
                                             })
                                         }}></input> */}
-                                        <TextField onChange={(e) => {
+                                        <TextField value={this.state.phone} onChange={(e) => {
+                                            var content = e.target.value
+                                            content = content.replace(/[^0-9.]/gi, '')
                                             this.setState({
-                                                phone: e.target.value
+                                                phone: content
                                             })}}
                                             id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '', backgroundColor: 'white', borderRadius: '10px'}} />
                                     </div>
@@ -203,7 +297,7 @@ class GetBookTaxi extends Component {
                                                 })
                                             }}
                                         ></input> */}
-                                        <TextField onChange={(e) => {
+                                        <TextField value={this.state.email} onChange={(e) => {
                                             this.setState({
                                                 email: e.target.value
                                             })

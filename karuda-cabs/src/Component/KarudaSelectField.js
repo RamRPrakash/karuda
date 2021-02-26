@@ -8,7 +8,7 @@ class KarudaSelectField extends Component {
         this.state = {  }
     }
     render() { 
-        let { value = '', onChange = () => { }, menuData = [], lebel = '' ,width = 300} = this.props
+        let { value = '', onChange = () => { }, menuData = [], lebel = '', width = 300, backgroundColor = '', borderRadius = '', height = ''} = this.props
         return (
             <div>
                 <InputLabel id="demo-simple-select-label">{lebel}</InputLabel>
@@ -17,7 +17,7 @@ class KarudaSelectField extends Component {
                     id="demo-simple-select"
                     value={value}
                     onChange={onChange}
-                    style={{ width: width}}
+                    style={{ width: width, backgroundColor: backgroundColor, borderRadius: borderRadius, height: height}}
                 >
                     {
                         menuData.map((item)=>{

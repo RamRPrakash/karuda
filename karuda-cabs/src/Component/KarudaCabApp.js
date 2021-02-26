@@ -103,7 +103,7 @@ class KarudaCabApp extends Component {
                                                         <div style={{ marginLeft: '10%', marginTop: '3%', color: '#cc0021' }}>
                                                             <PhoneIcon />
                                                         </div>
-                                                        <div style={{ fontWeight: '500', color: '#252525' }}>+91 9384841107</div>
+                                                        <div style={{ fontWeight: '500', color: '#252525' }}>+91   9384841107</div>
                                                     </div>
                                                     : 
                                                     <p style={{ fontWeight: '500', textAlign: 'center' }} onClick={() => this.changePage(item)}>{item}</p>

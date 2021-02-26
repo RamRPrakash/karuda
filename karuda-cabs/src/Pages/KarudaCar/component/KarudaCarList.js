@@ -53,7 +53,7 @@ class KarudaCarList extends Component {
                         } alt='car'></img>
                         <div>
                             <h3>{type}</h3>
-                        <h4>{data}</h4> Xylo, Marazzo, Loggy, Tavera
+                        <h4>{data}</h4> 
                         <h4> {data == 'Only Etios' ? "One Way Rs. 13/km | Round Trip Rs. 11/km" :
                         
                             data == 'Xylo' || data == 'Marazzo' || data == 'Loggy' || data == 'Tavera' ? "One Way Rs. 15/km | Round Trip Rs. 13/km" : data == 'Only Innova' ? "One Way Rs. 16/km | Round Trip Rs. 14/km" :
@@ -181,7 +181,7 @@ class KarudaCarList extends Component {
                             </div>
                             <div style={{ width: '50%' }}>
                                 <div style={{ height: '50px' }}><h3>24/7 Customer Support</h3></div>
-                                <div style={{ height: '50px' }}><p>You can call 790-474-0907 anytime for quick booking.</p></div>
+                                <div style={{ height: '50px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
                             </div>
                         </div>
                     </Grid>
@@ -203,7 +203,7 @@ class KarudaCarList extends Component {
                             </div>
                             <div style={{ width: '50%' }}>
                                 <div style={{ height: '50px' }}><h3>24/7 Customer Support</h3></div>
-                                <div style={{ height: '50px' }}><p>You can call 790-474-0907 anytime for quick booking.</p></div>
+                                <div style={{ height: '50px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
                             </div>
                         </div>
                     </Grid>
@@ -224,7 +224,7 @@ class KarudaCarList extends Component {
                         <div style={{ display: 'flex', width: '100%' }}>
                             <div style={{ height: '100px', lineHeight: '2' }}>
                                 <p style={{ fontWeight: '600' }}>CALL US 24x7</p>
-                                <h1>9384841107 | 9940035922</h1>
+                                <h1>  9384841107 | 9940035922</h1>
                             </div>
 
                         </div>
@@ -233,7 +233,7 @@ class KarudaCarList extends Component {
                         <div style={{ display: 'flex', width: '100%' }}>
                             <div style={{ height: '100px', lineHeight: '2' }}>
                                 <p style={{ fontWeight: '600' }}>FOR WHATSAPP</p>
-                                <h1>9384841107</h1>
+                                <h1>  9384841107</h1>
                             </div>
 
                         </div>

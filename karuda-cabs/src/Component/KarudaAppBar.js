@@ -74,7 +74,7 @@ class KarudaAppBar extends Component {
                                                     <div style={{  marginTop: '3%', color:'#cc0021' }}> 
                                                         <PhoneIcon />
                                                     </div>  
-                                                    <div style={{ fontWeight: '500', color: '#252525' }}><a href="tel:91 9384841107">+91 9384841107</a></div>
+                                                    <div style={{ fontWeight: '500', color: '#252525' }}><a href="tel:91   9384841107">+91   9384841107</a></div>
                                                 </div> 
                                                 : 
                                                 item === 'LEFT' || item === 'RIGHT' ? <div></div> :

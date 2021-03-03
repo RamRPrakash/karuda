@@ -107,7 +107,7 @@ class KarudaTariff extends Component {
                 </Grid>
 
                 <Grid style={{ backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
-                    <p style={{ marginLeft: this.state.windowWidth >= 700 ? '35%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</p>
+                    <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</h2>
                 </Grid>
                 <GetContact />
                 <div style={{
@@ -115,10 +115,10 @@ class KarudaTariff extends Component {
                 }}>
                     <div style={{ display: 'flex', fontSize: '22px', color: 'gray' }}>
                         <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%' }}>
-                            <p>karunyacabs.com Copyright @ All rights reserved 2021</p>
+                            <p>karudacabs.com Copyright @ All rights reserved 2021</p>
                         </div>
                         <div style={{ width: '50%' }}>
-                            <p>Designed and Developed by Skiftre Technologies</p>
+                            <p>Designed and Developed by Skifter Technologies</p>
                         </div>
                     </div>
 
@@ -132,6 +132,88 @@ class KarudaTariff extends Component {
     render() { 
         return (
             <React.Fragment>
+               
+                <Grid style={{ paddingBottom : '2%' }} container xs={12} sm={12} md={12} lg={12}>
+                    <Grid item xs={12} sm={12} md={6} lg={6} style={{ margin: this.state.windowWidth >= 700 ? '0%' : '5%' }}>
+                        <h3 style={{paddingLeft : '3%'}}>Trip Calculation</h3>
+                        <Grid container style={{padding : '3%'}}>
+                            
+                            <Grid item xs={12} sm={12} md={12} lg={6}>
+
+                                <KarudaSelectField
+                                    lebel='Select Car'
+                                    value={this.state.SelectedCar}
+                                    menuData={CarList}
+                                    onChange={(e) => {
+                                        console.log(e)
+
+
+
+                                        this.setState({
+                                            SelectedCar: e.target.value
+                                        })
+                                        if (this.state.SelectedCar && this.state.SelectedTrip) {
+                                            this.setState({
+                                                checkRate: +(this.state.KiloMetre) * rate[e.target.value][this.state.SelectedTrip == 'ONE WAY DROP' ? 0 : 1]
+                                            })
+                                        }
+                                    }}
+                                /> <br></br>
+                                <KarudaSelectField
+                                    lebel='Trip'
+                                    value={this.state.SelectedTrip}
+                                    menuData={DropList}
+                                    onChange={(e) => {
+                                        console.log(e)
+
+
+                                        this.setState({
+                                            SelectedTrip: e.target.value
+                                        })
+                                        if (this.state.SelectedCar && this.state.SelectedTrip) {
+                                            this.setState({
+                                                checkRate: +(this.state.KiloMetre) * rate[this.state.SelectedCar][e.target.value == 'ONE WAY DROP' ? 0 : 1]
+                                            })
+                                        }
+                                    }}
+                                /><br></br><br></br>
+                                <TextField style={{ width: '300px' }} id="outlined-basic" variant="outlined" label="Distance (in km)" value={this.state.KiloMetre} onChange={(e) => {
+                                    var content = e.target.value
+                                    content = content.replace(/[^0-9.]/gi, '')
+                                    console.log(content)
+                                    console.log(this.state.SelectedCar)
+                                    console.log(this.state.SelectedTrip)
+
+                                    console.log(rate[this.state.SelectedCar])
+
+
+                                    this.setState({
+                                        KiloMetre: content
+                                    })
+                                    if (this.state.SelectedCar && this.state.SelectedTrip) {
+                                        this.setState({
+                                            checkRate: +(content) * rate[this.state.SelectedCar][this.state.SelectedTrip == 'ONE WAY DROP' ? 0 : 1]
+                                        })
+                                    }
+                                }}
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={6} style={{ border: '2px solid #ffea00' }}>
+                                <div style={{ padding: '10%' }}>
+                                    <h3>
+                                        {
+                                            this.state.checkRate ? ` Total Charge : Rs.${this.state.checkRate} !!!` : 'Check Rate !!!'
+                                        }
+
+                                    </h3>
+                                </div>
+                            </Grid>
+
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+                
                 <div>
                     <h3>OUTSTATION CAB SERVICE TARIFF CHART</h3>
                 </div>
@@ -211,7 +293,7 @@ class KarudaTariff extends Component {
                             <li>Max lagguage capacity by vehicle type - Sedan - 3 suitcases, Suv - 4 suitcases</li>
                         </ul>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={6} lg={6} style={{ margin: this.state.windowWidth >= 700 ? '0%' : '5%'}}>
+                    <Grid item xs={12} sm={12} md={6} lg={6} style={{ display : 'none' ,  margin: this.state.windowWidth >= 700 ? '0%' : '5%'}}>
                         <h3>Trip Calculation</h3>
                         <Grid container>
                             <Grid item xs={12} sm={12} md={12} lg={6}>

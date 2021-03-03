@@ -5,6 +5,8 @@ import KarudaCheckBooking from '../Pages/KarudaCheckBooking/view/KarudaCheckBook
 import KarudaCar from '../Pages/KarudaCar/view/KarudaCar'
 import Home from '../Pages/Home/view/Home'
 import OnlineBooking from '../Pages/KarudaOnlineBooking/view/KarudaOnlineBooking'
+import Login from '../Pages/Login/Login'
+import EntryChart from '../Pages/EntryChart/EntryChart'
 
 export default [
     {
@@ -39,6 +41,14 @@ export default [
     {
         path: '/KarudaCheckBooking',
         component: KarudaCheckBooking
+    },
+    {
+        path: '/Login',
+        component: Login
+    },
+    {
+        path: '/EntryChart',
+        component: EntryChart
     },
 
 ]

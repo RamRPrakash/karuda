@@ -8,6 +8,9 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import EmailIcon from '@material-ui/icons/Email';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import BusinessIcon from '@material-ui/icons/Business';
+import googleBusiness from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/google_mybusiness.svg'
+import whatsapp from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/whatsapp.svg'
+import instagram from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/instagram.svg'
 class GetContact extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +29,7 @@ class GetContact extends Component {
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={4}>
                             <h3 style={{ marginLeft: '20%' , fontSize : '20px' , marginTop : '10%'}}>Quick Link</h3>
-                            <div style={{marginTop : '12%' , marginLeft : '25%'}}>Home</div>
+                            <div style={{marginTop : '10%' , marginLeft : '25%'}}>Home</div>
                             <div style={{ marginTop: '2%',marginLeft : '25%'}}>Tariff</div> 
                             <div style={{ marginTop: '2%', marginLeft: '25%' }}>Online Booking</div>
                             <div style={{ marginTop: '2%', marginLeft: '25%' }}>About Us</div>
@@ -35,11 +38,14 @@ class GetContact extends Component {
                         <Grid item xs={12} sm={6} md={4} lg={4}>
                             <h3 style={{ marginLeft: '20%', fontSize: '20px', marginTop: '10%' }}>Social Media</h3>
                             <FacebookIcon style={{fontSize : '40px', marginTop : '14%' , marginLeft : '10%' , color : 'yellow'}} />
-                            <WhatsAppIcon style={{ fontSize: '40px', marginTop: '14%', marginLeft: '10%', color: 'yellow'}}/>
+                            {/* <WhatsAppIcon style={{ fontSize: '40px', marginTop: '14%', marginLeft: '10%', color: 'yellow'}}/> */}
                             {/* <YouTubeIcon style={{ fontSize: '40px', marginTop: '14%', marginLeft: '10%', color: 'yellow'}}/> */}
                             <EmailIcon style={{ fontSize: '40px', marginTop: '14%', marginLeft: '10%', color: 'yellow'}}/>
-                            <InstagramIcon style={{ fontSize: '40px', marginTop: '14%', marginLeft: '10%', color: 'yellow' }}/>
-                            <BusinessIcon style={{ fontSize: '40px', marginTop: '14%', marginLeft: '10%', color: 'yellow' }}/>
+                            {/* <InstagramIcon style={{ fontSize: '40px', marginTop: '14%', marginLeft: '10%', color: 'yellow' }}/> */}
+                            {/* <BusinessIcon style={{ fontSize: '40px', marginTop: '14%', marginLeft: '10%', color: 'yellow' }}/> */}
+                            {/* <img style={{ width: '50px', marginLeft: '10%', color: 'yellow' }} src={whatsapp} alt='googleBusiness'></img>
+                            <img style={{ width: '50px', marginLeft: '10%', color: 'yellow'}} src={instagram} alt='googleBusiness'></img> */}
+                            <img style={{ width: '40px', marginLeft: '10%', color: 'yellow'}} src={googleBusiness} alt='googleBusiness'></img>
                         </Grid>
                     </Grid>
                 </div>

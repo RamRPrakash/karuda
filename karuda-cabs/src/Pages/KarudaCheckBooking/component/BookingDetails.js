@@ -100,7 +100,7 @@ class BookingDetails extends Component {
                 </Grid>
 
                 <Grid style={{ backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
-                    <p style={{ marginLeft: this.state.windowWidth >= 700 ? '35%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</p>
+                    <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</h2>
                 </Grid>
             <GetContact/>
                 <div style={{
@@ -108,10 +108,10 @@ class BookingDetails extends Component {
                 }}>
                     <div style={{ display: 'flex', fontSize: '22px', color: 'gray' }}>
                         <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%' }}>
-                            <p>karunyacabs.com Copyright @ All rights reserved 2021</p>
+                            <p>karudacabs.com Copyright @ All rights reserved 2021</p>
                         </div>
                         <div style={{ width: '50%' }}>
-                            <p>Designed and Developed by Skiftre Technologies</p>
+                            <p>Designed and Developed by Skifter Technologies</p>
                         </div>
                     </div>
 

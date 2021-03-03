@@ -54,9 +54,9 @@ class TopBannerList extends Component {
                 </Carousel>
                 <div style={{display : 'flex' , marginTop : '3%'}}>
                     <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '32%' : '5%', color: 'white', backgroundColor: '#cc0021', borderRadius: '10px' , width : '200px' }} variant="outlined" size="medium"  onClick={()=>{
-                        this.props.props.history.push('/KarudaOnlineBooking')
+                        this.props.props.history.push('/Tariff')
                     }} >
-                        <span style={{ fontWeight: '500' , fontSize : '30px' , fontWeight : 'bold' ,  }}>Get Taxi </span>
+                        <span style={{ fontWeight: '500' , fontSize : '30px' , fontWeight : 'bold' ,  }}>Get Quote </span>
                                     </Button>
                     
                    

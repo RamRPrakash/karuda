@@ -25,10 +25,10 @@ class GetCopyRight extends Component {
                 }}>
                     <div style={{display :'flex' , fontSize : '22px' , color : 'gray'}}>
                         <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%'}}>
-                            <p>karunyacabs.com Copyright @ All rights reserved 2021</p>
+                            <p>karudacabs.com Copyright @ All rights reserved 2021</p>
                         </div>
                         <div style={{width : '50%'}}>
-                            <p>Designed and Developed by Skiftre Technologies</p>
+                            <p>Designed and Developed by Skifter Technologies</p>
                         </div>
                     </div>
                     

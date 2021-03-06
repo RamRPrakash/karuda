@@ -7,6 +7,7 @@ import GetContact from '../../Home/component/GetContact'
 import GetCopyRight from '../../Home/component/GetCopyRight'
 import KarudaSelectField from '../../../Component/KarudaSelectField'
 import TextField from '@material-ui/core/TextField';
+import Api from 'axios'
 
 var CarList = ['Sedan (Dzire, Sunny, Xcent, Zest)', 'Sedan (Only Etios)', 'SUV (Xylo, Marazzo, Loggy, Tavera)', 'SUV (Only Innova)']
 var DropList = ['ONE WAY DROP', 'ROUND TRIP']
@@ -16,13 +17,32 @@ var rate = {
     'SUV (Xylo, Marazzo, Loggy, Tavera)' : [15,13],
     'SUV (Only Innova)' : [16,14]
 }
+
 class KarudaTariff extends Component {
     constructor(props) {
         super(props);
         this.state = { 
             checkRate : '' , 
-            KiloMetre : 0
+            KiloMetre : 0 ,
+            SUV_One :[15, 13] , 
+            SUV_Two :[16, 14] ,
+            Sedan_One :[12, 10],
+            Sedan_Two :[13, 11]
+
          }
+    }
+    UNSAFE_componentWillMount() {
+        Api.post('/getRate', {}).then(res => {
+            console.log(res)
+            var data = res['data'][0]['data']
+            console.log(data)
+            this.setState({
+                SUV_One: data['SUV_One'],
+                SUV_Two: data['SUV_Two'],
+                Sedan_One: data['Sedan_One'],
+                Sedan_Two: data['Sedan_Two']
+            })
+        })
     }
     updateWindowSize() {
         this.setState({
@@ -234,10 +254,10 @@ class KarudaTariff extends Component {
                         <p>Sedan (Dzire, Sunny, Xcent, Zest)</p>
                     </Grid>
                     <Grid style={{ borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <p>Rs. 12.00/km</p>
+                        <p>{`Rs.${this.state.Sedan_One[0]}/km`}</p>
                     </Grid>
                     <Grid style={{ borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <p>	Rs. 10.00/km</p>
+                        <p>{`Rs.${this.state.Sedan_One[1]}/km`}</p>
                     </Grid>
                 </Grid>
 
@@ -246,10 +266,10 @@ class KarudaTariff extends Component {
                         <p>Sedan (Only Etios)</p>
                     </Grid>
                     <Grid style={{ borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <p>	Rs. 13.00/km</p>
+                        <p>{`Rs.${this.state.Sedan_Two[0]}/km`}</p>
                     </Grid>
                     <Grid style={{ borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <p>	Rs. 11.00/km</p>
+                        <p>{`Rs.${this.state.Sedan_Two[1]}/km`}</p>
                     </Grid>
                 </Grid>
 
@@ -258,10 +278,10 @@ class KarudaTariff extends Component {
                         <p>SUV (Xylo, Marazzo, Loggy, Tavera)</p>
                     </Grid>
                     <Grid style={{ borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <p>	Rs. 15.00/km</p>
+                        <p>{`Rs.${this.state.SUV_One[0]}/km`}</p>
                     </Grid>
                     <Grid style={{ borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <p>	Rs. 13.00/km</p>
+                        <p>{`Rs.${this.state.SUV_One[1]}/km`}</p>
                     </Grid>
                 </Grid>
 
@@ -270,10 +290,10 @@ class KarudaTariff extends Component {
                         <p>SUV (Only Innova)</p>
                     </Grid>
                     <Grid style={{ borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <p>	Rs. 16.00/km</p>
+                        <p>{`Rs.${this.state.SUV_Two[0]}/km`}</p>
                     </Grid>
                     <Grid style={{ borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <p>		Rs. 14.00/km</p>
+                        <p>{`Rs.${this.state.SUV_Two[1]}/km`}</p>
                     </Grid>
                 </Grid>
 

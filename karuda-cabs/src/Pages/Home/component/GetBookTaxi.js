@@ -112,7 +112,7 @@ class GetBookTaxi extends Component {
                 phone: '',
                 email: ''
             })
-            api.post('http://103.148.157.116:1330/sendMail', data).then(response => {
+            api.post('/sendMail', data).then(response => {
                 console.log('sasffa')
             })
         }

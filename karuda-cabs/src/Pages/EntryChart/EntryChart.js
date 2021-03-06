@@ -19,8 +19,20 @@ class EntryChart extends Component {
           }
     }
     UNSAFE_componentWillMount(){
-        Api.post('http://103.148.157.116:1330/getRate',{}).then(res=>{
+        Api.post('/getRate',{}).then(res=>{
             console.log(res)
+            var data = res['data'][0]['data']
+            console.log(data)
+            this.setState({
+                FirstSedanOneway: data['Sedan_One'][0],
+                FirstSedanRoundway: data['Sedan_One'][1],
+                SecondSedanOneway: data['Sedan_Two'][0],
+                SecondSedanRoundway: data['Sedan_Two'][1],
+                FirstSUVOneway: data['SUV_One'][0],
+                FirstSUVRoundway: data['SUV_One'][1],
+                SecondSUVOneway: data['SUV_Two'][0],
+                SecondSUVRoundway: data['SUV_Two'][1]
+            })
         })
     }
     sendData=()=>{
@@ -32,9 +44,21 @@ class EntryChart extends Component {
             'SUV_Two': [this.state.SecondSUVOneway , this.state.SecondSUVRoundway],
         }
 
-        Api.post('http://103.148.157.116:1330/updateData',data).then(res=>{
+        Api.post('/updateData',data).then(res=>{
             console.log(res)
+            alert('Rate updated in Chart !!')
+            this.setState({
+                FirstSedanOneway : '',
+                FirstSedanRoundway : '',
+                SecondSedanOneway : '',
+                SecondSedanRoundway : '',
+                FirstSUVOneway : '',
+                FirstSUVRoundway : '',
+                SecondSUVOneway : '',
+                SecondSUVRoundway : ''
+            })
         })
+
     }
     render() { 
         return ( 

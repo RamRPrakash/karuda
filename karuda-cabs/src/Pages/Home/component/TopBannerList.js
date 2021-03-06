@@ -5,6 +5,16 @@ import ReactWhatsapp from 'react-whatsapp';
 import Button from '@material-ui/core/Button';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import { DriveEta } from '@material-ui/icons';
+import Dzire from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/Dzire.png'
+import ETIOS from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/ETIOS.png'
+import Sunny from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/Sunny.png'
+import xcent from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/xcent.png'
+import zest from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/zest.png'
+import INNOVA from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/INNOVA.png'
+import LODGY from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/LODGY.png'
+import MARAZZO from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/MARAZZO.png'
+import TAVERA from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/TAVERA.png'
+import XYLO from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/XYLO.png'
 class TopBannerList extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +24,12 @@ class TopBannerList extends Component {
                 { id: 2, title: 'Car 2' },
                 { id: 3, title: 'Car 3' },
                 { id: 4, title: 'Car 4' },
-                { id: 5, title: 'Car 5' }
+                { id: 5, title: 'Car 5' },
+                { id: 6, title: 'Car 5' },
+                { id: 7, title: 'Car 5' },
+                { id: 8, title: 'Car 5' },
+                { id: 9, title: 'Car 5' },
+                { id: 10, title: 'Car 5' },
             ]
          }
     }
@@ -40,13 +55,25 @@ class TopBannerList extends Component {
                     {items.map(item => 
                        
                             <div style={{
-                                height : '400px' , 
+                            height: this.state.windowWidth >= 700 ?  '400px' : '200px' , 
                                 width : '100%',
 
                             }} key={item.id}>
                                 {/* {item.title} */}
                             <div>
-                                <img alt='img' style={{ width: '60%', height: this.state.windowWidth >= 700 ? '400px' : '200px' , marginLeft : '20%'}} src={carList}></img>
+                                <img alt='img' style={{ width: '50%', height: this.state.windowWidth >= 700 ? '400px' : '150px' , marginLeft : '20%'}} 
+                                    src={
+                                        item.id == 1 ? Dzire : 
+                                            item.id == 2 ? ETIOS : 
+                                                item.id == 3 ? Sunny :
+                                                    item.id == 4 ? xcent : 
+                                                        item.id == 5 ? zest : 
+                                                            item.id == 6 ? INNOVA : 
+                                                                item.id == 7 ? LODGY : 
+                                                                    item.id == 8 ? MARAZZO : 
+                                                                        item.id == 9 ? TAVERA : XYLO
+                                        
+                                        }></img>
                             </div>
                             </div>
                       
@@ -61,7 +88,7 @@ class TopBannerList extends Component {
                     
                    
                    
-                    <ReactWhatsapp number="9787436363" message="Chat with karuda cabs!!!" style={{ backgroundColor: '#cc0021', width: '330px', borderRadius: '10px', borderColor: '#cc0021' , marginLeft : '5%'}} >
+                    <ReactWhatsapp number="9384841107" message="Chat with karuda cabs!!!" style={{ backgroundColor: '#cc0021', width: '330px', borderRadius: '10px', borderColor: '#cc0021' , marginLeft : '5%'}} >
                         <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '3%' : '15%', color: 'white', backgroundColor: '#cc0021', borderColor:'#cc0021' }} variant="outlined" size="medium"  >
                             <WhatsAppIcon style={{ color: '#FFFF00' , fontSize : '30px' }} />
                             <span style={{ fontWeight: '500', fontSize: '30px', fontWeight: 'bold', marginLeft : '5px' }}>Chat With Us </span> 

@@ -24,7 +24,7 @@ class karudaFooter extends Component {
     footer() {
         return (
             <React.Fragment>
-                <Grid style={{ marginTop: '5%', backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ marginTop: '5%', backgroundColor: 'white' , paddingBottom : '2%' }} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={12} lg={4} style={{ marginLeft: this.state.windowWidth >= 700 ? '' : '' }}>
                         <div style={{ display: 'flex', width: '100%' }}>
                             <div style={{ width: '50%', height: '100px' , textAlign : 'center' }}>
@@ -61,8 +61,8 @@ class karudaFooter extends Component {
                 </Grid>
 
 
-                <Grid style={{ width : '100%', marginTop: '2%', backgroundColor: "#FFEA00", lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px' }} container xs={12} sm={12} md={12} lg={12}>
-                    <Grid item xs={12} sm={12} md={12} lg={3} >
+                <Grid style={{ width: '100%', marginTop: '2%', backgroundColor: "#FFEA00", lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ?''  : 'center'}} container xs={12} sm={12} md={12} lg={12}>
+                    <Grid item xs={12} sm={12} md={12} lg={2} >
                         <div style={{ display: 'none', width: '100%' }}>
                             <div style={{ height: '100px' }}>
                                 <HeadsetMicIcon style={{ fontSize: '140px' }} />
@@ -80,11 +80,11 @@ class karudaFooter extends Component {
 
                         </div>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={3} >
+                    <Grid item xs={12} sm={12} md={12} lg={5} >
                         <div style={{ display: 'flex', width: '100%' }}>
-                            <div style={{ height: '100px', lineHeight: '2' }}>
-                                <p style={{ fontWeight: '600' }}>FOR WHATSAPP</p>
-                                <h1>  9384841107</h1>
+                            <div style={{ height: '100px', lineHeight: '2', width: this.state.windowWidth >= 700 ? '' : '100%'}}>
+                                <span style={{ fontWeight: '600',  }}>FOR WHATSAPP</span>
+                                <h1 style={{}}>  9384841107 </h1>
                             </div>
 
                         </div>

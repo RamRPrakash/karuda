@@ -119,7 +119,7 @@ class KarudaBooking extends Component {
     footer(){
         return(
             <React.Fragment>
-            <Grid style={{ marginTop: '5%', backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ marginTop: '5%', backgroundColor: 'white', paddingBottom: '2%' }} container xs={12} sm={12} md={12} lg={12}>
                 <Grid item xs={12} sm={12} md={12} lg={3} style={{ marginLeft: this.state.windowWidth >= 700 ? '10%' : '' }}>
                     <div style={{ display: 'flex', width: '100%' }}>
                         <div style={{ width: '50%', height: '100px' }}>

@@ -11,7 +11,7 @@ class KarudaCheckBooking extends Component {
         return (
 
             <Grid container >
-                <KarudaAppBar props={this.props} />
+                <KarudaAppBar props={this.props} />{this.state.windowWidth >= 700 ? <div><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br></div> : null}
                 <BookingDetails/>
             </Grid>
         );

@@ -23,7 +23,7 @@ class GetCopyRight extends Component {
                 <div style={{
                     backgroundColor: '#2C2C2C'
                 }}>
-                    <div style={{display :'flex' , fontSize : '22px' , color : 'gray'}}>
+                    <div style={{display :'flex' , fontSize : '18px' , color : 'gray'}}>
                         <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%'}}>
                             <p>karudacabs.com Copyright @ All rights reserved 2021</p>
                         </div>

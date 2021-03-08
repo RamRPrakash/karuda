@@ -30,9 +30,10 @@ class BookingDetails extends Component {
         window.removeEventListener("resize", this.updateWindowSize.bind(this));
     }
     footer() {
+        console.log(this.props)
         return (
             <React.Fragment>
-                <Grid style={{ marginTop: '5%', backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ marginTop: '5%', backgroundColor: 'white', paddingBottom: '2%' }} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={4} lg={4} style={{ marginLeft: this.state.windowWidth >= 700 ? '' : '' }}>
                         <div style={{ display: 'flex', width: '100%' }}>
                             <div style={{ width: '50%', height: '100px', textAlign: 'center' }}>
@@ -69,7 +70,7 @@ class BookingDetails extends Component {
                 </Grid>
 
 
-                <Grid style={{ marginTop: '2%', backgroundColor: "#FFEA00", lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ marginTop: '2%', backgroundColor: "#FFEA00", lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center' }} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={12} lg={3} >
                         <div style={{ display: 'none', width: '100%' }}>
                             <div style={{ height: '100px' }}>
@@ -90,7 +91,7 @@ class BookingDetails extends Component {
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={3} >
                         <div style={{ display: 'flex', width: '100%' }}>
-                            <div style={{ height: '100px', lineHeight: '2' }}>
+                            <div style={{ height: '100px', lineHeight: '2', width: this.state.windowWidth >= 700 ? '' : '100%'}}>
                                 <p style={{ fontWeight: '600' }}>FOR WHATSAPP</p>
                                 <h1>  9384841107</h1>
                             </div>
@@ -102,7 +103,7 @@ class BookingDetails extends Component {
                 <Grid style={{ backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
                     <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</h2>
                 </Grid>
-            <GetContact/>
+                <GetContact props={this.props.props}/>
                 <div style={{
                     backgroundColor: '#2C2C2C', width: '100%'
                 }}>
@@ -127,7 +128,7 @@ class BookingDetails extends Component {
             <React.Fragment>
                 <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b'}}>
                     <marquee behavior="scroll" direction="left">
-                        <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telungana.</h3>
+                        <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>
                     </marquee>
                 </div>
                 {/* height: this.state.windowWidth >= 700 ? '300px' : '200px', */}

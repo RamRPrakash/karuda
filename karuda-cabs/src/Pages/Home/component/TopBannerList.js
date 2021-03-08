@@ -61,7 +61,7 @@ class TopBannerList extends Component {
                             }} key={item.id}>
                                 {/* {item.title} */}
                             <div>
-                                <img alt='img' style={{ width: '50%', height: this.state.windowWidth >= 700 ? '400px' : '150px' , marginLeft : '20%'}} 
+                                <img alt='img' style={{ width: this.state.windowWidth >= 700 ?'50%' : '80%', height: this.state.windowWidth >= 700 ? '400px' : '150px' , marginLeft : '20%'}} 
                                     src={
                                         item.id == 1 ? Dzire : 
                                             item.id == 2 ? ETIOS : 

@@ -16,6 +16,7 @@ import KarudaAppBar from '../../../Component/KarudaAppBar'
 import KarudaCabApp from '../../../Component/KarudaCabApp'
 import ReactWhatsapp from 'react-whatsapp';
 import KarudaFooter from '../../../Component/karudaFooter'
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -76,7 +77,7 @@ class Home extends Component {
                 </Grid>
 
 
-                <Grid style={{ marginTop: '2%', backgroundColor: "#FFEA00", lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ marginTop: '2%', backgroundColor: "#FFEA00", lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px'   }} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={12} lg={3} >
                         <div style={{ display: 'flex', width: '100%' }}>
                             <div style={{ height: '100px' }}>
@@ -88,9 +89,9 @@ class Home extends Component {
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={5} >
                         <div style={{ display: 'flex', width: '100%' }}>
-                            <div style={{ height: '100px', lineHeight: '2' }}>
-                                <p style={{ fontWeight: '600' }}>CALL US 24x7</p>
-                                <h1>  9384841107 | 9940035922</h1>
+                            <div style={{ textAlign: this.state.windowWidth >= 700 ?'' : 'center' , height: '100px', lineHeight: '2' }}>
+                                <p style={{ fontWeight: '600', textAlign: this.state.windowWidth >= 700 ? '' : 'center'}}>CALL US 24x7</p>
+                                <h1 style={{ textAlign: this.state.windowWidth >= 700 ? '' : 'center'}}>  9384841107 | 9940035922</h1>
                             </div>
 
                         </div>
@@ -117,12 +118,13 @@ class Home extends Component {
         )
     }
     render() { 
+        console.log(this.props)
         return (
-           <div>
-                <KarudaAppBar props={this.props} />
-                <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b' }}>
+            <Grid>
+                <KarudaAppBar props={this.props} /> {this.state.windowWidth >= 700 ?  <div><br></br><br></br><br></br><br></br><br></br><br></br></div> : null}
+                <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', }}>
                     <marquee behavior="scroll" direction="left">
-                        <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telungana.</h3>
+                        <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>
                     </marquee>
                 </div>
                 <br></br><br></br>
@@ -135,9 +137,9 @@ class Home extends Component {
                 {/* {this.footer()}
                 <GetTestimonials/> */}
                 <KarudaFooter/>
-                <GetContact />
+                <GetContact props={this.props} />
                 <GetCopyRight/>
-          </div>
+            </Grid>
           );
     }
 }

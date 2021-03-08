@@ -16,7 +16,7 @@ class GetContact extends Component {
         super(props);
         this.state = {  }
     }
-    render() { 
+    render() {
         return (
             <React.Fragment>
                 <div style={{backgroundColor : 'black' , color : 'white' , paddingBottom : '2%'}}>
@@ -27,16 +27,31 @@ class GetContact extends Component {
                                 The perfect way to get through your everyday travel needs. City taxis are available 24/7 and you can book and travel in an instant. With rides starting from as low as Rs. 6/km, you can choose from a wide range of options! You can also opt to do your bit for the environment with karuda Share!
                             </p>
                         </Grid>
-                        <Grid item xs={12} sm={6} md={4} lg={4}>
-                            <h3 style={{ marginLeft: '20%' , fontSize : '20px' , marginTop : '10%'}}>Quick Link</h3>
-                            <div style={{marginTop : '10%' , marginLeft : '25%'}}>Home</div>
-                            <div style={{ marginTop: '2%',marginLeft : '25%'}}>Tariff</div> 
-                            <div style={{ marginTop: '2%', marginLeft: '25%' }}>Online Booking</div>
-                            <div style={{ marginTop: '2%', marginLeft: '25%' }}>About Us</div>
-                            <div style={{ marginTop: '2%',marginLeft: '25%' }}>Contact Us</div>
+                        <Grid item xs={12} sm={6} md={4} lg={4} style={{textAlign : 'center'}}>
+                            <h3 style={{ marginLeft: '0%' , fontSize : '20px' , marginTop : '10%'}}>Quick Link</h3>
+                            <div style={{marginTop : '10%' , marginLeft : '0%' , cursor : 'pointer' }} onClick={()=>{
+                                console.log(this.props)
+                                this.props.props.history.push('/')
+                            }}>Home</div>
+                            <div style={{ marginTop: '2%', marginLeft: '0%', cursor: 'pointer' }} onClick={() => {
+                                console.log(this.props)
+                                this.props.props.history.push('/Tariff')
+                            }}>Tariff</div> 
+                            <div style={{ marginTop: '2%', marginLeft: '0%', cursor: 'pointer' }} onClick={() => {
+                                console.log(this.props)
+                                this.props.props.history.push('/KarudaOnlineBooking')
+                            }}>Online Booking</div>
+                            {/* <div style={{ marginTop: '2%', marginLeft: '25%', cursor: 'pointer' }} onClick={() => {
+                                console.log(this.props)
+                                this.props.props.history.push('/')
+                            }}>About Us</div> */}
+                            <div style={{ marginTop: '2%', marginLeft: '0%', cursor: 'pointer' }} onClick={() => {
+                                console.log(this.props)
+                                this.props.props.history.push('/KarudaCheckBooking')
+                            }}>Contact Us</div>
                         </Grid>
                         <Grid item xs={12} sm={6} md={4} lg={4}>
-                            <h3 style={{ marginLeft: '20%', fontSize: '20px', marginTop: '10%' }}>Social Media</h3>
+                            <h3 style={{ marginLeft: '30%', fontSize: '20px', marginTop: '10%' }}>Social Media</h3>
                             <FacebookIcon style={{fontSize : '40px', marginTop : '14%' , marginLeft : '10%' , color : 'yellow'}} />
                             {/* <WhatsAppIcon style={{ fontSize: '40px', marginTop: '14%', marginLeft: '10%', color: 'yellow'}}/> */}
                             {/* <YouTubeIcon style={{ fontSize: '40px', marginTop: '14%', marginLeft: '10%', color: 'yellow'}}/> */}

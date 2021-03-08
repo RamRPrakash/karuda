@@ -59,7 +59,7 @@ class KarudaAppBar extends Component {
     render() { 
         return ( 
            <React.Fragment> 
-                <div className='web-ui' style={{ width: '100%', height: '130px', backgroundColor: '#252525' , color : 'white', lineHeight : '100px' , }}>
+                <div className='web-ui' style={{ width: '100%', height: '130px', backgroundColor: '#252525' , color : 'white', lineHeight : '100px' , position :'fixed' , zIndex : '100' }}>
                 <div style={{ display: 'flex',   width : '100%'}}>
                 {
                         menuBars.map((item , index)=>{
@@ -121,7 +121,7 @@ class KarudaAppBar extends Component {
                                     <MenuItem onClick={() => { this.handleClose('ONLINE BOOKING') }}>ONLINE BOOKING</MenuItem>
                                     <MenuItem onClick={() => { this.handleClose('TARIFF CHART') }}>TARIFF CHART</MenuItem>
                                     <MenuItem onClick={() => { this.handleClose('CONTACT US') }}>CONTACT US</MenuItem>
-                                    <MenuItem onClick={() => { this.handleClose('MOBILE') }}>MOBILE</MenuItem>
+                                    {/* <MenuItem onClick={() => { this.handleClose('MOBILE') }}>MOBILE</MenuItem> */}
                             </MenuList>
                         </ClickAwayListener>
                     </Paper>

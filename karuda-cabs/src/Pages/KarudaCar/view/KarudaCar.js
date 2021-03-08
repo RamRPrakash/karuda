@@ -8,13 +8,25 @@ class KarudaCar extends Component {
         super(props);
         this.state = {  }
     }
+    updateWindowSize() {
+        this.setState({
+            windowWidth: window.innerWidth
+        });
+    }
+    componentDidMount() {
+        this.updateWindowSize();
+        window.addEventListener("resize", this.updateWindowSize.bind(this));
+    }
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateWindowSize.bind(this));
+    }
     render() { 
         return (
             <Grid container >
                 <KarudaAppBar props={this.props} />
-                <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b' }}>
+                <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', marginTop: this.state.windowWidth >= 700 ?'8%' : '' }}>
                     <marquee behavior="scroll" direction="left">
-                        <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telungana.</h3>
+                        <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>
                     </marquee>
                 </div>
                 <KarudaCarList props={this.props} />

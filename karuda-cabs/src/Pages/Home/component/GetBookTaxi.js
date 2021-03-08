@@ -73,6 +73,9 @@ class GetBookTaxi extends Component {
             phone: this.state.phone,
             email: this.state.email
         }
+        console.log(this.state.phone)
+        console.log(this.state.phone.length)
+        console.log(this.state.phone.length > 11 || this.state.phone < 11)
         if (this.state.selectedDate.length == ''){
             alert('Please Fill Date')
             return
@@ -93,13 +96,39 @@ class GetBookTaxi extends Component {
             alert('Please Select vehicle')
             return
         }
-        else if (this.state.phone.length == ''){
-            alert('Please Fill Phone')
+        else if (this.state.phone.length == '' ){
+            alert('Please Fill Mobile Number')
+            return
+        }
+        else if (!(this.state.phone.length == 10) && (this.state.phone.length > 11  || this.state.phone.length < 11 ) ){
+            alert('Please Fill valid Mobile Number')
             return
         }
         else if (this.state.email.length == ''){
             alert('Please Fill Email')
             return
+        }
+        else if(this.state.email){
+            var Regex = /^(([^*&%$#!^+='~`{}<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+            if (!Regex.test(this.state.email)){
+                alert('Please Fill valid mail ')
+                return
+            }
+            else {
+                alert('Thanks you Booking karuacabs. Our Manager will contact you soon !!!')
+                this.setState({
+                    selectedDate: new Date(),
+                    hour: new Date(),
+                    startDestination: '',
+                    endDestination: '',
+                    vehicle: '',
+                    phone: '',
+                    email: ''
+                })
+                api.post('/sendMail', data).then(response => {
+                    console.log('sasffa')
+                })
+            }
         }
         else{
             alert('Thanks you Booking karuacabs. Our Manager will contact you soon !!!')
@@ -140,7 +169,7 @@ class GetBookTaxi extends Component {
                                                 variant="inline"
                                                 format="MM/dd/yyyy"
                                                 color ="white"
-                                                style={{ width: this.state.windowWidth >= 700 ? '370px' : '195px' , color : 'white'}}
+                                                style={{ width: this.state.windowWidth >= 700 ? '370px' : '190px' , color : 'white'}}
                                                 margin="normal"
                                                 id="date-picker-inline"
                                                 label=""
@@ -183,7 +212,7 @@ class GetBookTaxi extends Component {
                                             KeyboardButtonProps={{
                                                 'aria-label': 'change time',
                                             }}
-                                            style={{ color: 'white', backgroundColor: 'white', borderRadius: '10px', width: this.state.windowWidth >= 700 ? '370px' : '195px' , height : '56px'}}
+                                            style={{ color: 'white', backgroundColor: 'white', borderRadius: '10px', width: this.state.windowWidth >= 700 ? '370px' : '190px' , height : '56px'}}
                                         />
                                         </MuiPickersUtilsProvider>
                                         {/* <TextField id="outlined-basic" variant="outlined" onChange={(e) => {
@@ -195,10 +224,10 @@ class GetBookTaxi extends Component {
                                             style={{ color: 'white', backgroundColor: 'white', borderRadius: '10px' ,  width: this.state.windowWidth >= 700 ?'370px' : '' }} /> */}
                                     </div>
                                 </div> <br></br>
-                                <div style={{ display: 'flex', width: '100%' }}>
+                                <div style={{ display: 'flex', width: '100%' , marginTop : '2%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
                                         <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>start destination</h2></div>
-                                    <div style={{ }}>
+                                    <div style={{ marginTop: '2%' }}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929',  color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px'  }}
                                             onChange={(e) => {
                                                 this.setState({
@@ -210,13 +239,13 @@ class GetBookTaxi extends Component {
                                             this.setState({
                                                 startDestination: e.target.value
                                             })
-                                        }} variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '', backgroundColor: 'white', borderRadius: '10px', }}/>
+                                        }} variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '190px', backgroundColor: 'white', borderRadius: '10px', }}/>
                                     </div>
                                 </div><br></br>
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
                                         <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>end destination</h2></div>
-                                    <div style={{  }}>
+                                    <div style={{ marginTop: '2%'  }}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929', color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px' }} 
                                             onChange={(e) => {
                                                 this.setState({
@@ -229,13 +258,13 @@ class GetBookTaxi extends Component {
                                             this.setState({
                                                 endDestination: e.target.value
                                             })
-                                        }} id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '', backgroundColor: 'white', borderRadius: '10px' }}/>
+                                        }} id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '190px', backgroundColor: 'white', borderRadius: '10px' }}/>
                                     </div>
                                 </div><br></br>
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
                                         <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>choose vehicle</h2></div>
-                                    <div style={{  borderRadius: '10px'  }}>
+                                    <div style={{ borderRadius: '10px', marginTop: '2%'  }}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929',  color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px' }} 
                                             onChange={(e) => {
                                                 this.setState({
@@ -271,7 +300,7 @@ class GetBookTaxi extends Component {
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
                                         <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>phone</h2></div>
-                                    <div style={{}}>
+                                    <div style={{ marginTop: '2%'}}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929', color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px' }} 
                                         onChange={(e) => {
                                             this.setState({
@@ -284,13 +313,13 @@ class GetBookTaxi extends Component {
                                             this.setState({
                                                 phone: content
                                             })}}
-                                            id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '', backgroundColor: 'white', borderRadius: '10px'}} />
+                                            id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '190px', backgroundColor: 'white', borderRadius: '10px'}} />
                                     </div>
                                 </div><br></br>
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
                                         <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>Email</h2></div>
-                                    <div style={{ }}>
+                                    <div style={{ marginTop: '2%' }}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929',  color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px'  }} 
                                             onChange={(e) => {
                                                 this.setState({
@@ -302,7 +331,7 @@ class GetBookTaxi extends Component {
                                             this.setState({
                                                 email: e.target.value
                                             })
-                                        }} id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '', backgroundColor: 'white', borderRadius: '10px'  }} />
+                                        }} id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '190px', backgroundColor: 'white', borderRadius: '10px'  }} />
                                     </div>
                                 </div><br></br>
                                 <div>

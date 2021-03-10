@@ -101,7 +101,13 @@ class BookingDetails extends Component {
                 </Grid>
 
                 <Grid style={{ backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
-                    <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</h2>
+                    {
+                        this.state.windowWidth >= 700 ?
+                            <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</h2>
+                            :
+                            <h4 style={{ textAlign: 'center', marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</h4>
+
+                    }
                 </Grid>
                 <GetContact props={this.props.props}/>
                 <div style={{

@@ -121,15 +121,15 @@ class Home extends Component {
         console.log(this.props)
         return (
             <Grid>
-                <KarudaAppBar props={this.props} /> {this.state.windowWidth >= 700 ?  <div><br></br><br></br><br></br><br></br><br></br><br></br></div> : null}
-                <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', }}>
+                <KarudaAppBar props={this.props} /> {this.state.windowWidth >= 700 ? <div><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br></div> : null}
+                {/* <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', }}>
                     <marquee behavior="scroll" direction="left">
                         <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>
                     </marquee>
-                </div>
+                </div> */}
                 <br></br><br></br>
                 {/* <KarudaCabApp props={this.props}/> */}
-                <TopBannerList props={this.props} /><br></br><br></br><br></br><br></br>
+                <TopBannerList props={this.props} /><br></br><br></br><br></br><br></br><br></br>
                 {/* <GetTexi/> */}
                 <GetServices /><br></br><br></br><br></br><br></br>
                 <GetBookTaxi/><br></br>

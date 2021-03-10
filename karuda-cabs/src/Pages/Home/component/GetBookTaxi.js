@@ -335,7 +335,7 @@ class GetBookTaxi extends Component {
                                     </div>
                                 </div><br></br>
                                 <div>
-                                    <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '20' : '15%' , color : 'black' , backgroundColor : 'yellow' , borderColor : 'yellow' , borderRadius : '30px' , width : '140px' , height : '55px'}} variant="outlined" size="medium" onClick={this.storeMail}  >
+                                    <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '20' : '7%' , color : 'black' , backgroundColor : 'yellow' , borderColor : 'yellow' , borderRadius : '30px' , width : '140px' , height : '55px'}} variant="outlined" size="medium" onClick={this.storeMail}  >
                                         <span style={{fontSize : '18px'}}>Book Now</span>
                                     </Button>
                                 </div><br></br>
@@ -343,7 +343,7 @@ class GetBookTaxi extends Component {
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={6} >
-                            <img style={{ marginLeft: this.state.windowWidth >= 700 ?  '20%' : '10%', width: '80%', height: '900px' }} alt="Customer Care" src={CustomerCare}  ></img>
+                            <img style={{ marginLeft: this.state.windowWidth >= 700 ? '20%' : '10%', width: '70%', height: this.state.windowWidth >= 700 ?'900px' : '600px' }} alt="Customer Care" src={CustomerCare}  ></img>
                         </Grid>
                     </Grid>
                 </div>

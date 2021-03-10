@@ -60,36 +60,36 @@ class KarudaAppBar extends Component {
         return ( 
            <React.Fragment> 
                 <div className='web-ui' style={{ width: '100%', height: '130px', backgroundColor: '#252525' , color : 'white', lineHeight : '100px' , position :'fixed' , zIndex : '100' }}>
-                <div style={{ display: 'flex',   width : '100%'}}>
-                {
-                        menuBars.map((item , index)=>{
-                            return (
-                                <div style={{ width: item == 'HOME' || item == 'CARS' ? '10%' : item == 'LEFT' || item == 'RIGHT' ? '2%' :  '20%', cursor: 'pointer', marginLeft: item == 'MOBILE' ?  '' : item == 'LOGO' ?  '2%' : item =='HOME' ? '' : ''}} item >
-                                    {
-                                        item === 'LOGO'?
-                                             <img style={{width : '230px' , height : '90px' , lineHeight : '100px' , marginTop : '20px'}} src={karudaLogo} alt="Karuda Cabs"></img> 
-                                             : 
-                                            item === 'MOBILE' ?
-                                                <div style={{ borderRadius: '88px', background: '#ffea00', height: '40px', lineHeight: '42px', marginTop: '46px' , display : 'flex'  , textAlign : 'right' , width :'156px' }}> 
-                                                    <div style={{  marginTop: '3%', color:'#cc0021' }}> 
-                                                        <PhoneIcon />
-                                                    </div>  
-                                                    <div style={{ fontWeight: '500', color: '#252525' }}><a href="tel:91   9384841107">+91   9384841107</a></div>
-                                                </div> 
+                    <div style={{ display: 'flex',   width : '100%'}}>
+                    {
+                            menuBars.map((item , index)=>{
+                                return (
+                                    <div style={{ width: item == 'HOME' || item == 'CARS' ? '10%' : item == 'LEFT' || item == 'RIGHT' ? '2%' :  '20%', cursor: 'pointer', marginLeft: item == 'MOBILE' ?  '' : item == 'LOGO' ?  '2%' : item =='HOME' ? '' : ''}} item >
+                                        {
+                                            item === 'LOGO'?
+                                                <img style={{width : '230px' , height : '90px' , lineHeight : '100px' , marginTop : '20px'}} src={karudaLogo} alt="Karuda Cabs"></img> 
                                                 : 
-                                                item === 'LEFT' || item === 'RIGHT' ? <div></div> :
-                                                <p style={{ fontWeight: '500' , textAlign : 'center' }} onClick={()=>this.changePage(item)}>{ item }</p>
+                                                item === 'MOBILE' ?
+                                                    <div style={{ borderRadius: '88px', background: '#ffea00', height: '40px', lineHeight: '42px', marginTop: '46px' , display : 'flex'  , textAlign : 'right' , width :'156px' }}> 
+                                                        <div style={{  marginTop: '3%', color:'#cc0021' }}> 
+                                                            <PhoneIcon />
+                                                        </div>  
+                                                        <div style={{ fontWeight: '500', color: '#252525' }}><a href="tel:91   9384841107">+91   9384841107</a></div>
+                                                    </div> 
+                                                    : 
+                                                    item === 'LEFT' || item === 'RIGHT' ? <div></div> :
+                                                    <p style={{ fontWeight: '500' , textAlign : 'center' }} onClick={()=>this.changePage(item)}>{ item }</p>
 
-                                    }
-                                   
-                                </div>
-                            )
-                        })
-                }
-                </div>
-                
+                                        }
+                                    
+                                    </div>
+                                )
+                            })
+                    }
+                    </div>
+                   
             </div>
-                <div className='mobile-ui' style={{ width: '100%', backgroundColor: '#252525'}}>
+                <div className='mobile-ui' style={{ width: '100%', backgroundColor: '#252525' ,}}>
                     <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%', backgroundColor: '#252525' }}>
                         <ListIcon style={{ fontSize: '70px', color: '#ff9800' , marginTop : '6%'}} onClick={()=>{
                             this.setState({
@@ -126,6 +126,11 @@ class KarudaAppBar extends Component {
                         </ClickAwayListener>
                     </Paper>
                     </Popper>
+                </div>
+                <div >
+                    <marquee style={{ marginTop: this.state.windowWidth >= 700 ? '8%' : '0%', width: '100%', height: '70px', backgroundColor: '#ffeb3b', color: 'black', position: this.state.windowWidth >= 700 ? 'fixed' : '', zIndex: this.state.windowWidth >= 700 ?100 : 0 }} behavior="scroll" direction="left">
+                        <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>
+                    </marquee>
                 </div>
             </React.Fragment>
          );

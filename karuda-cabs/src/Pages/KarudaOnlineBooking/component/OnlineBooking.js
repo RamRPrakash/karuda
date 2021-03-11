@@ -129,10 +129,10 @@ class OnlineBooking extends Component {
     }
     render() { 
         return ( 
-            <React.Fragment>
+            <div style={{ marginTop: this.state.windowWidth >= 700 ? '12%' : ''}}>
                 <GetBookTaxi/>
                 {this.footer()}
-            </React.Fragment>
+            </div>
          );
     }
 }

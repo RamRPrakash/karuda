@@ -23,13 +23,13 @@ class KarudaCheckBooking extends Component {
         return (
 
             <Grid container >
-                <KarudaAppBar props={this.props} />{this.state.windowWidth >= 700 ? <div><br></br><br></br><br></br><br></br><br></br><br></br></div> : null}
-                <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', }}>
+                <KarudaAppBar props={this.props} />
+                {/* <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', }}>
                     <marquee behavior="scroll" direction="left">
                         <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>
                     </marquee>
-                </div>
-                <BookingDetails/>
+                </div> */}
+                <BookingDetails props={this.props}/>
             </Grid>
         );
     }

@@ -11,6 +11,7 @@ import KarudaFooter from '../../../Component/karudaFooter'
 import Card from '@material-ui/core/Card';
 import GetContact from '../../Home/component/GetContact'
 import GetCopyRight from '../../Home/component/GetCopyRight'
+import Secure from 'secure-ls'
 
 class BookingDetails extends Component {
     constructor(props) {
@@ -129,16 +130,29 @@ class BookingDetails extends Component {
             </React.Fragment>
         )
     }
+    setLocal=()=>{
+        var data = {
+            Name  : this.state.Name ,
+            Phone  : this.state.Phone ,
+            Query  : this.state.Query ,
+        }
+        var Tot = localStorage.getItem('TOT_MSG') || [] 
+        if (Tot.length > 0){
+            Tot = JSON.parse(Tot)
+        }
+        Tot.push(data)
+        localStorage.setItem('TOT_MSG', JSON.stringify(Tot))
+    }
     render() { 
         return (
             <React.Fragment>
-                <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b'}}>
+                {/* <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b'}}>
                     <marquee behavior="scroll" direction="left">
                         <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>
                     </marquee>
-                </div>
+                </div> */}
                 {/* height: this.state.windowWidth >= 700 ? '300px' : '200px', */}
-                <div style={{ padding :'2%' ,  width: '100%', backgroundColor: '#F2F7FB' }}>
+                <div style={{ marginTop: this.state.windowWidth >= 700 ? '12%' : '' , padding :'2%' ,  width: '100%', backgroundColor: '#F2F7FB' }}>
                     <Grid container xs={12} sm={12} md={12} lg={12}>
                         {/* <Grid item xs={12} sm={12} md={12} lg={12}> 
                             <h2 style={{ marginTop: '3%' ,marginLeft: this.state.windowWidth >= 700 ? '45%' : '10%'}}>BOOKING DETAILS</h2>
@@ -162,8 +176,16 @@ class BookingDetails extends Component {
                         </Grid>
 
                         <Grid item xs={12} sm={12} md={6} lg={6}>
-                            <TextField id="outlined-basic" style={{ width: '100%' , marginTop : '2%' , background : 'white' }} label="Name" variant="outlined" /><br></br><br></br><br></br>
-                            <TextField id="outlined-basic" style={{ width: '100%', background: 'white' }} label="Phone" variant="outlined" /><br></br><br></br><br></br>
+                            <TextField id="outlined-basic" onChange={(e)=>{
+                                this.setState({
+                                    Name: e.target.value
+                                })
+                            }} style={{ width: '100%' , marginTop : '2%' , background : 'white' }} label="Name" variant="outlined" /><br></br><br></br><br></br>
+                            <TextField id="outlined-basic" onChange={(e) => {
+                                this.setState({
+                                    Phone: e.target.value
+                                })
+                            }} style={{ width: '100%', background: 'white' }} label="Phone" variant="outlined" /><br></br><br></br><br></br>
                             <TextField 
                                 style={{ width: '100%', background: 'white'}}
                                 id="outlined-multiline-static"
@@ -171,12 +193,18 @@ class BookingDetails extends Component {
                                 multiline
                                 rows={4}
                                 defaultValue="Any Query"
-                                variant="outlined"
+                                variant="outlined" 
+                                onChange={(e) => {
+                                    this.setState({
+                                        Query: e.target.value
+                                    })
+                                }}
                             /><br></br><br></br><br></br>
                             <Button
                                 variant="contained"
                                 color="primary"
-                                endIcon={<SendIcon/>}
+                                endIcon={<SendIcon/>} 
+                                onClick={this.setLocal}
                             >
                                 Send Enquiry 
       </Button>

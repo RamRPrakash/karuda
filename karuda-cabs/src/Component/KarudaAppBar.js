@@ -16,7 +16,10 @@ class KarudaAppBar extends Component {
           }
     }
     changePage=(item)=>{
-
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
         if(item == 'HOME'){
             this.props.props.history.push('/')
         }
@@ -100,10 +103,10 @@ class KarudaAppBar extends Component {
                         </div>
                     <div style={{ background: '#252525', height: '70px', lineHeight: '42px',width: '80%' , marginTop : '3%' , marginLeft : '10%' }}>
                         <div style={{ borderRadius: '25px', background: '#cc0021' , display : 'flex' }}>
-                            <div style={{ marginTop: '3%', color: 'white', marginLeft: '22%' , fontSize : '20px' }}>
+                            <div style={{ marginTop: '3%', color: 'white', marginLeft: '18%' , fontSize : '20px' }}>
                                 <PhoneIcon  style={{fontSize : '25px'}} />
                             </div>
-                            <div style={{ fontWeight: '500', color: 'white' , marginLeft : '5%' }}><a style={{color : 'white' , fontSize : '20px'}} href="tel:91   9384841107">+91   9384841107</a></div>
+                            <div style={{ fontWeight: '500', color: 'white' , marginLeft : '5%' }}><a style={{color : 'white' , fontSize : '22px'}} href="tel:91   9384841107">+91   9384841107</a></div>
                         </div>
                         
                     </div> 

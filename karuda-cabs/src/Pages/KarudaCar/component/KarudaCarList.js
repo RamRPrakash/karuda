@@ -279,7 +279,7 @@ class KarudaCarList extends Component {
         var SUVTWO = ['Tavera','Only Innova']
         return (  
             <React.Fragment>
-                <Grid container xs={12} sm={12} md={12} lg={12} >
+                <Grid style={{ marginTop: this.state.windowWidth >= 700 ? '15%' : ''}} container xs={12} sm={12} md={12} lg={12} >
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <h1 style={{ marginLeft: this.state.windowWidth >= 700 ? '40%' : '10%'}}>SEDAN CARS</h1>
                         <p style={{ marginLeft: this.state.windowWidth >= 700 ? '28%' : '10%' }}>Top rated drivers, and a hand-picked fleet of the best cars with extra legroom and boot space.</p>

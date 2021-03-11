@@ -19,6 +19,7 @@
     "react-scripts": "4.0.1",
     "react-swipeable-views": "^0.13.9",
     "react-whatsapp": "^0.2.1",
+    "secure-ls": "^1.2.6",
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
   },

@@ -8,6 +8,8 @@ import GetCopyRight from '../../Home/component/GetCopyRight'
 import KarudaSelectField from '../../../Component/KarudaSelectField'
 import TextField from '@material-ui/core/TextField';
 import Api from 'axios'
+import Button from '@material-ui/core/Button';
+
 
 var CarList = ['Sedan (Dzire, Sunny, Xcent, Zest)', 'Sedan (Only Etios)', 'SUV (Xylo, Marazzo, Loggy, Tavera)', 'SUV (Only Innova)']
 var DropList = ['ONE WAY DROP', 'ROUND TRIP']
@@ -160,7 +162,7 @@ class KarudaTariff extends Component {
         return (
             <React.Fragment>
                
-                <Grid style={{ paddingBottom : '2%' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ paddingBottom : '2%' , marginTop : '14%' }} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={6} lg={6} style={{ margin: this.state.windowWidth >= 700 ? '0%' : '5%' }}>
                         <h3 style={{paddingLeft : '3%'}}>Trip Calculation</h3>
                         <Grid container style={{padding : '3%'}}>
@@ -240,8 +242,14 @@ class KarudaTariff extends Component {
 
                     </Grid>
                 </Grid>
-                
-                <div>
+                <div style={{width : '100%' }}>
+                    <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '1%' : '5%' , color: 'white', backgroundColor: '#CC0021', borderColor: 'yellow', borderRadius: '30px', width: '140px', height: '55px' }} variant="outlined" size="medium" onClick={() => {
+                        this.props.props.history.push('/KarudaOnlineBooking')
+                    }}  >
+                        <span style={{ fontSize: '18px' }}>Book Now</span>
+                    </Button>
+                    </div>
+                <div style={{ marginLeft: this.state.windowWidth >= 700 ? '1%' : '5%'}}>
                     <h3>OUTSTATION CAB SERVICE TARIFF CHART</h3>
                 </div>
                 <Grid container xs={12} sm={12} md={12} lg={12}>
@@ -305,7 +313,7 @@ class KarudaTariff extends Component {
                 </Grid>
 
                
-                   <h1 style={{width : '100%'}}> Additional charges details</h1>
+                <h1 style={{ width: '100%' , marginLeft: this.state.windowWidth >= 700 ? '1%' : '5%'}}> Additional charges details</h1>
                 <Grid container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={6} lg={6}>
                         <ul style={{fontSize : '20px' }}>

@@ -25,11 +25,11 @@ class karudaOnlineBooking extends Component {
         return (
             <Grid container >
                 <KarudaAppBar props={this.props}/>
-                <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', marginTop: this.state.windowWidth >= 700 ? '8%' : ''}}>
+                {/* <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', marginTop: this.state.windowWidth >= 700 ? '8%' : ''}}>
                     <marquee behavior="scroll" direction="left">
                         <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>
                     </marquee>
-                </div>
+                </div> */}
                 <OnlineBooking props={this.props}/>
             </Grid>
           );

@@ -108,7 +108,7 @@ class Home extends Component {
                 </Grid>
 
                 <Grid style={{ backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
-                    <p style={{ marginLeft: this.state.windowWidth >= 700 ? '35%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</p>
+                    <p style={{ marginLeft: this.state.windowWidth >= 700 ? '35%' : '' }}>Address: 5/3, 1st Cross Street, Karambakkam, Porur, Chennai-600116</p>
                 </Grid>
 
                 <Grid style={{ backgroundColor: '#00695c', color: 'white' }} container xs={12} sm={12} md={12} lg={12}>

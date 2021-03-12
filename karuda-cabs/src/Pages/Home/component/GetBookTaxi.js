@@ -226,7 +226,7 @@ class GetBookTaxi extends Component {
                                 </div> <br></br>
                                 <div style={{ display: 'flex', width: '100%' , marginTop : '2%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
-                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>start destination</h2></div>
+                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>Start Destination</h2></div>
                                     <div style={{ marginTop: '2%' }}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929',  color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px'  }}
                                             onChange={(e) => {
@@ -244,7 +244,7 @@ class GetBookTaxi extends Component {
                                 </div><br></br>
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
-                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>end destination</h2></div>
+                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>End Destination</h2></div>
                                     <div style={{ marginTop: '2%'  }}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929', color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px' }} 
                                             onChange={(e) => {
@@ -263,7 +263,7 @@ class GetBookTaxi extends Component {
                                 </div><br></br>
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
-                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>choose vehicle</h2></div>
+                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>Choose Vehicle</h2></div>
                                     <div style={{ borderRadius: '10px', marginTop: '2%'  }}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929',  color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px' }} 
                                             onChange={(e) => {
@@ -299,7 +299,7 @@ class GetBookTaxi extends Component {
                                 </div><br></br>
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div style={{ width: '50%', color: 'yellow', }}>
-                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>phone</h2></div>
+                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>Phone</h2></div>
                                     <div style={{ marginTop: '2%'}}>
                                         {/* <input type="text" style={{ backgroundColor: '#292929', color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px' }} 
                                         onChange={(e) => {
@@ -335,7 +335,7 @@ class GetBookTaxi extends Component {
                                     </div>
                                 </div><br></br>
                                 <div>
-                                    <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '20' : '7%' , color : 'black' , backgroundColor : 'yellow' , borderColor : 'yellow' , borderRadius : '30px' , width : '140px' , height : '55px'}} variant="outlined" size="medium" onClick={this.storeMail}  >
+                                    <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '14%' : '7%' , color : 'black' , backgroundColor : 'yellow' , borderColor : 'yellow' , borderRadius : '30px' , width : '140px' , height : '55px'}} variant="outlined" size="medium" onClick={this.storeMail}  >
                                         <span style={{fontSize : '18px'}}>Book Now</span>
                                     </Button>
                                 </div><br></br>

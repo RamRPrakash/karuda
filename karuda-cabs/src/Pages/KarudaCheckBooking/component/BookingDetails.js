@@ -104,9 +104,9 @@ class BookingDetails extends Component {
                 <Grid style={{ backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
                     {
                         this.state.windowWidth >= 700 ?
-                            <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</h2>
+                            <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}>Address: 5/3, 1st Cross Street, Karambakkam, Porur, Chennai-600116</h2>
                             :
-                            <h4 style={{ textAlign: 'center', marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}>Address: 5/3, 1st cross street, karambakkam, porur, chennai-600116</h4>
+                            <h4 style={{ textAlign: 'center', marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}>Address: 5/3, 1st Cross Street, Karambakkam, Porur, Chennai-600116</h4>
 
                     }
                 </Grid>
@@ -142,6 +142,12 @@ class BookingDetails extends Component {
         }
         Tot.push(data)
         localStorage.setItem('TOT_MSG', JSON.stringify(Tot))
+        alert('Thank you for Feed Back')
+        this.setState({
+            Name : '',
+            Phone : '',
+            Query : ''
+        })
     }
     render() { 
         return (

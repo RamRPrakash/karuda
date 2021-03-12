@@ -63,8 +63,8 @@ class TopBannerList extends Component {
                             <div>
                                 <img alt='img' style={{ width: this.state.windowWidth >= 700 ?'50%' : '80%', height: this.state.windowWidth >= 700 ? '400px' : '150px' , marginLeft : '20%'}} 
                                     src={
-                                        item.id == 1 ? Dzire : 
-                                            item.id == 2 ? ETIOS : 
+                                        item.id == 1 ? ETIOS :
+                                            item.id == 2 ?  Dzire : 
                                                 item.id == 3 ? Sunny :
                                                     item.id == 4 ? xcent : 
                                                         item.id == 5 ? zest : 

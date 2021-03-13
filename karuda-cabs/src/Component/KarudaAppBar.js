@@ -61,8 +61,8 @@ class KarudaAppBar extends Component {
     }
     render() { 
         return ( 
-           <React.Fragment> 
-                <div className='web-ui' style={{ width: '100%', height: '130px', backgroundColor: '#252525' , color : 'white', lineHeight : '100px' , position :'fixed' , zIndex : '100' }}>
+           <React.Fragment > 
+                <div className='web-ui' style={{ width: '100%', height: '150px', backgroundColor: '#252525' , color : 'white', lineHeight : '100px' , position :'fixed' , zIndex : '100' , paddingBottom : '10px'}}>
                     <div style={{ display: 'flex',   width : '100%'}}>
                     {
                             menuBars.map((item , index)=>{
@@ -92,7 +92,7 @@ class KarudaAppBar extends Component {
                     </div>
                    
             </div>
-                <div className='mobile-ui' style={{ width: '100%', backgroundColor: '#252525' ,}}>
+                <div className='mobile-ui' style={{ width: '100%', backgroundColor: '#252525' , position : 'fixed' , zIndex : 100}}>
                     <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%', backgroundColor: '#252525' }}>
                         <ListIcon style={{ fontSize: '70px', color: '#ff9800' , marginTop : '6%'}} onClick={()=>{
                             this.setState({
@@ -110,7 +110,7 @@ class KarudaAppBar extends Component {
                         </div>
                         
                     </div> 
-                    <Popper open={this.state.open}>
+                    <Popper open={this.state.open} style={{zIndex : 100}}>
                     <Paper>
                             <ClickAwayListener onClickAway={() => {
                                 this.setState({
@@ -131,7 +131,7 @@ class KarudaAppBar extends Component {
                     </Popper>
                 </div>
                 <div >
-                    <marquee style={{ marginTop: this.state.windowWidth >= 700 ? '8%' : '0%', width: '100%', height: '70px', backgroundColor: '#ffeb3b', color: 'black', position: this.state.windowWidth >= 700 ? 'fixed' : '', zIndex: this.state.windowWidth >= 700 ?100 : 0 }} behavior="scroll" direction="left">
+                    <marquee style={{ marginTop: this.state.windowWidth >= 700 ? '9%' : '45%', width: '100%', height: '70px', backgroundColor: '#ffeb3b', color: 'black', position: this.state.windowWidth >= 700 ? 'fixed' : 'fixed', zIndex: this.state.windowWidth >= 700 ?100 : 100 }} behavior="scroll" direction="left">
                         <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>
                     </marquee>
                 </div>

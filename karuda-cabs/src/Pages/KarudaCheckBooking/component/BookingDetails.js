@@ -158,7 +158,7 @@ class BookingDetails extends Component {
                     </marquee>
                 </div> */}
                 {/* height: this.state.windowWidth >= 700 ? '300px' : '200px', */}
-                <div style={{ marginTop: this.state.windowWidth >= 700 ? '12%' : '' , padding :'2%' ,  width: '100%', backgroundColor: '#F2F7FB' }}>
+                <div style={{ marginTop: this.state.windowWidth >= 700 ? '12%' : '65%' , padding :'2%' ,  width: '100%', backgroundColor: '#F2F7FB' }}>
                     <Grid container xs={12} sm={12} md={12} lg={12}>
                         {/* <Grid item xs={12} sm={12} md={12} lg={12}> 
                             <h2 style={{ marginTop: '3%' ,marginLeft: this.state.windowWidth >= 700 ? '45%' : '10%'}}>BOOKING DETAILS</h2>

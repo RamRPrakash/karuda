@@ -27,8 +27,8 @@ class GetContact extends Component {
                 <div style={{backgroundColor : 'black' , color : 'white' , paddingBottom : '2%'}}>
                     <Grid container>
                         <Grid item xs={12} sm={6} md={4} lg={4}>
-                            <img style={{ width: '200px', margin: '2%', marginLeft : '20%'}} src={karudaLogo} alt="Karuda"/>
-                            <p style={{fontSize : '18px' , margin : '2%' ,marginLeft : '10%'}}>
+                            <img style={{ width: '200px', margin: '2%', marginLeft : '25%'}} src={karudaLogo} alt="Karuda"/>
+                            <p style={{fontSize : '18px' , margin : '2%' ,marginLeft : '15%' , textAlign : 'center'}}>
                                 The perfect way to get through your everyday travel needs. City taxis are available 24/7 and you can book and travel in an instant. With rides starting from as low as Rs. 6/km, you can choose from a wide range of options! You can also opt to do your bit for the environment with karuda Share!
                             </p>
                         </Grid>

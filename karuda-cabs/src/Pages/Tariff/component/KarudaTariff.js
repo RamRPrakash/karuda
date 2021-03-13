@@ -162,7 +162,7 @@ class KarudaTariff extends Component {
         return (
             <React.Fragment>
                
-                <Grid style={{ paddingBottom : '2%' , marginTop : '14%' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ paddingBottom: '2%', marginTop: this.state.windowWidth >= 700 ?'14%' : '70%' , marginLeft : '10%'}} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={6} lg={6} style={{ margin: this.state.windowWidth >= 700 ? '0%' : '5%' }}>
                         <h3 style={{paddingLeft : '3%'}}>Trip Calculation</h3>
                         <Grid container style={{padding : '3%'}}>
@@ -313,10 +313,10 @@ class KarudaTariff extends Component {
                 </Grid>
 
                
-                <h1 style={{ width: '100%' , marginLeft: this.state.windowWidth >= 700 ? '1%' : '5%'}}> Additional charges details</h1>
+                <h1 style={{ width: '100%' , marginLeft: this.state.windowWidth >= 700 ? '10%' : '5%'}}> Additional charges details</h1>
                 <Grid container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={6} lg={6}>
-                        <ul style={{fontSize : '20px' }}>
+                        <ul style={{fontSize : '20px' , marginLeft : '17%' }}>
                             <li>Toll Fees, Inter-State Permit charges (if any) are extra.</li>
                             <li>One way - Driver Bata Rs. 400. (If more than 400 km driver bata Rs.600).</li>
                             <li>Round Trip - Driver Bata Rs. 400 Per Day.</li>

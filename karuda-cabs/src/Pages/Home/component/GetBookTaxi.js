@@ -152,7 +152,7 @@ class GetBookTaxi extends Component {
         return (
             <React.Fragment>
                 <div style={{
-                    width: '98%', padding : '10px' , backgroundColor: '#0a0a0a' }} >
+                    width: '98%', padding: '10px', backgroundColor: '#0a0a0a', marginTop: this.state.windowWidth >= 700 ? '' : '65%' }} >
                     <Grid container xs={12} sm={12} md={12} lg={12}>
                         <Grid item xs={12} sm={12} md={12} lg={6} >
                             <div style={{ color: 'white' }}>

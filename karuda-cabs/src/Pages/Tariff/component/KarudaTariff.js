@@ -243,7 +243,7 @@ class KarudaTariff extends Component {
                     </Grid>
                 </Grid>
                 <div style={{width : '100%' }}>
-                    <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '1%' : '5%' , color: 'white', backgroundColor: '#CC0021', borderColor: 'yellow', borderRadius: '30px', width: '140px', height: '55px' }} variant="outlined" size="medium" onClick={() => {
+                    <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '11%' : '15%' , color: 'white', backgroundColor: '#CC0021', borderColor: 'yellow', borderRadius: '30px', width: '140px', height: '55px' }} variant="outlined" size="medium" onClick={() => {
                         this.props.props.history.push('/KarudaOnlineBooking')
                     }}  >
                         <span style={{ fontSize: '18px' }}>Book Now</span>

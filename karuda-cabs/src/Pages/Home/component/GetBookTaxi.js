@@ -84,6 +84,10 @@ class GetBookTaxi extends Component {
             alert('Please Fill Time')
             return
         }
+        else if (this.state.Name.length == ''){
+            alert('Please Fill Name')
+            return
+        }
         else if (this.state.startDestination.length == ''){
             alert('Please Fill Start Destination')
             return
@@ -157,6 +161,62 @@ class GetBookTaxi extends Component {
                         <Grid item xs={12} sm={12} md={12} lg={6} >
                             <div style={{ color: 'white' }}>
                                 <h1 style={{ textAlign: 'center' }}>Book Taxi Now</h1><br></br>
+                                <div style={{ display: 'flex', width: '100%', marginTop: '2%' }}>
+                                    <div style={{ width: '50%', color: 'yellow', }}>
+                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>Name</h2></div>
+                                    <div style={{ marginTop: '2%' }}>
+                                        {/* <input type="text" style={{ backgroundColor: '#292929',  color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px'  }}
+                                            onChange={(e) => {
+                                                this.setState({
+                                                    startDestination: e.target.value
+                                                })
+                                            }} ></input> */}
+
+                                        <TextField value={this.state.Name} id="outlined-basic" onChange={(e) => {
+                                            this.setState({
+                                                Name: e.target.value
+                                            })
+                                        }} variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '190px', backgroundColor: 'white', borderRadius: '10px', }} />
+                                    </div>
+                                </div><br></br>
+                                <div style={{ display: 'flex', width: '100%' }}>
+                                    <div style={{ width: '50%', color: 'yellow', }}>
+                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>Phone</h2></div>
+                                    <div style={{ marginTop: '2%' }}>
+                                        {/* <input type="text" style={{ backgroundColor: '#292929', color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px' }} 
+                                        onChange={(e) => {
+                                            this.setState({
+                                                phone: e.target.value
+                                            })
+                                        }}></input> */}
+                                        <TextField value={this.state.phone} onChange={(e) => {
+                                            var content = e.target.value
+                                            content = content.replace(/[^0-9.]/gi, '')
+                                            this.setState({
+                                                phone: content
+                                            })
+                                        }}
+                                            id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '190px', backgroundColor: 'white', borderRadius: '10px' }} />
+                                    </div>
+                                </div><br></br>
+                                <div style={{ display: 'flex', width: '100%' }}>
+                                    <div style={{ width: '50%', color: 'yellow', }}>
+                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>Email</h2></div>
+                                    <div style={{ marginTop: '2%' }}>
+                                        {/* <input type="text" style={{ backgroundColor: '#292929',  color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px'  }} 
+                                            onChange={(e) => {
+                                                this.setState({
+                                                    email: e.target.value
+                                                })
+                                            }}
+                                        ></input> */}
+                                        <TextField value={this.state.email} onChange={(e) => {
+                                            this.setState({
+                                                email: e.target.value
+                                            })
+                                        }} id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '190px', backgroundColor: 'white', borderRadius: '10px' }} />
+                                    </div>
+                                </div><br></br>
                                 <div style={{ display: 'flex', width: '100%' }}>
                                     <div style={{ color: 'yellow', width: '50%', }}>
                                         <h2 style={{ marginLeft: this.state.windowWidth >= 700 ?'30%' : '15%'}}>Date</h2>
@@ -297,43 +357,7 @@ class GetBookTaxi extends Component {
                                         }} id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '', backgroundColor: 'white', borderRadius: '10px' }} /> */}
                                     </div>
                                 </div><br></br>
-                                <div style={{ display: 'flex', width: '100%' }}>
-                                    <div style={{ width: '50%', color: 'yellow', }}>
-                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>Phone</h2></div>
-                                    <div style={{ marginTop: '2%'}}>
-                                        {/* <input type="text" style={{ backgroundColor: '#292929', color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px' }} 
-                                        onChange={(e) => {
-                                            this.setState({
-                                                phone: e.target.value
-                                            })
-                                        }}></input> */}
-                                        <TextField value={this.state.phone} onChange={(e) => {
-                                            var content = e.target.value
-                                            content = content.replace(/[^0-9.]/gi, '')
-                                            this.setState({
-                                                phone: content
-                                            })}}
-                                            id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '190px', backgroundColor: 'white', borderRadius: '10px'}} />
-                                    </div>
-                                </div><br></br>
-                                <div style={{ display: 'flex', width: '100%' }}>
-                                    <div style={{ width: '50%', color: 'yellow', }}>
-                                        <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '30%' : '15%' }}>Email</h2></div>
-                                    <div style={{ marginTop: '2%' }}>
-                                        {/* <input type="text" style={{ backgroundColor: '#292929',  color: 'white', fontSize: '20px', width: this.state.windowWidth >= 700 ? '370px' : '', borderRadius: '10px'  }} 
-                                            onChange={(e) => {
-                                                this.setState({
-                                                    email: e.target.value
-                                                })
-                                            }}
-                                        ></input> */}
-                                        <TextField value={this.state.email} onChange={(e) => {
-                                            this.setState({
-                                                email: e.target.value
-                                            })
-                                        }} id="outlined-basic" variant="outlined" style={{ width: this.state.windowWidth >= 700 ? '370px' : '190px', backgroundColor: 'white', borderRadius: '10px'  }} />
-                                    </div>
-                                </div><br></br>
+                                
                                 <div>
                                     <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '14%' : '7%' , color : 'black' , backgroundColor : 'yellow' , borderColor : 'yellow' , borderRadius : '30px' , width : '140px' , height : '55px'}} variant="outlined" size="medium" onClick={this.storeMail}  >
                                         <span style={{fontSize : '18px'}}>Book Now</span>

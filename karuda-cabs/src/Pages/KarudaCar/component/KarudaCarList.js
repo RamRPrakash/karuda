@@ -54,10 +54,10 @@ class KarudaCarList extends Component {
                         <div>
                             <h3>{type}</h3>
                         <h4>{data}</h4> 
-                        <h4> {data == 'Only Etios' ? "One Way Rs. 13/km | Round Trip Rs. 11/km" :
+                        <h4> {data == 'Only Etios' ? "One Way Rs. 14/km | Round Trip Rs. 12/km" :
                         
-                            data == 'Xylo' || data == 'Marazzo' || data == 'Loggy' || data == 'Tavera' ? "One Way Rs. 15/km | Round Trip Rs. 13/km" : data == 'Only Innova' ? "One Way Rs. 16/km | Round Trip Rs. 14/km" :
-                        "One Way Rs. 12/km | Round Trip Rs. 10/km" }
+                            data == 'Xylo' || data == 'Marazzo' || data == 'Loggy' || data == 'Tavera' ? "One Way Rs. 16/km | Round Trip Rs. 14/km" : data == 'Only Innova' ? "One Way Rs. 17/km | Round Trip Rs. 15/km" :
+                        "One Way Rs. 13/km | Round Trip Rs. 11/km" }
                                 </h4>
                             {/* <div style={{ display: 'flex', width: '500px' }}>
                                 <Card style={{ width: '60px' }}>
@@ -272,7 +272,7 @@ class KarudaCarList extends Component {
             </React.Fragment>
         )
     }
-    render() { 
+    render() {
         var SEDANOONE = ['Dzire' , 'Sunny' , 'Xcent']
         var SEDANTWO = ['Zest' , 'Only Etios']
         var SUVONE = ['Xylo', 'Marazzo', 'Loggy']

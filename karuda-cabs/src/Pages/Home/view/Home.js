@@ -131,8 +131,9 @@ class Home extends Component {
                 {/* <KarudaCabApp props={this.props}/> */}
                 <TopBannerList props={this.props} /><br></br><br></br><br></br><br></br><br></br>
                 {/* <GetTexi/> */}
+                <GetBookTaxi /><br></br>
                 <GetServices /><br></br><br></br><br></br><br></br>
-                <GetBookTaxi/><br></br>
+                
                 <GetDrivers /><br></br><br></br><br></br>
                 {/* {this.footer()}
                 <GetTestimonials/> */}

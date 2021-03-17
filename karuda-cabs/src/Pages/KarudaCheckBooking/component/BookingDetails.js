@@ -11,7 +11,8 @@ import KarudaFooter from '../../../Component/karudaFooter'
 import Card from '@material-ui/core/Card';
 import GetContact from '../../Home/component/GetContact'
 import GetCopyRight from '../../Home/component/GetCopyRight'
-import Secure from 'secure-ls'
+import SecureLS from 'secure-ls' 
+var ls = new SecureLS({ encodingType: 'des', isCompression: false, encryptionSecret: 'my-secret-key' });
 
 class BookingDetails extends Component {
     constructor(props) {
@@ -142,6 +143,8 @@ class BookingDetails extends Component {
         }
         Tot.push(data)
         localStorage.setItem('TOT_MSG', JSON.stringify(Tot))
+
+        ls.set('ENCRYT', Tot )
         alert('Thank you for Feed Back')
         this.setState({
             Name : '',

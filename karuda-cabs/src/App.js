@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState , useMemo} from 'react';
 
 import Routes from './router'
 import { HashRouter, Switch, Route } from 'react-router-dom'
@@ -11,7 +11,34 @@ import twitter1 from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/twitter
 
 
 function App() {
+  // const [counterOne, setCounterOne] = useState(0)
+  // const [counterTwo, setCounterTwo] = useState(0)
+
+  // const incrementOne = () => {
+  //   setCounterOne(counterOne + 1)
+  // }
+
+  // const incrementTwo = () => {
+  //   setCounterTwo(counterTwo + 1)
+  // }
+  
+
+  // const isEven = useMemo(() => {
+  //   var i = 0
+  //   while (i < 200000000) i++;
+  //   return counterOne % 2 === 0 ? 'Even' : 'Odd'
+  // }, [counterOne])
   return (
+    <div>
+    {/* <div>Performance Check
+  <div>
+      <button onClick={incrementOne}>counter one : {counterOne}</button>
+
+      {isEven}
+      </div>
+      <button onClick={incrementTwo}>counter Two : {counterTwo}</button>
+
+      </div> */}
     <HashRouter>
       <div className="App">
         <div className='web-ui' style={{marginTop : '20%' , position : 'fixed' , marginLeft : '2%'}}>
@@ -41,6 +68,7 @@ function App() {
           </Switch>
         </div>
     </HashRouter>
+    </div>
   );
 }
 

@@ -12,7 +12,7 @@ import Card from '@material-ui/core/Card';
 import GetContact from '../../Home/component/GetContact'
 import GetCopyRight from '../../Home/component/GetCopyRight'
 import SecureLS from 'secure-ls' 
-var ls = new SecureLS({ encodingType: 'des', isCompression: false, encryptionSecret: 'my-secret-key' });
+var ls = new SecureLS({ encodingType: 'des', isCompression: false, encryptionSecret: 'karur vysya bank' });
 
 class BookingDetails extends Component {
     constructor(props) {

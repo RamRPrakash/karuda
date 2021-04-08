@@ -3,6 +3,8 @@ import './../css/Home.css'
 import Grid from '@material-ui/core/Grid';
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
+import * as emailjs from 'emailjs-com'
+
 import {
     MuiPickersUtilsProvider,
     KeyboardTimePicker,
@@ -129,9 +131,24 @@ class GetBookTaxi extends Component {
                     phone: '',
                     email: ''
                 })
-                api.post('/sendMail', data).then(response => {
-                    console.log('sasffa')
-                })
+                let templateParams = {
+                    from_name: 'prakashparthi1996@gmail.com',
+                    to_name: 'prakashparthi1996@gmail.com',
+                    user_id: 'prakashparthi1996@gmail.com',
+                    user_email: 'prakashparthi1996@gmail.com',
+                    reply_to: data.email,
+                    subject: 'Booking Confirmation',
+                    message_html: 'Message Send',
+                }
+                emailjs.send(
+                    'service_nzqo20s',
+                    'template_xcax20u',
+                    templateParams,
+                    'user_uuJ5kVkOo8NtBGucRNg3S'
+                )
+                // api.post('/sendMail', data).then(response => {
+                //     console.log('sasffa')
+                // })
             }
         }
         else{
@@ -145,9 +162,25 @@ class GetBookTaxi extends Component {
                 phone: '',
                 email: ''
             })
-            api.post('/sendMail', data).then(response => {
-                console.log('sasffa')
-            })
+            let templateParams = {
+                from_name: 'prakashparthi1996@gmail.com',
+                to_name: 'prakashparthi1996@gmail.com',
+                user_id: 'prakashparthi1996@gmail.com',
+                user_email: 'prakashparthi1996@gmail.com',
+                reply_to: data.email,
+                subject: 'Booking Confirmation',
+                message_html: 'Message Send',
+            }
+            emailjs.send(
+                'service_nzqo20s',
+                'template_xcax20u',
+                templateParams,
+                'user_uuJ5kVkOo8NtBGucRNg3S'
+            )
+
+            // api.post('/sendMail', data).then(response => {
+            //     console.log('sasffa')
+            // })
         }
         
     }

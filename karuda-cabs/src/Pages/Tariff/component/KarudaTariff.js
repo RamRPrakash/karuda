@@ -9,6 +9,15 @@ import KarudaSelectField from '../../../Component/KarudaSelectField'
 import TextField from '@material-ui/core/TextField';
 import Api from 'axios'
 import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+
+import Dzire from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/Dzire.png'
+import Sunny from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/Sunny.png'
+import ETIOS from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/ETIOS.png'
+import XYLO from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/XYLO.png'
+import INNOVA from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/INNOVA.png'
+
+
 
 
 var CarList = ['Sedan (Dzire, Sunny, Xcent, Zest)', 'Sedan (Only Etios)', 'SUV (Xylo, Marazzo, Loggy, Tavera)', 'SUV (Only Innova)']
@@ -29,7 +38,8 @@ class KarudaTariff extends Component {
             SUV_One :[15, 13] , 
             SUV_Two :[16, 14] ,
             Sedan_One :[12, 10],
-            Sedan_Two :[13, 11]
+            Sedan_Two :[13, 11] , 
+            SelectedCar: 'Sedan (Dzire, Sunny, Xcent, Zest)'
 
          }
     }
@@ -38,6 +48,12 @@ class KarudaTariff extends Component {
             console.log(res)
             var data = res['data'][0]['data']
             console.log(data)
+            rate = {
+                'Sedan (Dzire, Sunny, Xcent, Zest)': data['Sedan_One'],
+                'Sedan (Only Etios)': data['Sedan_Two'],
+                'SUV (Xylo, Marazzo, Loggy, Tavera)': data['SUV_One'],
+                'SUV (Only Innova)': data['SUV_Two']
+            }
             this.setState({
                 SUV_One: data['SUV_One'],
                 SUV_Two: data['SUV_Two'],
@@ -158,12 +174,66 @@ class KarudaTariff extends Component {
             </React.Fragment>
         )
     }
+    singleCar() {
+        if (this.state.SelectedCar ){
+            var price = [0 , 0]
+            var disCar = Dzire
+            if (this.state.SelectedCar == 'Sedan (Dzire, Sunny, Xcent, Zest)'){
+                price = this.state.Sedan_One
+
+                disCar = Sunny
+            }
+            else if (this.state.SelectedCar == 'Sedan (Only Etios)'){
+                
+                price = this.state.Sedan_Two
+
+                disCar = ETIOS
+
+            }
+            else if (this.state.SelectedCar == 'SUV (Xylo, Marazzo, Loggy, Tavera)'){
+                price = this.state.SUV_One
+
+                disCar = XYLO
+
+            }
+            else if (this.state.SelectedCar == 'SUV (Only Innova)'){
+                price = this.state.SUV_Two
+                disCar = INNOVA
+
+            }
+
+            console.log(price)
+            
+            return (
+
+                <Card style={{ marginLeft: '10%', margin: '10%', width: '300px', padding: this.state.windowWidth >= 700 ? '30px' : '10px' }}>
+                    <div>
+                        <img style={{ width: '300px' }} src={disCar} alt='car'></img>
+                        <div>
+                            <h3>{this.state.SelectedCar}</h3>
+                            {/* <h4>{data}</h4> */}
+                            <h4> {`One Way Rs. ${price[0]}/km|Round Trip Rs.${price[1]}/km`}</h4>
+                            
+                            <Button style={{ color: 'white', backgroundColor: '#CC0021', borderColor: 'yellow', borderRadius: '30px', width: '140px', height: '55px' }} variant="outlined" size="medium" onClick={() => {
+                                this.props.props.history.push('/KarudaOnlineBooking')
+                            }}  >
+                                <span style={{ fontSize: '18px' }}>Book Now</span>
+                            </Button>
+                        </div>
+                    </div>
+                </Card>
+
+            )
+        }
+
+        
+    }
     render() { 
         return (
             <React.Fragment>
                
                 <Grid style={{ paddingBottom: '2%', marginTop: this.state.windowWidth >= 700 ?'14%' : '70%' , marginLeft : '10%'}} container xs={12} sm={12} md={12} lg={12}>
-                    <Grid item xs={12} sm={12} md={6} lg={6} style={{ margin: this.state.windowWidth >= 700 ? '0%' : '5%' }}>
+                    <Grid item xs={12} sm={12} md={6} lg={6} style={{ margin: this.state.windowWidth >= 700 ? '0%' : '5%'  }}>
                         <h3 style={{paddingLeft : '3%'}}>Trip Calculation</h3>
                         <Grid container style={{padding : '3%'}}>
                             
@@ -237,18 +307,21 @@ class KarudaTariff extends Component {
                                     </h3>
                                 </div>
                             </Grid>
-
                         </Grid>
 
                     </Grid>
+                    <Grid item xs={12} sm={12} md={6} lg={6} style={{  }}>
+                        {this.singleCar()}
+
+                    </Grid>
                 </Grid>
-                <div style={{width : '100%' }}>
+                {/* <div style={{width : '100%' }}>
                     <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '11%' : '15%' , color: 'white', backgroundColor: '#CC0021', borderColor: 'yellow', borderRadius: '30px', width: '140px', height: '55px' }} variant="outlined" size="medium" onClick={() => {
                         this.props.props.history.push('/KarudaOnlineBooking')
                     }}  >
                         <span style={{ fontSize: '18px' }}>Book Now</span>
                     </Button>
-                    </div>
+                </div> */}
                 <div style={{ marginLeft: this.state.windowWidth >= 700 ? '1%' : '5%'}}>
                     <h3>OUTSTATION CAB SERVICE TARIFF CHART</h3>
                 </div>

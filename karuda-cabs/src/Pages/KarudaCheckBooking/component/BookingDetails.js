@@ -12,6 +12,8 @@ import Card from '@material-ui/core/Card';
 import GetContact from '../../Home/component/GetContact'
 import GetCopyRight from '../../Home/component/GetCopyRight'
 import SecureLS from 'secure-ls' 
+import * as emailjs from 'emailjs-com'
+
 var ls = new SecureLS({ encodingType: 'des', isCompression: false, encryptionSecret: 'karur vysya bank' });
 
 class BookingDetails extends Component {
@@ -146,11 +148,32 @@ class BookingDetails extends Component {
 
         ls.set('ENCRYT', Tot )
         alert('Thank you for Feed Back')
+       
+        let templateParams = {
+            from_name: 'karudacabsjk@gmail.com',
+            to_name: 'prakashparthi1996@gmail.com',
+            user_id: 'prakashparthi1996@gmail.com',
+            user_email: 'prakashparthi1996@gmail.com',
+            reply_to: 'karudacabsjk@gmail.com',
+            subject: 'Booking Confirmation',
+            message_html: 'Karuda Booking Detail:',
+            Name : this.state.Name,
+            Phone : this.state.Phone,
+            Query: this.state.Query
+        }
+        emailjs.send(
+            'service_nzqo20s',
+            'template_vngxath',
+            templateParams,
+            'user_uuJ5kVkOo8NtBGucRNg3S'
+        )
+
         this.setState({
-            Name : '',
-            Phone : '',
-            Query : ''
+            Name: '',
+            Phone: '',
+            Query: ''
         })
+
     }
     render() { 
         return (
@@ -185,12 +208,12 @@ class BookingDetails extends Component {
                         </Grid>
 
                         <Grid item xs={12} sm={12} md={6} lg={6}>
-                            <TextField id="outlined-basic" onChange={(e)=>{
+                            <TextField id="outlined-basic" value={this.state.Name} onChange={(e)=>{
                                 this.setState({
                                     Name: e.target.value
                                 })
                             }} style={{ width: '100%' , marginTop : '2%' , background : 'white' }} label="Name" variant="outlined" /><br></br><br></br><br></br>
-                            <TextField id="outlined-basic" onChange={(e) => {
+                            <TextField id="outlined-basic" value={this.state.Phone } onChange={(e) => {
                                 this.setState({
                                     Phone: e.target.value
                                 })
@@ -199,6 +222,7 @@ class BookingDetails extends Component {
                                 style={{ width: '100%', background: 'white'}}
                                 id="outlined-multiline-static"
                                 label="Any Query"
+                                value={ this.state.Query }
                                 multiline
                                 rows={4}
                                 defaultValue="Any Query"

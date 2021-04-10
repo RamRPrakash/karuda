@@ -67,6 +67,7 @@ class GetBookTaxi extends Component {
         //     alert('')
         // }
         var data = {
+            name : this.state.Name ,
             selectedDate: this.state.selectedDate ,
             hour: this.state.hour,
             startDestination: this.state.startDestination,
@@ -138,7 +139,15 @@ class GetBookTaxi extends Component {
                     user_email: 'prakashparthi1996@gmail.com',
                     reply_to: data.email,
                     subject: 'Booking Confirmation',
-                    message_html: 'Message Send',
+                    message_html: 'Karuda Booking Detail:',
+                    Name: data.name,
+                    Phone: data.phone,
+                    Date: data.selectedDate,
+                    Time: data.hour,
+                    Start: data.startDestination,
+                    End: data.endDestination,
+                    Vehicle: data.vehicle,
+
                 }
                 emailjs.send(
                     'service_nzqo20s',
@@ -169,7 +178,15 @@ class GetBookTaxi extends Component {
                 user_email: 'prakashparthi1996@gmail.com',
                 reply_to: data.email,
                 subject: 'Booking Confirmation',
-                message_html: 'Message Send',
+                message_html: 'Karuda Booking Detail:',
+                Name: data.name , 
+                Phone: data.phone,
+                Date: data.selectedDate,
+                Time: data.hour,
+                Start: data.startDestination,
+                End: data.endDestination,
+                Vehicle: data.vehicle,
+
             }
             emailjs.send(
                 'service_nzqo20s',

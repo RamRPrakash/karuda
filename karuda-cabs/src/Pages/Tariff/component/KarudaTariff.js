@@ -11,11 +11,11 @@ import Api from 'axios'
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 
-import Dzire from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/Dzire.png'
-import Sunny from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/Sunny.png'
-import ETIOS from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/ETIOS.png'
-import XYLO from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/XYLO.png'
-import INNOVA from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/INNOVA.png'
+import Dzire from '../../../images/Dzire.png'
+import Sunny from '../../../images/Sunny.png'
+import ETIOS from '../../../images/ETIOS.png'
+import XYLO from '../../../images/XYLO.png'
+import INNOVA from '../../../images/INNOVA.png'
 
 
 

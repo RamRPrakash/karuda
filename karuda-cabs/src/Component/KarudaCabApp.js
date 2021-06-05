@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import karudaLogo from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/karuda.png'
+import karudaLogo from '../images/karuda.png'
 import PhoneIcon from '@material-ui/icons/Phone';
 import Paper from '@material-ui/core/Paper';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';

@@ -1,21 +1,19 @@
 import React, { Component } from 'react'
 import './../css/Home.css'
 import Grid from '@material-ui/core/Grid';
-import karudaLogo from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/karuda.png'
+import karudaLogo from '../../../images/karuda.png'
 import FacebookIcon from '@material-ui/icons/Facebook';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import EmailIcon from '@material-ui/icons/Email';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import BusinessIcon from '@material-ui/icons/Business';
-import googleBusiness from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/google_mybusiness.svg'
-import whatsapp from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/whatsapp.svg'
-import instagram from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/instagram.svg'
 
-import facebook1 from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/facebook1.svg'
-import googleplus1 from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/googleplus1.svg'
-import instagram1 from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/instagram1.svg'
-import twitter1 from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/twitter1.svg'
+
+import facebook1 from '../../../images/facebook1.svg'
+import googleplus1 from '../../../images/googleplus1.svg'
+import instagram1 from '../../../images/instagram1.svg'
+import twitter1 from '../../../images/twitter1.svg'
 class GetContact extends Component {
     constructor(props) {
         super(props);

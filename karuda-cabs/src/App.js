@@ -4,10 +4,10 @@ import Routes from './router'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import './index.css'
 //import Static from 'react-static-router';
-import facebook1 from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/facebook1.svg'
-import googleplus1 from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/googleplus1.svg'
-import instagram1 from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/instagram1.svg'
-import twitter1 from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/twitter1.svg'
+import facebook1 from './images/facebook1.svg'
+import googleplus1 from './images/googleplus1.svg'
+import instagram1 from './images/instagram1.svg'
+import twitter1 from './images/twitter1.svg'
 
 
 function App() {

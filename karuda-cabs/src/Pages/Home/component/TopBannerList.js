@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import Carousel from 'react-elastic-carousel';
-import carList from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/car.png'
+import carList from '../../../images/car.png'
 import ReactWhatsapp from 'react-whatsapp';
 import Button from '@material-ui/core/Button';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import { DriveEta } from '@material-ui/icons';
-import Dzire from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/Dzire.png'
-import ETIOS from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/ETIOS.png'
-import Sunny from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/Sunny.png'
-import xcent from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/xcent.png'
-import zest from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/zest.png'
-import INNOVA from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/INNOVA.png'
-import LODGY from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/LODGY.png'
-import MARAZZO from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/MARAZZO.png'
-import TAVERA from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/TAVERA.png'
-import XYLO from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/XYLO.png'
+import Dzire from '../../../images/Dzire.png'
+import ETIOS from '../../../images/ETIOS.png'
+import Sunny from '../../../images/Sunny.png'
+import xcent from '../../../images/xcent.png'
+import zest from '../../../images/zest.png'
+import INNOVA from '../../../images/INNOVA.png'
+import LODGY from '../../../images/LODGY.png'
+import MARAZZO from '../../../images/MARAZZO.png'
+import TAVERA from '../../../images/TAVERA.png'
+import XYLO from '../../../images/XYLO.png'
 class TopBannerList extends Component {
     constructor(props) {
         super(props);

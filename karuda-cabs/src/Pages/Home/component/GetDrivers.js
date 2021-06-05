@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './../css/Home.css'
 import Grid from '@material-ui/core/Grid';
-import HalfCar from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/OffCar.png'
+import HalfCar from '../../../images/OffCar.png'
 class GetDrivers extends Component {
     constructor(props) {
         super(props);

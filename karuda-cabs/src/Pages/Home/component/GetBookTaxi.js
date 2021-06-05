@@ -11,7 +11,7 @@ import {
     KeyboardDatePicker,
 } from '@material-ui/pickers';
 import TextField from '@material-ui/core/TextField';
-import CustomerCare from 'F:/REACT_PROJECT/KarudaCabs/karuda-cabs/src/images/caller.png'
+import CustomerCare from '../../../images/caller.png'
 import Button from '@material-ui/core/Button';
 import api from 'axios';
 import KarudaSelectField from '../../../Component/KarudaSelectField'

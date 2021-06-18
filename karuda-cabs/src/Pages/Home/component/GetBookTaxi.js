@@ -122,7 +122,7 @@ class GetBookTaxi extends Component {
                 return
             }
             else {
-                alert('Thanks you Booking karuacabs. Our Manager will contact you soon !!!')
+                alert('Thanks you Booking karudacabs. Our Manager will contact you soon !!!')
                 this.setState({
                     selectedDate: new Date(),
                     hour: new Date(),

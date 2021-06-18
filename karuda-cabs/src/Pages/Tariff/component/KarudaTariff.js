@@ -115,7 +115,7 @@ class KarudaTariff extends Component {
                 </Grid>
 
 
-                <Grid style={{ marginTop: '2%', backgroundColor: "#FFEA00", lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ marginTop: '2%', backgroundColor: "#A5032E", color : 'white' ,  lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center' }} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={12} lg={3} >
                         <div style={{ display: 'none', width: '100%' }}>
                             <div style={{ height: '100px' }}>
@@ -156,9 +156,9 @@ class KarudaTariff extends Component {
                 </Grid>
                 <GetContact props={this.props.props}/>
                 <div style={{
-                    backgroundColor: '#2C2C2C' , width :'100%'
+                    backgroundColor: '#A5032E' , width :'100%'
                 }}>
-                    <div style={{ display: 'flex', fontSize: '22px', color: 'gray' }}>
+                    <div style={{ display: 'flex', fontSize: '22px', color: 'white' }}>
                         <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%' }}>
                             <p>karudacabs.com Copyright @ All rights reserved 2021</p>
                         </div>
@@ -232,7 +232,7 @@ class KarudaTariff extends Component {
         return (
             <React.Fragment>
                
-                <Grid style={{ paddingBottom: '2%', marginTop: this.state.windowWidth >= 700 ?'14%' : '70%' , marginLeft : '10%'}} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ paddingBottom: '2%', marginTop: this.state.windowWidth >= 700 ?'15%' : '70%' , marginLeft : '10%'}} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={6} lg={6} style={{ margin: this.state.windowWidth >= 700 ? '0%' : '5%'  }}>
                         <h3 style={{paddingLeft : '3%'}}>Trip Calculation</h3>
                         <Grid container style={{padding : '3%'}}>
@@ -297,7 +297,7 @@ class KarudaTariff extends Component {
                                 }}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={12} md={12} lg={6} style={{ border: '2px solid #ffea00' }}>
+                            <Grid item xs={12} sm={12} md={12} lg={6} style={{ border: '2px solid #A5032E' }}>
                                 <div style={{ padding: '10%' }}>
                                     <h3>
                                         {
@@ -323,17 +323,17 @@ class KarudaTariff extends Component {
                     </Button>
                 </div> */}
                 <div style={{ marginLeft: this.state.windowWidth >= 700 ? '1%' : '5%'}}>
-                    <h3>OUTSTATION CAB SERVICE TARIFF CHART</h3>
+                    <h3 style={{color : '#A5032E'}}>OUTSTATION CAB SERVICE TARIFF CHART</h3>
                 </div>
                 <Grid container xs={12} sm={12} md={12} lg={12}>
-                    <Grid style={{ backgroundColor: '#ffea00', borderStyle:'ridge' , textAlign : 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <h4>VEHICLE TYPE</h4>
+                    <Grid style={{ backgroundColor: '#A5032E', borderStyle:'ridge' , textAlign : 'center'}} item xs={4} sm={4} md={4} lg={4}>
+                        <h4 style={{color : 'white'}}>VEHICLE TYPE</h4>
                     </Grid>
-                    <Grid style={{ backgroundColor: '#ffea00', borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <h4>ONE WAY DROP</h4>
+                    <Grid style={{ backgroundColor: '#A5032E', borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
+                        <h4 style={{color : 'white'}}>ONE WAY DROP</h4>
                     </Grid>
-                    <Grid style={{ backgroundColor: '#ffea00', borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <h4>	ROUND TRIP</h4>
+                    <Grid style={{ backgroundColor: '#A5032E', borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
+                        <h4 style={{color : 'white'}}>	ROUND TRIP</h4>
                     </Grid>
                 </Grid>
 
@@ -386,7 +386,7 @@ class KarudaTariff extends Component {
                 </Grid>
 
                
-                <h1 style={{ width: '100%' , marginLeft: this.state.windowWidth >= 700 ? '10%' : '5%'}}> Additional charges details</h1>
+                <h1 style={{ width: '100%' , marginLeft: this.state.windowWidth >= 700 ? '10%' : '5%' , color : '#A5032E'}}> Additional charges details</h1>
                 <Grid container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={6} lg={6}>
                         <ul style={{fontSize : '20px' , marginLeft : '17%' }}>

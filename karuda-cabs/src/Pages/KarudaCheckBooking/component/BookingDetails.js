@@ -74,7 +74,7 @@ class BookingDetails extends Component {
                 </Grid>
 
 
-                <Grid style={{ marginTop: '2%', backgroundColor: "#FFEA00", lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ marginTop: '2%', backgroundColor: "#A5032E" , color : 'white' , lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center' }} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={12} lg={3} >
                         <div style={{ display: 'none', width: '100%' }}>
                             <div style={{ height: '100px' }}>
@@ -115,9 +115,9 @@ class BookingDetails extends Component {
                 </Grid>
                 <GetContact props={this.props.props}/>
                 <div style={{
-                    backgroundColor: '#2C2C2C', width: '100%'
+                    backgroundColor: '#A5032E', width: '100%'
                 }}>
-                    <div style={{ display: 'flex', fontSize: '22px', color: 'gray' }}>
+                    <div style={{ display: 'flex', fontSize: '22px', color: 'white' }}>
                         <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%' }}>
                             <p>karudacabs.com Copyright @ All rights reserved 2021</p>
                         </div>
@@ -184,7 +184,7 @@ class BookingDetails extends Component {
                     </marquee>
                 </div> */}
                 {/* height: this.state.windowWidth >= 700 ? '300px' : '200px', */}
-                <div style={{ marginTop: this.state.windowWidth >= 700 ? '12%' : '65%' , padding :'2%' ,  width: '100%', backgroundColor: '#F2F7FB' }}>
+                <div style={{ marginTop: this.state.windowWidth >= 700 ? '10%' : '65%' , padding :'2%' ,  width: '100%', backgroundColor: '#F2F7FB' }}>
                     <Grid container xs={12} sm={12} md={12} lg={12}>
                         {/* <Grid item xs={12} sm={12} md={12} lg={12}> 
                             <h2 style={{ marginTop: '3%' ,marginLeft: this.state.windowWidth >= 700 ? '45%' : '10%'}}>BOOKING DETAILS</h2>

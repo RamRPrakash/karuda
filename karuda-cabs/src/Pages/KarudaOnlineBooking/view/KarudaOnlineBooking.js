@@ -6,6 +6,7 @@ import AcUnitIcon from '@material-ui/icons/AcUnit';
 
 import KarudaAppBar from '../../../Component/KarudaAppBar' 
 import OnlineBooking from "../component/OnlineBooking";
+import NewAppBar from '../../../Component/NewAppBar';
 
 class karudaOnlineBooking extends Component {
     constructor(props) {
@@ -24,7 +25,8 @@ class karudaOnlineBooking extends Component {
     render() { 
         return (
             <Grid container >
-                <KarudaAppBar props={this.props}/>
+                <NewAppBar/>
+                {/* <KarudaAppBar props={this.props}/> */}
                 {/* <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', marginTop: this.state.windowWidth >= 700 ? '8%' : ''}}>
                     <marquee behavior="scroll" direction="left">
                         <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>

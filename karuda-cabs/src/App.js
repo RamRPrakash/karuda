@@ -8,7 +8,8 @@ import facebook1 from './images/facebook1.svg'
 import googleplus1 from './images/googleplus1.svg'
 import instagram1 from './images/instagram1.svg'
 import twitter1 from './images/twitter1.svg'
-
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 function App() {
   // const [counterOne, setCounterOne] = useState(0)
@@ -41,7 +42,7 @@ function App() {
       </div> */}
     <HashRouter>
       <div className="App">
-        <div className='web-ui' style={{marginTop : '20%' , position : 'fixed' , marginLeft : '2%'}}>
+        {/* <div className='web-ui' style={{marginTop : '20%' , position : 'fixed' , marginLeft : '2%'}}>
           <div> <img style={{marginTop : '2%'}}src={facebook1} width="40px" height="50px" alt="Sample" /></div>
           <div> <img style={{marginTop : '2%'}}src={googleplus1} width="40px" height="50px" alt="Sample" /></div>
           <div> <img style={{marginTop : '2%'}}src={instagram1} width="40px" height="50px" alt="Sample" /></div>
@@ -52,6 +53,17 @@ function App() {
           <div> <img style={{marginTop : '2%'}}src={googleplus1} width="20px" height="30px" alt="Sample" /></div>
           <div> <img style={{marginTop : '2%'}}src={instagram1} width="20px" height="30px" alt="Sample" /></div>
           <div> <img style={{marginTop : '2%'}}src={twitter1} width="20px" height="30px" alt="Sample" /></div>
+        </div> */}
+        <div className='web-ui' style={{marginTop : '45%' , position : 'fixed' , marginLeft : '2%'}}>
+          <div>
+            <WhatsAppIcon style={{width:'70px',height:'40px' , color : 'green'}}/>
+          </div>
+          
+        </div>
+        <div className='web-ui' style={{marginTop : '45%' , position : 'fixed' , marginLeft : '94%'}}>  
+          <div>
+            <PhoneIcon style={{width:'70px',height:'40px',justifyContent:'flex-end' ,  color : 'blue'}}/>
+          </div>
         </div>
         </div>
         <div>

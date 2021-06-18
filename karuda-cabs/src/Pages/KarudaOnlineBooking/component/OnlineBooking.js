@@ -8,6 +8,7 @@ import KarudaAppBar from '../../../Component/KarudaAppBar'
 import GetBookTaxi from '../../Home/component/GetBookTaxi'
 import GetContact from '../../Home/component/GetContact'
 import GetCopyRight from '../../Home/component/GetCopyRight'
+import Trip from '../../Trip/view/Trip';
 class OnlineBooking extends Component {
     constructor(props) {
         super(props);
@@ -66,7 +67,7 @@ class OnlineBooking extends Component {
                 </Grid>
 
 
-                <Grid style={{ marginTop: '2%', backgroundColor: "#FFEA00", lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center'}} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ marginTop: '2%', backgroundColor: "#A5032E", color : 'white' ,  lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center'}} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={12} lg={3} >
                         <div style={{ display: 'none', width: '100%' }}>
                             <div style={{ height: '100px' }}>
@@ -108,10 +109,10 @@ class OnlineBooking extends Component {
                 <GetContact props={this.props.props}/>
                 {/* <GetCopyRight/> */}
                 <div style={{
-                    backgroundColor: '#2C2C2C' , 
+                    backgroundColor: '#A5032E' , 
                     width : '100%'
                 }}>
-                    <div style={{ display: 'flex', fontSize: '18px', color: 'gray' }}>
+                    <div style={{ display: 'flex', fontSize: '18px', color: 'white' }}>
                         <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%' }}>
                             <p>karudacabs.com Copyright @ All rights reserved 2021</p>
                         </div>
@@ -130,7 +131,8 @@ class OnlineBooking extends Component {
     render() { 
         return ( 
             <div style={{ marginTop: this.state.windowWidth >= 700 ? '12%' : ''}}>
-                <GetBookTaxi/>
+                {/* <GetBookTaxi/> */}
+                <Trip/>
                 {this.footer()}
             </div>
          );

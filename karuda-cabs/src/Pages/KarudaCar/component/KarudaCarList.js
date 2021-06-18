@@ -211,7 +211,7 @@ class KarudaCarList extends Component {
                 </Grid>
 
 
-                <Grid style={{ marginTop: '2%', backgroundColor: "#FFEA00", lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center'}} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ marginTop: '2%', backgroundColor: "#A5032E", color : 'white',  lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center'}} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={12} lg={3} >
                         <div style={{ display: 'none', width: '100%' }}>
                             <div style={{ height: '100px' }}>
@@ -256,9 +256,9 @@ class KarudaCarList extends Component {
                 </Grid> */}
                 <GetContact props={this.props.props}/>
                 <div style={{
-                    backgroundColor: '#2C2C2C', width: '100%' 
+                    backgroundColor: '#A5032E', width: '100%' 
                 }}>
-                    <div style={{ display: 'flex', fontSize: '22px', color: 'gray' , width : '100%' }}>
+                    <div style={{ display: 'flex', fontSize: '22px', color: 'white' , width : '100%' }}>
                         <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%' }}>
                             <p>karudacabs.com Copyright @ All rights reserved 2021</p>
                         </div>
@@ -279,7 +279,7 @@ class KarudaCarList extends Component {
         var SUVTWO = ['Tavera','Only Innova']
         return (  
             <React.Fragment>
-                <Grid style={{ marginTop: this.state.windowWidth >= 700 ? '15%' : '75%'}} container xs={12} sm={12} md={12} lg={12} >
+                <Grid style={{ marginTop: this.props.newhome ? '3%': this.state.windowWidth >= 700 ? '15%' : '75%'}} container xs={12} sm={12} md={12} lg={12} >
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <h1 style={{ marginLeft: this.state.windowWidth >= 700 ? '40%' : '10%'}}>SEDAN CARS</h1>
                         <p style={{ marginLeft: this.state.windowWidth >= 700 ? '28%' : '10%' }}>Top rated drivers, and a hand-picked fleet of the best cars with extra legroom and boot space.</p>
@@ -350,7 +350,10 @@ class KarudaCarList extends Component {
                 </Grid>
 
                 {/* {this.carList(2)} */}
-                {this.footer()}
+
+                {
+                    this.props.newhome ? null :
+                this.footer()}
             </React.Fragment>
         );
     }

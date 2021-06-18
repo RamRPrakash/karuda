@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid';
 import KarudaAppBar from '../../../Component/KarudaAppBar'
 import BookingDetails from '../component/BookingDetails'
+import NewAppBar from '../../../Component/NewAppBar';
 class KarudaCheckBooking extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +24,8 @@ class KarudaCheckBooking extends Component {
         return (
 
             <Grid container >
-                <KarudaAppBar props={this.props} />
+                <NewAppBar/>
+                {/* <KarudaAppBar props={this.props} /> */}
                 {/* <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', }}>
                     <marquee behavior="scroll" direction="left">
                         <h3>Our Cab Service available around TamilNadu, Pondy, Kerala, Karnataka, Andhra Pradesh & Telangana.</h3>

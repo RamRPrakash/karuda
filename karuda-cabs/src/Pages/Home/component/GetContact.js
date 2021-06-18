@@ -22,7 +22,7 @@ class GetContact extends Component {
     render() {
         return (
             <React.Fragment>
-                <div style={{backgroundColor : 'black' , color : 'white' , paddingBottom : '2%'}}>
+                <div style={{backgroundColor : '#white' , color : '#A5032E' , paddingBottom : '2%'}}>
                     <Grid container>
                         <Grid item xs={12} sm={6} md={4} lg={4}>
                             <img style={{ width: '200px', margin: '2%', marginLeft : '25%'}} src={karudaLogo} alt="Karuda"/>

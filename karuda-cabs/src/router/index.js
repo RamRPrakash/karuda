@@ -7,11 +7,12 @@ import Home from '../Pages/Home/view/Home'
 import OnlineBooking from '../Pages/KarudaOnlineBooking/view/KarudaOnlineBooking'
 import Login from '../Pages/Login/Login'
 import EntryChart from '../Pages/EntryChart/EntryChart'
+import NewHome from '../Pages/NewHome/view/NewHome'
 
 export default [
     {
         path: '/',
-        component: Home,
+        component: NewHome,
         exact: true
     },
     {
@@ -49,6 +50,10 @@ export default [
     {
         path: '/EntryChart',
         component: EntryChart
+    },
+    {
+        path: '/NewHome',
+        component: NewHome
     },
 
 ]

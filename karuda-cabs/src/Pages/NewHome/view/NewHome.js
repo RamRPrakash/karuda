@@ -27,7 +27,8 @@ class NewHome extends Component {
             SUV_Two :[16, 14] ,
             Sedan_One :[12, 10],
             Sedan_Two :[13, 11] , 
-            SelectedCar: 'Sedan (Dzire, Sunny, Xcent, Zest)'
+            SelectedCar: 'Sedan (Dzire, Sunny, Xcent, Zest)' ,
+            carList : false
 
          }
     }
@@ -149,16 +150,28 @@ class NewHome extends Component {
             </React.Fragment>
         )
     }
+    getCarList=(data)=>{
+       this.setState({
+        carList : data
+       })
+    }
+    selectedCar=(data)=>{
+      
+            this.refs.selectCar.storeMail()
+        this.setState({
+            selectedCar : data
+           })
+    }
     render() { 
         return (
             <div >
                 <div>
                 <NewAppBar/>
                 </div>
-                <div style={{marginTop : '15%'}}> 
+                <div style={{marginTop : this.state.windowWidth >= 700 ? '15%' : '70%'}}> 
                 <TopBanner/>
-                <Trip/>
-                <KarudaCarList newhome={true} />
+                <Trip ref="selectCar"  getCarList={(data)=>this.getCarList(data)} selectedCar={this.state.selectedCar}/>
+                <KarudaCarList  newhome={true}  carList={this.state.carList} selectedCar={(data)=>this.selectedCar(data)} />
                 {this.viewTariff()}
                 <ImageAvatars/>
                

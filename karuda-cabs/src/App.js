@@ -10,6 +10,8 @@ import instagram1 from './images/instagram1.svg'
 import twitter1 from './images/twitter1.svg'
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import PhoneIcon from '@material-ui/icons/Phone';
+import ReactWhatsapp from 'react-whatsapp';
+
 
 function App() {
   // const [counterOne, setCounterOne] = useState(0)
@@ -56,13 +58,16 @@ function App() {
         </div> */}
         <div className='web-ui' style={{marginTop : '45%' , position : 'fixed' , marginLeft : '2%'}}>
           <div>
-            <WhatsAppIcon style={{width:'70px',height:'40px' , color : 'green'}}/>
+          <ReactWhatsapp number="919384841107" message="Chat with karuda cabs!!!" style={{ backgroundColor : 'white' , border : '0'}} >
+
+            <WhatsAppIcon style={{width:'70px',height:'40px' , color : 'green'}}></WhatsAppIcon>
+            </ReactWhatsapp>
           </div>
           
         </div>
         <div className='web-ui' style={{marginTop : '45%' , position : 'fixed' , marginLeft : '94%'}}>  
           <div>
-            <PhoneIcon style={{width:'70px',height:'40px',justifyContent:'flex-end' ,  color : 'blue'}}/>
+          <a href="tel:91   9384841107"> <PhoneIcon style={{width:'70px',height:'40px',justifyContent:'flex-end' ,  color : 'blue'}}/></a>
           </div>
         </div>
         </div>

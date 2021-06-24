@@ -44,30 +44,71 @@ class Trip extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            name : '',
             selectedDate : new Date(),
             hour : new Date(),
             startDestination : '',
             endDestination : '',
             vehicle : '',
             phone : '',
-            email : ''
+            email : '' ,
+            showCarList : false ,
+            setColor : 'white',
+            setTextColor : 'black',
+            setColor1 : 'white',
+            setTextColor1 : 'black' , 
+            setWay : 0
          }
     }
+    changeColor=(data)=>{
+        this.setState({
+           setColor : data ?  '#A5032E' : 'white',
+           setTextColor : data ?  'white' : 'black',
+        })    
+       }
+    changeColor1=()=>{
+        this.setState({
+           setColor1 : '#A5032E',
+           setTextColor1 : 'white',
+           setColor : 'white',
+           setTextColor : 'black'
+        })    
+       }   
 
+       showCar=()=>{
+        this.setState({showCarList : !this.state.showCarList})
+        this.props.getCarList(!this.state.showCarList)
+       }
+       updateWindowSize() {
+        this.setState({
+            windowWidth: window.innerWidth
+        });
+    }
+    componentDidMount() {
+        this.updateWindowSize();
+        window.addEventListener("resize", this.updateWindowSize.bind(this));
+    }
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateWindowSize.bind(this));
+    }   
     storeMail=()=>{
+        console.log('comimng')
+       
         var data = {
             name : this.state.name,
             selectedDate : this.state.selectedDate,
             hour : this.state.hour,
             startDestination : this.state.startDestination,
             endDestination : this.state.endDestination,
-            vehicle : this.state.vehicle,
+            vehicle : this.props.selectedCar,
             phone : this.state.phone,
-            email : this.state.email
+            email : this.state.email ,
+            setWay : this.state.setWay
         }
         console.log(this.state.phone.length)
+        console.log(this.state.name)
         
-        if (this.state.selectedDate.length == ''){
+        if (!this.state.selectedDate){
             alert("Please Fill the Date")
             return
         }
@@ -83,15 +124,15 @@ class Trip extends Component {
             alert('Please Fill End Destination')
             return
         }
-        else if (this.state.vehicle.length == ''){
-            alert('Please Select vehicle')
-            return
-        }
+        // else if (this.state.vehicle.length == ''){
+        //     alert('Please Select vehicle')
+        //     return
+        // }
         else if (this.state.phone.length == '' ){
             alert('Please Fill Mobile Number')
             return
         }
-        else if ((this.state.phone.length == 10) && (this.state.phone.length > 11 || this.state.phone.length < 11 )){
+        else if ((this.state.phone.length < 10) && (this.state.phone.length > 11 || this.state.phone.length < 11 )){
             alert('Please Fill the Valid Phone Number')
             return
         }
@@ -113,12 +154,12 @@ class Trip extends Component {
                     email: ''
                 })
                 let templateParams = {
-                    from_name: 'parthiban18121998@gmail.com',
-                    to_name: 'parthiban18121998@gmail.com',
-                    user_id: 'parthiban18121998@gmail.com',
-                    user_email: 'parthiban18121998@gmail.com',
+                    from_name: 'prakashparthi1996@gmail.com',
+                    to_name: 'prakashparthi1996@gmail.com',
+                    user_id: 'prakashparthi1996@gmail.com',
+                    user_email: 'prakashparthi1996@gmail.com',
                     reply_to: data.email,
-                    subject: 'Booking Confirmation',
+                    subject: this.state.setWay ? 'One way' : 'Round Trip' +'Booking Confirmation',
                     message_html: 'Karuda Booking Detail:',
                     Name: data.name,
                     Phone: data.phone,
@@ -126,7 +167,7 @@ class Trip extends Component {
                     Time: data.hour,
                     Start: data.startDestination,
                     End: data.endDestination,
-                    Vehicle: data.vehicle,
+                    Vehicle: data.vehicle + this.state.setWay ? 'One way' : 'Round Trip',
                     message_html: 'Happy Journey..!'    
                 }
                 emailjs.send(
@@ -178,9 +219,7 @@ class Trip extends Component {
         }
     }
     
-    // changeColor(){
-    //  // var  styles = {backgroundColor:'green'}
-    // }
+    
     render() { 
         return ( 
             <React.Fragment>
@@ -188,10 +227,10 @@ class Trip extends Component {
                     <div style={{margin : '2%'}}>
                 <div style={{width : '100%' , display : 'flex' }}>    
                    
-                        <Button variant="outlined"  style={{width : '50%' , backgroundColor : '#A5032E' , color : 'white'}} >
+                        <Button variant="outlined"  style={{width : '50%' , backgroundColor : this.state.setWay ? 'white' : '#A5032E' , color : this.state.setWay ? '#A5032E' : 'white'}} onClick={()=>this.setState({setWay : 0})}>
                         One Way
                         </Button>
-                        <Button variant="outlined"  style={{width : '50%'}}>
+                        <Button variant="outlined"  style={{width : '50%', color : this.state.setWay ? 'white' : '#A5032E' , backgroundColor: this.state.setWay ? '#A5032E' : 'white' }} onClick={()=>this.setState({setWay : 1})}>
                         Round Trip
                         </Button>
                 </div>
@@ -203,7 +242,7 @@ class Trip extends Component {
                                             })
                                         }} style={{width : '300px' , }} id="outlined-basic"  variant="outlined" />
                     </Grid>
-                    <Grid  item xs={4} sm={4} md={4} lg={4}>
+                    <Grid  item xs={12} sm={12} md={6} lg={4}>
                      <div>Phone</div>  <TextField value={this.state.phone} onChange={(e) => {
                                             var content = e.target.value
                                             content = content.replace(/[^0-9.]/gi, '')
@@ -212,7 +251,7 @@ class Trip extends Component {
                                             })
                                         }} style={{width : '300px' , }} id="outlined-basic"  variant="outlined" />
                     </Grid>
-                    <Grid  item xs={4} sm={4} md={4} lg={4}>
+                    <Grid  item xs={12} sm={12} md={6} lg={4}>
                      <div>Email</div> <TextField value={this.state.email} onChange={(e) => {
                                             this.setState({
                                                 email: e.target.value
@@ -221,7 +260,7 @@ class Trip extends Component {
                     </Grid>
                 </Grid>
                 <Grid style={{marginTop : '2%'}} container xs={12} sm={12} md={12} lg={12}>
-                    <Grid  item xs={4} sm={4} md={4} lg={4}>
+                    <Grid  item xs={12} sm={12} md={6} lg={4}>
                      <div>Date</div> 
                             {/* <TextField
                                 id="datetime-local"
@@ -253,18 +292,8 @@ class Trip extends Component {
                                             />
                                         </MuiPickersUtilsProvider>
                     </Grid>
-                    <Grid  item xs={4} sm={4} md={4} lg={4}>
+                    <Grid  item xs={12} sm={12} md={6} lg={4}>
                      <div>Time</div> 
-                            {/* <TextField
-                                id="datetime-local"
-                                //label="Next appointment"
-                                type="datetime-local"
-                                defaultValue="2017-05-24T10:30"
-                                //className={classes.textField}
-                                InputLabelProps={{
-                                shrink: true,
-                                }}
-                            /> */}
                             <MuiPickersUtilsProvider utils={DateFnsUtils} >
                                         <KeyboardTimePicker
                                             margin="normal"
@@ -284,8 +313,8 @@ class Trip extends Component {
                                         />
                                         </MuiPickersUtilsProvider>
                     </Grid>
-                    <Grid  item xs={4} sm={4} md={4} lg={4}>
-                     <div>Choose vehicle</div> <KarudaSelectField 
+                    <Grid   item xs={12} sm={6} md={4} lg={4} style={{display : this.state.windowWidth >= 700 ? 'block' : 'none' }}>
+                     {/* <div>Choose vehicle</div> <KarudaSelectField 
                                             lebel=''
                                             backgroundColor = 'white'
                                             borderRadius= '10px'
@@ -303,30 +332,38 @@ class Trip extends Component {
                                                 })
                                               
                                             }}
-                                            />
+                                            /> */}
+                        {/* <ThemeProvider theme={theme}>
+                            <Button variant="contained" color="primary" style={{marginTop:'6%', color:'White',width:'300px'}} onClick={this.storeMail} >
+                            Search
+                            </Button>
+                        </ThemeProvider> */}
+                        <button style={{color:'white',backgroundColor:'#A5032E',marginTop:'6%',width:'300px',height:'40px',fontFamily:'sans-serif',fontSize:'20px'}} onClick={this.showCar} >Search</button>
                     </Grid>
                 </Grid>
                 <Grid style={{marginTop : '2%'}} container xs={12} sm={12} md={12} lg={12}>
-                    <Grid  item xs={4} sm={4} md={4} lg={4}>
+                    <Grid  item xs={12} sm={12} md={6} lg={4}>
                      <div>Start Destination</div> <TextField value={this.state.startDestination} id="outlined-basic" onChange={(e) => {
                                             this.setState({
                                                 startDestination: e.target.value
                                             })
                                         }} style={{width : '300px' , }} id="outlined-basic"  variant="outlined" />
                     </Grid>
-                    <Grid  item xs={4} sm={4} md={4} lg={4}>
+                    <Grid  item xs={12} sm={12} md={6} lg={4}>
                      <div>End Destination</div>  <TextField  value={this.state.endDestination} onChange={(e) => {
                                             this.setState({
                                                 endDestination: e.target.value
                                             })
                                         }} style={{width : '300px' , }} id="outlined-basic"  variant="outlined" />
                     </Grid>
-                    <Grid  item xs={4} sm={4} md={4} lg={4}>
-                        <ThemeProvider theme={theme}>
+                    <Grid  item xs={12} sm={12} md={6} lg={4} style={{display : this.state.windowWidth > 700 ? 'none' : 'block' }}>
+                        {/* <ThemeProvider theme={theme}>
                             <Button variant="contained" color="primary" style={{marginTop:'5%', color:'White',width:'300px'}} onClick={this.storeMail} >
                             Search
                             </Button>
-                        </ThemeProvider>
+                        </ThemeProvider> */}
+                        <button style={{color:'white',backgroundColor:'#A5032E',marginTop:'6%',width:'300px',height:'40px',fontFamily:'sans-serif',fontSize:'20px'}} onClick={this.showCar} >Search</button>
+
                     </Grid>
                 </Grid>
                 </div>

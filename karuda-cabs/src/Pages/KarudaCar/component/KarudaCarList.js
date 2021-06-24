@@ -38,6 +38,7 @@ class KarudaCarList extends Component {
     componentWillUnmount() {
         window.removeEventListener("resize", this.updateWindowSize.bind(this));
     }
+   
 
     singleCar(type , data){
         
@@ -74,7 +75,8 @@ class KarudaCarList extends Component {
                                             </Card>
                             </div> */}
                         <Button style={{  color: 'white', backgroundColor: '#CC0021', borderColor: 'yellow', borderRadius: '30px', width: '140px', height: '55px' }} variant="outlined" size="medium" onClick={()=>{
-                            this.props.props.history.push('/KarudaOnlineBooking')
+                            //this.props.props.history.push('/KarudaOnlineBooking')
+                            this.props.selectedCar(data)
                         }}  >
                             <span style={{ fontSize: '18px' }}>Book Now</span>
                         </Button>
@@ -273,12 +275,17 @@ class KarudaCarList extends Component {
         )
     }
     render() {
+        
         var SEDANOONE = ['Dzire' , 'Sunny' , 'Xcent']
         var SEDANTWO = ['Zest' , 'Only Etios']
         var SUVONE = ['Xylo', 'Marazzo', 'Loggy']
         var SUVTWO = ['Tavera','Only Innova']
-        return (  
+        console.log(this.props)
+        return ( 
             <React.Fragment>
+            {this.props.carList ? 
+            <React.Fragment>
+               
                 <Grid style={{ marginTop: this.props.newhome ? '3%': this.state.windowWidth >= 700 ? '15%' : '75%'}} container xs={12} sm={12} md={12} lg={12} >
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <h1 style={{ marginLeft: this.state.windowWidth >= 700 ? '40%' : '10%'}}>SEDAN CARS</h1>
@@ -349,12 +356,15 @@ class KarudaCarList extends Component {
                     }
                 </Grid>
 
-                {/* {this.carList(2)} */}
+               <>
 
                 {
                     this.props.newhome ? null :
                 this.footer()}
+                </>
             </React.Fragment>
+            : null }
+            </React.Fragment> 
         );
     }
 }

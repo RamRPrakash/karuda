@@ -15,6 +15,8 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import MobAppBar from './MobAppBar';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function NewAppBar() {
+export default function NewAppBar(props) {
   const history = useHistory();
   const classes = useStyles();
   const [windowWidth , setWindowSize] = useState()
@@ -49,7 +51,7 @@ export default function NewAppBar() {
  console.log({windowWidth})
   return (
     <div className={classes.root} style={{width : '100%' , display : 'flex' , direction : 'row'}}>
-      <AppBar style={{backgroundColor : '#A5032E' }} position="fixed">
+      <AppBar style={{backgroundColor : '#A5032E' , display :windowWidth && windowWidth.width > 700 ? 'block' : 'none' }} position="fixed">
         <Toolbar>
            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
            <SmartphoneIcon/>
@@ -75,7 +77,7 @@ export default function NewAppBar() {
           {/* <Button color="inherit">Login</Button> */}
         </Toolbar>
       </AppBar>
-      <AppBar style={{backgroundColor : 'white' , color : '#A5032E' , marginTop : windowWidth && windowWidth.width > 700 ?'4%' :'17%'}} position="fixed" >
+      <AppBar style={{ display :windowWidth && windowWidth.width > 700 ?'block' : 'none' , backgroundColor : 'white' , color : '#A5032E' , marginTop : windowWidth && windowWidth.width > 700 ?'4%' :'17%'}} position="fixed" >
         <Toolbar>
           <Box>
             <img src="karuda.png" style={{height:'80px',width:'40% '}}/>
@@ -87,11 +89,11 @@ export default function NewAppBar() {
               }} >
                <b> HOME</b>
               </Box>
-              <Box p={1} onClick={()=>{
+              {/* <Box p={1} onClick={()=>{
                 history.push('/KarudaCar')
               }} >
                <b> ABOUT US </b>
-              </Box>
+              </Box> */}
               <Box p={1} onClick={()=>{
                 history.push('/KarudaOnlineBooking')
               }}>
@@ -119,6 +121,8 @@ export default function NewAppBar() {
           {/* <Button color="inherit">Login</Button> */}
         </Toolbar>
       </AppBar>
+
+      <MobAppBar props={history} />
     </div>
   );
 }

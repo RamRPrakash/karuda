@@ -14,8 +14,8 @@ class TopBanner extends Component {
             <div>
 <Carousel>
             <img alt="NewCarBg1" src={NewCarBg1} style={{width : '100%' , height : '70%'}}></img>
-            <img alt="NewCarBg2" src={NewCarBg2}></img>
-            <img alt="NewCarBg3" src={NewCarBg3}></img>
+            <img alt="NewCarBg2" src={NewCarBg2} style={{width : '100%' , height : '70%'}}></img>
+            <img alt="NewCarBg3" src={NewCarBg3} style={{width : '100%' , height : '70%'}}></img>
 </Carousel>
             </div>
           );

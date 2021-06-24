@@ -9,6 +9,7 @@ import GetBookTaxi from '../../Home/component/GetBookTaxi'
 import GetContact from '../../Home/component/GetContact'
 import GetCopyRight from '../../Home/component/GetCopyRight'
 import Trip from '../../Trip/view/Trip';
+import KarudaCarList from '../../KarudaCar/component/KarudaCarList';
 class OnlineBooking extends Component {
     constructor(props) {
         super(props);
@@ -128,11 +129,24 @@ class OnlineBooking extends Component {
             </React.Fragment>
         )
     }
+    getCarList=(data)=>{
+        this.setState({
+         carList : data
+        })
+     }
+     selectedCar=(data)=>{
+       
+             this.refs.selectCar.storeMail()
+         this.setState({
+             selectedCar : data
+            })
+     }
     render() { 
         return ( 
-            <div style={{ marginTop: this.state.windowWidth >= 700 ? '12%' : ''}}>
+            <div style={{ marginTop: this.state.windowWidth >= 700 ? '12%' : '50%'}}>
                 {/* <GetBookTaxi/> */}
-                <Trip/>
+                <Trip ref="selectCar"  getCarList={(data)=>this.getCarList(data)} selectedCar={this.state.selectedCar}/>
+                <KarudaCarList  newhome={true}  carList={this.state.carList} selectedCar={(data)=>this.selectedCar(data)} />
                 {this.footer()}
             </div>
          );

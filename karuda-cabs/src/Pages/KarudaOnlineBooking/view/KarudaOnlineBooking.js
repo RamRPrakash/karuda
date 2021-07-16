@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
+import Card from '@material-ui/core/Card';
 
 import KarudaAppBar from '../../../Component/KarudaAppBar' 
 import OnlineBooking from "../component/OnlineBooking";
@@ -24,6 +25,7 @@ class karudaOnlineBooking extends Component {
     }
     render() { 
         return (
+             
             <Grid container >
                 <NewAppBar/>
                 {/* <KarudaAppBar props={this.props}/> */}
@@ -34,6 +36,7 @@ class karudaOnlineBooking extends Component {
                 </div> */}
                 <OnlineBooking props={this.props}/>
             </Grid>
+         
           );
     }
 }

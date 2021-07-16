@@ -74,78 +74,172 @@ class KarudaTariff extends Component {
     componentWillUnmount() {
         window.removeEventListener("resize", this.updateWindowSize.bind(this));
     }
+    // footer() {
+    //     console.log(this.props)
+    //     return (
+    //         <React.Fragment>
+    //             <Card style={{margin:'2%'}}>    
+    //             <Grid style={{ marginTop: '5%', backgroundColor: 'white', paddingBottom: '2%' }} container xs={12} sm={12} md={12} lg={12}>
+    //                 <Grid item xs={12} sm={12} md={4} lg={4} style={{ marginLeft: this.state.windowWidth >= 700 ? '0%' : '' }}>
+    //                     <div style={{ display: 'flex', width: '100%' }}>
+    //                         <div style={{ width: '50%', height: '100px', textAlign: 'center'}}>
+    //                             <HeadsetMicIcon style={{ fontSize: '140px' }} />
+    //                         </div>
+    //                         <div style={{ width: '50%' }}>
+    //                             <div style={{ height: '50px' }}><h3>24/7 Customer Support</h3></div>
+    //                             <div style={{ height: '50px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
+    //                         </div>
+    //                     </div>
+    //                 </Grid>
+    //                 <Grid item xs={12} sm={12} md={4} lg={4}>
+    //                     <div style={{ display: 'flex', width: '100%' }}>
+    //                         <div style={{ width: '50%', height: '100px', textAlign: 'center' }}>
+    //                             <AcUnitIcon style={{ fontSize: '140px' }} />
+    //                         </div>
+    //                         <div style={{ width: '50%' }}>
+    //                             <div style={{ height: '50px' }}><h3>Fully A/C Cabs</h3></div>
+    //                             <div style={{ height: '50px' }}><p>All our cabs are fully equipped with Air conditioner.</p></div>
+    //                         </div>
+    //                     </div>
+    //                 </Grid>
+    //                 <Grid item xs={12} sm={12} md={4} lg={4}>
+    //                     <div style={{ display: 'flex', width: '100%' }}>
+    //                         <div style={{ width: '50%', height: '100px', textAlign: 'center'}}>
+    //                             <DriveEtaIcon style={{ fontSize: '140px' }} />
+    //                         </div>
+    //                         <div style={{ width: '50%' }}>
+    //                             <div style={{ height: '50px' }}><h3>24/7 Customer Support</h3></div>
+    //                             <div style={{ height: '50px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
+    //                         </div>
+    //                     </div>
+    //                 </Grid>
+    //             </Grid>
+
+
+    //             <Grid style={{ marginTop: '2%', backgroundColor: "#55bde3", color : 'white' ,  lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center' }} container xs={12} sm={12} md={12} lg={12}>
+    //                 <Grid item xs={12} sm={12} md={12} lg={3} >
+    //                     <div style={{ display: 'none', width: '100%' }}>
+    //                         <div style={{ height: '100px' }}>
+    //                             <HeadsetMicIcon style={{ fontSize: '140px' }} />
+    //                             <p>Click here for Feedback</p>
+    //                         </div>
+
+    //                     </div>
+    //                 </Grid>
+    //                 <Grid item xs={12} sm={12} md={12} lg={5} >
+    //                     <div style={{ display: 'flex', width: '100%' }}>
+    //                         <div style={{ height: '100px', lineHeight: '2' }}>
+    //                             <p style={{ fontWeight: '600' }}>CALL US 24x7</p>
+    //                             <h1>  9384841107 | 9940035922</h1>
+    //                         </div>
+
+    //                     </div>
+    //                 </Grid>
+    //                 <Grid item xs={12} sm={12} md={12} lg={3} >
+    //                     <div style={{ display: 'flex', width: '100%' }}>
+    //                         <div style={{ height: '100px', lineHeight: '2', width: this.state.windowWidth >= 700 ? '' : '100%' }}>
+    //                             <p style={{ fontWeight: '600' }}>FOR WHATSAPP</p>
+    //                             <h1>  9384841107</h1>
+    //                         </div>
+
+    //                     </div>
+    //                 </Grid>
+    //             </Grid>
+
+    //             <Grid style={{ backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
+    //                 {
+    //                     this.state.windowWidth >= 700 ?
+    //                         <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}><a target="_blank" href="https://www.google.com/maps/place/1st+Cross+St,+Karambakkam,+Kaveri+Nagar,+Porur,+Chennai,+Tamil+Nadu+600116/@13.0396794,80.1545894,17z/data=!3m1!4b1!4m5!3m4!1s0x3a52611b0be825a1:0xa465b2002e3e935b!8m2!3d13.0396794!4d80.1567781">Address: 5/3, 1st Cross Street, Karambakkam, Porur, Chennai-600116</a></h2>
+    //                         :
+    //                         <h4 style={{ textAlign: 'center', marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}><a target="_blank" href="https://www.google.com/maps/place/1st+Cross+St,+Karambakkam,+Kaveri+Nagar,+Porur,+Chennai,+Tamil+Nadu+600116/@13.0396794,80.1545894,17z/data=!3m1!4b1!4m5!3m4!1s0x3a52611b0be825a1:0xa465b2002e3e935b!8m2!3d13.0396794!4d80.1567781">Address: 5/3, 1st Cross Street, Karambakkam, Porur, Chennai-600116</a></h4>
+
+    //                 }
+    //             </Grid>
+    //             <GetContact props={this.props.props}/>
+    //             <div style={{
+    //                 backgroundColor: '#55bde3' , width :'100%'
+    //             }}>
+    //                 <div style={{ display: 'flex', fontSize: '22px', color: 'white' }}>
+    //                     <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%' }}>
+    //                         <p>karudacabs.com Copyright @ All rights reserved 2021</p>
+    //                     </div>
+    //                     <div style={{ width: '50%' }}>
+    //                         <p>Designed and Developed by Skifter Technologies</p>
+    //                     </div>
+    //                 </div>
+
+    //             </div>
+    //             {/* <Grid style={{ backgroundColor: '#00695c', color: 'white' }} container xs={12} sm={12} md={12} lg={12}>
+    //                 <p style={{ marginLeft: this.state.windowWidth >= 700 ? '40%' : '' }}>© 2021 by Karuda Cabs. All rights reserved.</p>
+    //             </Grid> */}
+    //             </Card>
+    //         </React.Fragment>
+    //     )
+    // }
     footer() {
         console.log(this.props)
         return (
             <React.Fragment>
-                <Grid style={{ marginTop: '5%', backgroundColor: 'white', paddingBottom: '2%' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid  className="karudaBackGround" style={{ marginTop: '3%', backgroundColor: '#f6f6f6', paddingBottom: '2%' , fontSize : '20px'}} container xs={12} sm={12} md={12} lg={12}>
                     <Grid item xs={12} sm={12} md={4} lg={4} style={{ marginLeft: this.state.windowWidth >= 700 ? '0%' : '' }}>
                         <div style={{ display: 'flex', width: '100%' }}>
-                            <div style={{ width: '50%', height: '100px', textAlign: 'center'}}>
-                                <HeadsetMicIcon style={{ fontSize: '140px' }} />
+                            <div style={{ width: '30%', height: '100px', textAlign: 'center' , marginTop : '3%'}}>
+                                <HeadsetMicIcon style={{ fontSize: '100px' }} />
                             </div>
-                            <div style={{ width: '50%' }}>
+                            <div style={{ width: '70%' }}>
                                 <div style={{ height: '50px' }}><h3>24/7 Customer Support</h3></div>
-                                <div style={{ height: '50px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
+                                <div style={{ height: '50px', marginTop : this.state.windowWidth >= 700 ? '-8%': '-2%',fontSize:this.state.windowWidth >= 700 ? '20px': '18px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
                             </div>
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={12} md={4} lg={4}>
                         <div style={{ display: 'flex', width: '100%' }}>
-                            <div style={{ width: '50%', height: '100px', textAlign: 'center' }}>
-                                <AcUnitIcon style={{ fontSize: '140px' }} />
+                            <div style={{ width: '30%', height: '100px', textAlign: 'center', marginTop : '3%'}}>
+                                <AcUnitIcon style={{ fontSize: '100px' }} />
                             </div>
-                            <div style={{ width: '50%' }}>
+                            <div style={{ width: '70%' }}>
                                 <div style={{ height: '50px' }}><h3>Fully A/C Cabs</h3></div>
-                                <div style={{ height: '50px' }}><p>All our cabs are fully equipped with Air conditioner.</p></div>
+                                <div style={{ height: '50px' , marginTop : this.state.windowWidth >= 700 ? '-8%': '-2%',fontSize:this.state.windowWidth >= 700 ? '20px': '18px'}}><p>All our cabs are fully equipped with Air conditioner.</p></div>
                             </div>
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={12} md={4} lg={4}>
                         <div style={{ display: 'flex', width: '100%' }}>
-                            <div style={{ width: '50%', height: '100px', textAlign: 'center'}}>
-                                <DriveEtaIcon style={{ fontSize: '140px' }} />
+                            <div style={{ width: '30%', height: '100px', textAlign: 'center', marginTop : '3%'}}>
+                                <DriveEtaIcon style={{ fontSize: '100px' }} />
                             </div>
-                            <div style={{ width: '50%' }}>
+                            <div style={{ width: '70%' }}>
                                 <div style={{ height: '50px' }}><h3>24/7 Customer Support</h3></div>
-                                <div style={{ height: '50px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
+                                <div style={{ height: '50px', marginTop : this.state.windowWidth >= 700 ? '-8%': '-2%',fontSize:this.state.windowWidth >= 700 ? '20px': '18px'}}><p>You can call  9384841107 anytime for quick booking.</p></div>
                             </div>
                         </div>
                     </Grid>
                 </Grid>
 
 
-                <Grid style={{ marginTop: '2%', backgroundColor: "#A5032E", color : 'white' ,  lineHeight: '0px', height: this.state.windowWidth >= 700 ? '170px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center' }} container xs={12} sm={12} md={12} lg={12}>
-                    <Grid item xs={12} sm={12} md={12} lg={3} >
-                        <div style={{ display: 'none', width: '100%' }}>
-                            <div style={{ height: '100px' }}>
-                                <HeadsetMicIcon style={{ fontSize: '140px' }} />
-                                <p>Click here for Feedback</p>
-                            </div>
-
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={5} >
+                <Grid style={{ marginTop: '0%',  backgroundColor: "#55bde3", color : 'white' ,  lineHeight: '0px', height: this.state.windowWidth >= 700 ? '120px' : '500px', textAlign: this.state.windowWidth >= 700 ? '' : 'center' , marginBottom : '0%' , justifyContent : 'center'}} container xs={12} sm={12} md={12} lg={12}>
+                 
+                    <Grid item xs={12} sm={12} md={12} lg={5} style={{marginLeft : '13%'}} >
                         <div style={{ display: 'flex', width: '100%' }}>
                             <div style={{ height: '100px', lineHeight: '2' }}>
-                                <p style={{ fontWeight: '600' }}>CALL US 24x7</p>
-                                <h1>  9384841107 | 9940035922</h1>
+                                <p style={{ fontWeight: '600' , fontSize : '22px' , lineHeight : '30px' }}>CALL US 24x7</p>
+                                <h2 style={{lineHeight : '0px'}}>  9384841107 | 9940035922</h2>
                             </div>
 
                         </div>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={3} >
+                    <Grid item xs={12} sm={12} md={12} lg={3} style={{marginLeft : '3%'}}>
                         <div style={{ display: 'flex', width: '100%' }}>
-                            <div style={{ height: '100px', lineHeight: '2', width: this.state.windowWidth >= 700 ? '' : '100%' }}>
-                                <p style={{ fontWeight: '600' }}>FOR WHATSAPP</p>
-                                <h1>  9384841107</h1>
+                            <div style={{ height: '100px', lineHeight: '2', width: this.state.windowWidth >= 700 ? '' : '100%' , marginLeft : '3%'}}>
+                                <p style={{ fontWeight: '600', fontSize : '22px', lineHeight : '30px' }}>FOR WHATSAPP</p>
+                                <h2 style={{lineHeight : '0px' ,  }}>  9384841107</h2>
                             </div>
 
                         </div>
                     </Grid>
                 </Grid>
 
-                <Grid style={{ backgroundColor: 'white' }} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{ backgroundColor: '#f4eeee' ,  paddingTop : '1%' , paddingBottom : '1%' }} container xs={12} sm={12} md={12} lg={12}>
                     {
                         this.state.windowWidth >= 700 ?
                             <h2 style={{ marginLeft: this.state.windowWidth >= 700 ? '25%' : '' }}><a target="_blank" href="https://www.google.com/maps/place/1st+Cross+St,+Karambakkam,+Kaveri+Nagar,+Porur,+Chennai,+Tamil+Nadu+600116/@13.0396794,80.1545894,17z/data=!3m1!4b1!4m5!3m4!1s0x3a52611b0be825a1:0xa465b2002e3e935b!8m2!3d13.0396794!4d80.1567781">Address: 5/3, 1st Cross Street, Karambakkam, Porur, Chennai-600116</a></h2>
@@ -155,14 +249,16 @@ class KarudaTariff extends Component {
                     }
                 </Grid>
                 <GetContact props={this.props.props}/>
+                {/* <GetCopyRight/> */}
                 <div style={{
-                    backgroundColor: '#A5032E' , width :'100%'
+                    backgroundColor: '#55bde3' , 
+                    width : '100%'
                 }}>
-                    <div style={{ display: 'flex', fontSize: '22px', color: 'white' }}>
-                        <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '10%' : '2%' }}>
+                    <div className='karudaCopyRights' style={{ display: 'flex', fontSize: '18px', color: 'white', fontSize : '22px' }}>
+                        <div style={{ width: this.state.windowWidth >= 700 ? '50%' : '100%', marginLeft: this.state.windowWidth >= 700 ? '2%' : '2%' }}>
                             <p>karudacabs.com Copyright @ All rights reserved 2021</p>
                         </div>
-                        <div style={{ width: '50%' }}>
+                        <div style={{ width: '50%', textAlign : 'end' , marginRight : '2%' }}>
                             <p>Designed and Developed by Skifter Technologies</p>
                         </div>
                     </div>
@@ -174,6 +270,7 @@ class KarudaTariff extends Component {
             </React.Fragment>
         )
     }
+    
     singleCar() {
         if (this.state.SelectedCar ){
             var price = [0 , 0]
@@ -206,15 +303,15 @@ class KarudaTariff extends Component {
             
             return (
 
-                <Card style={{ marginLeft: '10%', margin: '10%', width: '300px', padding: this.state.windowWidth >= 700 ? '30px' : '10px' }}>
+                <Card style={{ marginLeft:this.state.windowWidth >= 700 ?  '0%':'3%',  width: this.state.windowWidth >= 700 ? '400px':'300px', padding: this.state.windowWidth >= 700 ? '30px' : '10px' , textAlign : 'center' }}>
                     <div>
-                        <img style={{ width: '300px' }} src={disCar} alt='car'></img>
+                        <img style={{ width:this.state.windowWidth >= 700 ?  '300px' : '200px' }} src={disCar} alt='car'></img>
                         <div>
                             <h3>{this.state.SelectedCar}</h3>
                             {/* <h4>{data}</h4> */}
                             <h4> {`One Way Rs. ${price[0]}/km|Round Trip Rs.${price[1]}/km`}</h4>
                             
-                            <Button style={{ color: 'white', backgroundColor: '#CC0021', borderColor: 'yellow', borderRadius: '30px', width: '140px', height: '55px' }} variant="outlined" size="medium" onClick={() => {
+                            <Button style={{ color: 'white', backgroundColor: '#55bde3', borderColor: 'yellow', borderRadius: '30px', width: '140px', height: '55px' }} variant="outlined" size="medium" onClick={() => {
                                 this.props.props.history.push('/KarudaOnlineBooking')
                             }}  >
                                 <span style={{ fontSize: '18px' }}>Book Now</span>
@@ -231,13 +328,13 @@ class KarudaTariff extends Component {
     render() { 
         return (
             <React.Fragment>
-               
-                <Grid style={{ paddingBottom: '2%', marginTop: this.state.windowWidth >= 700 ?'15%' : '70%' , marginLeft : '10%'}} container xs={12} sm={12} md={12} lg={12}>
-                    <Grid item xs={12} sm={12} md={6} lg={6} style={{ margin: this.state.windowWidth >= 700 ? '0%' : '5%'  }}>
-                        <h3 style={{paddingLeft : '3%'}}>Trip Calculation</h3>
-                        <Grid container style={{padding : '3%'}}>
+               <Grid  className="karudaBackGround" container>
+                <Grid  style={{ paddingBottom: '4%', marginTop: this.state.windowWidth >= 700 ?'15%' : '70%' , marginLeft : '5%'}} container xs={12} sm={12} md={12} lg={12}>
+                    <Grid item xs={12} sm={12} md={12} lg={8} style={{ margin: this.state.windowWidth >= 700 ? '0%' : '5%'  }}>
+                        <h3 style={{paddingLeft : '0%' , fontSize : '22px'}}>Trip Calculation</h3>
+                        <Grid container style={{padding : '0%' , marginTop : '2%'}}>
                             
-                            <Grid item xs={12} sm={12} md={12} lg={6}>
+                            <Grid item xs={12} sm={12} md={12} lg={5} style={{marginTop : '3%'}}>
 
                                 <KarudaSelectField
                                     lebel='Select Car'
@@ -257,7 +354,8 @@ class KarudaTariff extends Component {
                                             })
                                         }
                                     }}
-                                /> <br></br>
+                                /> <br></br><br></br>
+                             
                                 <KarudaSelectField
                                     lebel='Trip'
                                     value={this.state.SelectedTrip}
@@ -275,7 +373,7 @@ class KarudaTariff extends Component {
                                             })
                                         }
                                     }}
-                                /><br></br><br></br>
+                                /><br></br><br></br><br></br>
                                 <TextField style={{ width: '300px' }} id="outlined-basic" variant="outlined" label="Distance (in km)" value={this.state.KiloMetre} onChange={(e) => {
                                     var content = e.target.value
                                     content = content.replace(/[^0-9.]/gi, '')
@@ -297,47 +395,42 @@ class KarudaTariff extends Component {
                                 }}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={12} md={12} lg={6} style={{ border: '2px solid #A5032E' }}>
-                                <div style={{ padding: '10%' }}>
-                                    <h3>
+                            <Grid item xs={12} sm={12} md={12} lg={6} style={{ border: '2px solid #55bde3' , marginTop :this.state.windowWidth >= 700 ?  '-2%': '7%' }}>
+                                <div style={{ margin: '30%'  , width :this.state.windowWidth >= 700 ?  '100%':'' }}>
+                                    <h1>
                                         {
                                             this.state.checkRate ? ` Total Charge : Rs.${this.state.checkRate} !!!` : 'Check Rate !!!'
                                         }
 
-                                    </h3>
+                                    </h1>
                                 </div>
                             </Grid>
                         </Grid>
 
                     </Grid>
-                    <Grid item xs={12} sm={12} md={6} lg={6} style={{  }}>
+                    <Grid item xs={12} sm={12} md={12} lg={4} style={{  }}>
                         {this.singleCar()}
 
                     </Grid>
                 </Grid>
-                {/* <div style={{width : '100%' }}>
-                    <Button style={{ marginLeft: this.state.windowWidth >= 700 ? '11%' : '15%' , color: 'white', backgroundColor: '#CC0021', borderColor: 'yellow', borderRadius: '30px', width: '140px', height: '55px' }} variant="outlined" size="medium" onClick={() => {
-                        this.props.props.history.push('/KarudaOnlineBooking')
-                    }}  >
-                        <span style={{ fontSize: '18px' }}>Book Now</span>
-                    </Button>
-                </div> */}
-                <div style={{ marginLeft: this.state.windowWidth >= 700 ? '1%' : '5%'}}>
-                    <h3 style={{color : '#A5032E'}}>OUTSTATION CAB SERVICE TARIFF CHART</h3>
+                </Grid>
+                <Card style={{margin:'2%' , width : '100%'}}> 
+                <div style={{ marginLeft: this.state.windowWidth >= 700 ? '1%' : '5%' , width : '100%'}}>
+                    <h2 style={{color : 'black' , textAlign : 'center'}}>Outstation Cab Service Tariff Chart</h2>
                 </div>
                 <Grid container xs={12} sm={12} md={12} lg={12}>
-                    <Grid style={{ backgroundColor: '#A5032E', borderStyle:'ridge' , textAlign : 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <h4 style={{color : 'white'}}>VEHICLE TYPE</h4>
+                    <Grid style={{ backgroundColor: '#55bde3', borderStyle:'ridge' , textAlign : 'center'}} item xs={4} sm={4} md={4} lg={4}>
+                        <h4 style={{color : 'white' , fontSize : '20px'}}>VEHICLE TYPE</h4>
                     </Grid>
-                    <Grid style={{ backgroundColor: '#A5032E', borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <h4 style={{color : 'white'}}>ONE WAY DROP</h4>
+                    <Grid style={{ backgroundColor: '#55bde3', borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
+                        <h4 style={{color : 'white' , fontSize : '20px'}}>ONE WAY DROP</h4>
                     </Grid>
-                    <Grid style={{ backgroundColor: '#A5032E', borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
-                        <h4 style={{color : 'white'}}>	ROUND TRIP</h4>
+                    <Grid style={{ backgroundColor: '#55bde3', borderStyle: 'ridge', textAlign: 'center'}} item xs={4} sm={4} md={4} lg={4}>
+                        <h4 style={{color : 'white' , fontSize : '20px'}}>	ROUND TRIP</h4>
                     </Grid>
                 </Grid>
 
-                <Grid container xs={12} sm={12} md={12} lg={12}>
+                <Grid  container xs={12} sm={12} md={12} lg={12} style={{fontSize : '20px'}}>
                     <Grid style={{  borderStyle:'ridge' , textAlign : 'center'}} item xs={4} sm={4} md={4} lg={4}>
                         <p>Sedan (Dzire, Sunny, Xcent, Zest)</p>
                     </Grid>
@@ -349,7 +442,7 @@ class KarudaTariff extends Component {
                     </Grid>
                 </Grid>
 
-                <Grid container xs={12} sm={12} md={12} lg={12}>
+                <Grid    container xs={12} sm={12} md={12} lg={12} style={{fontSize : '20px'}}>
                     <Grid style={{  borderStyle:'ridge' , textAlign : 'center'}} item xs={4} sm={4} md={4} lg={4}>
                         <p>Sedan (Only Etios)</p>
                     </Grid>
@@ -361,7 +454,7 @@ class KarudaTariff extends Component {
                     </Grid>
                 </Grid>
 
-                <Grid container xs={12} sm={12} md={12} lg={12}>
+                <Grid   container xs={12} sm={12} md={12} lg={12} style={{fontSize : '20px'}}>
                     <Grid style={{  borderStyle:'ridge' , textAlign : 'center'}} item xs={4} sm={4} md={4} lg={4}>
                         <p>SUV (Xylo, Marazzo, Loggy, Tavera)</p>
                     </Grid>
@@ -373,7 +466,7 @@ class KarudaTariff extends Component {
                     </Grid>
                 </Grid>
 
-                <Grid container xs={12} sm={12} md={12} lg={12}>
+                <Grid   container xs={12} sm={12} md={12} lg={12} style={{fontSize : '20px'}}>
                     <Grid style={{  borderStyle:'ridge' , textAlign : 'center'}} item xs={4} sm={4} md={4} lg={4}>
                         <p>SUV (Only Innova)</p>
                     </Grid>
@@ -385,11 +478,13 @@ class KarudaTariff extends Component {
                     </Grid>
                 </Grid>
 
-               
-                <h1 style={{ width: '100%' , marginLeft: this.state.windowWidth >= 700 ? '10%' : '5%' , color : '#A5032E'}}> Additional charges details</h1>
-                <Grid container xs={12} sm={12} md={12} lg={12}>
-                    <Grid item xs={12} sm={12} md={6} lg={6}>
-                        <ul style={{fontSize : '20px' , marginLeft : '17%' }}>
+            </Card>
+               <div className="karudaBackGround"  style={{width : '100%'}}>
+                <h2 className="karudaBackGround" style={{ width: '100%' , textAlign : 'center' , color : '#55bde3' ,  marginLeft : '1%' , color : 'black' , paddingTop : '2%' , paddingBottom : '2%' }}> Additional charges details</h2>
+               </div>
+               <div className="karudaBackGround" style={{width : '100%' ,marginTop : '-2%' , paddingBottom : '1%'}}>
+                 
+                        <ul style={{fontSize : '20px' , marginLeft : '1%' , lineHeight : '40px' }}>
                             <li>Toll Fees, Inter-State Permit charges (if any) are extra.</li>
                             <li>One way - Driver Bata Rs. 400. (If more than 400 km driver bata Rs.600).</li>
                             <li>Round Trip - Driver Bata Rs. 400 Per Day.</li>
@@ -400,85 +495,9 @@ class KarudaTariff extends Component {
                             <li> 1 day means 1 Calender day (from midnight 12 to Next Midnight 12)</li>
                             <li>Max lagguage capacity by vehicle type - Sedan - 3 suitcases, Suv - 4 suitcases</li>
                         </ul>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={6} lg={6} style={{ display : 'none' ,  margin: this.state.windowWidth >= 700 ? '0%' : '5%'}}>
-                        <h3>Trip Calculation</h3>
-                        <Grid container>
-                            <Grid item xs={12} sm={12} md={12} lg={6}>
-
-                                <KarudaSelectField
-                                    lebel='Select Car'
-                                    value={this.state.SelectedCar}
-                                    menuData={CarList}
-                                    onChange={(e) => {
-                                        console.log(e)
-
-                                       
-                                        
-                                        this.setState({
-                                            SelectedCar: e.target.value
-                                        })
-                                        if (this.state.SelectedCar && this.state.SelectedTrip) {
-                                            this.setState({
-                                                checkRate: +(this.state.KiloMetre) * rate[e.target.value][this.state.SelectedTrip == 'ONE WAY DROP' ? 0 : 1]
-                                            })
-                                        }
-                                    }}
-                                /> <br></br>
-                                <KarudaSelectField
-                                    lebel='Trip'
-                                    value={this.state.SelectedTrip}
-                                    menuData={DropList}
-                                    onChange={(e) => {
-                                        console.log(e)
-                                    
-                                       
-                                        this.setState({
-                                            SelectedTrip: e.target.value
-                                        })
-                                        if (this.state.SelectedCar && this.state.SelectedTrip) {
-                                            this.setState({
-                                                checkRate: +(this.state.KiloMetre) * rate[this.state.SelectedCar][e.target.value == 'ONE WAY DROP' ? 0 : 1]
-                                            })
-                                        }
-                                    }}
-                                /><br></br><br></br>
-                                <TextField style={{ width: '300px' }} id="outlined-basic" variant="outlined" label="Distance (in km)" value={this.state.KiloMetre} onChange={(e) => {
-                                    var content = e.target.value
-                                    content = content.replace(/[^0-9.]/gi, '')
-                                    console.log(content)
-                                    console.log(this.state.SelectedCar)
-                                    console.log(this.state.SelectedTrip)
-                                   
-                                    console.log(rate[this.state.SelectedCar])
-                                   
-                                    
-                                    this.setState({
-                                        KiloMetre: content 
-                                    })
-                                    if (this.state.SelectedCar && this.state.SelectedTrip) {
-                                        this.setState({
-                                            checkRate: +(content) * rate[this.state.SelectedCar][this.state.SelectedTrip == 'ONE WAY DROP' ? 0 : 1]
-                                        })
-                                    }
-                                }}
-                                />
-                            </Grid>
-                            <Grid item xs={12} sm={12} md={12} lg={6} style={{  border: '2px solid #ffea00'}}>
-                                <div style={{padding : '10%'}}>
-                                    <h3>
-                                        {
-                                            this.state.checkRate ?  ` Total Charge : Rs.${this.state.checkRate} !!!` : 'Check Rate !!!'
-                                        }
-                                       
-                                    </h3>
-                                </div>
-                            </Grid>
-
-                        </Grid>
-                        
-                    </Grid>
-                </Grid>
+                </div>
+                 
+              
 
                 {this.footer()}
             </React.Fragment>

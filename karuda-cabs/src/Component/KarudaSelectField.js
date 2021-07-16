@@ -11,7 +11,7 @@ class KarudaSelectField extends Component {
         let { value = '', onChange = () => { }, menuData = [], lebel = '', width = 300, backgroundColor = '', borderRadius = '', height = ''} = this.props
         return (
             <div>
-                <InputLabel id="demo-simple-select-label">{lebel}</InputLabel>
+                <InputLabel style={{marginBottom : '2%'}} id="demo-simple-select-label">{lebel}</InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"

@@ -62,13 +62,13 @@ class Trip extends Component {
     }
     changeColor=(data)=>{
         this.setState({
-           setColor : data ?  '#A5032E' : 'white',
+           setColor : data ?  '#55bde3' : 'white',
            setTextColor : data ?  'white' : 'black',
         })    
        }
     changeColor1=()=>{
         this.setState({
-           setColor1 : '#A5032E',
+           setColor1 : '#55bde3',
            setTextColor1 : 'white',
            setColor : 'white',
            setTextColor : 'black'
@@ -223,27 +223,28 @@ class Trip extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <Card style={{margin:'2%'}}>
+                <Card  className="karudaBackGround" style={{margin:'0%' , backgroundColor : '#f6f6f6'}}>
                     <div style={{margin : '2%'}}>
+                        <div style={{width : '100%'}}><h2 style={{textAlign : 'center'}}>Book Now</h2></div>
                 <div style={{width : '100%' , display : 'flex' }}>    
                    
-                        <Button variant="outlined"  style={{width : '50%' , backgroundColor : this.state.setWay ? 'white' : '#A5032E' , color : this.state.setWay ? '#A5032E' : 'white'}} onClick={()=>this.setState({setWay : 0})}>
+                        <Button variant="outlined"  style={{width : '50%' ,height:'57px', backgroundColor : this.state.setWay ? 'white' : '#55bde3' , color : this.state.setWay ? '#55bde3' : 'white' , fontSize : '20px' , borderRadius : '5px 0px 0px 5px' , border : '1px solid #55bde3'}} onClick={()=>this.setState({setWay : 0})}>
                         One Way
                         </Button>
-                        <Button variant="outlined"  style={{width : '50%', color : this.state.setWay ? 'white' : '#A5032E' , backgroundColor: this.state.setWay ? '#A5032E' : 'white' }} onClick={()=>this.setState({setWay : 1})}>
+                        <Button variant="outlined"  style={{width : '50%',height:'57px', color : this.state.setWay ? 'white' : '#55bde3' , backgroundColor: this.state.setWay ? '#55bde3' : 'white', fontSize : '20px' , borderRadius : '0px 5px 5px 0px' , border : '1px solid #55bde3'}} onClick={()=>this.setState({setWay : 1})}>
                         Round Trip
                         </Button>
                 </div>
-                <Grid style={{marginTop : '2%'}} container xs={12} sm={12} md={12} lg={12}  >
+                <Grid style={{marginTop : '4%', marginLeft: this.state.windowWidth >= 700 ? '0%' : '10%'}} container xs={12} sm={12} md={12} lg={12}  >
                     <Grid  item xs={12} sm={12} md={6} lg={4}>
-                     <div>Name</div> <TextField value={this.state.name} onChange={(e) => {
+                     <div style={{fontSize : '22px' , marginBottom : '3%'}}>Name</div> <TextField value={this.state.name} onChange={(e) => {
                                             this.setState({
                                                 name: e.target.value
                                             })
                                         }} style={{width : '300px' , }} id="outlined-basic"  variant="outlined" />
                     </Grid>
                     <Grid  item xs={12} sm={12} md={6} lg={4}>
-                     <div>Phone</div>  <TextField value={this.state.phone} onChange={(e) => {
+                     <div style={{fontSize : '22px', marginBottom : '3%'}}>Phone</div>  <TextField value={this.state.phone} onChange={(e) => {
                                             var content = e.target.value
                                             content = content.replace(/[^0-9.]/gi, '')
                                             this.setState({
@@ -252,16 +253,16 @@ class Trip extends Component {
                                         }} style={{width : '300px' , }} id="outlined-basic"  variant="outlined" />
                     </Grid>
                     <Grid  item xs={12} sm={12} md={6} lg={4}>
-                     <div>Email</div> <TextField value={this.state.email} onChange={(e) => {
+                     <div style={{fontSize : '22px', marginBottom : '3%'}}>Email</div> <TextField value={this.state.email} onChange={(e) => {
                                             this.setState({
                                                 email: e.target.value
                                             })
                                         }} style={{width : '300px' , }} id="outlined-basic"  variant="outlined" />
                     </Grid>
                 </Grid>
-                <Grid style={{marginTop : '2%'}} container xs={12} sm={12} md={12} lg={12}>
+                <Grid style={{marginTop : '2%', marginLeft: this.state.windowWidth >= 700 ? '0%' : '10%'}} container xs={12} sm={12} md={12} lg={12}>
                     <Grid  item xs={12} sm={12} md={6} lg={4}>
-                     <div>Date</div> 
+                     <div style={{fontSize : '22px', marginBottom : '3%'}}>Date</div> 
                             {/* <TextField
                                 id="datetime-local"
                                 //label="Next appointment"
@@ -278,7 +279,7 @@ class Trip extends Component {
                                                 variant="inline"
                                                 format="MM/dd/yyyy"
                                                 color ="white"
-                                                style={{ width: '300px' , color : 'white'}}
+                                                style={{ width: '300px' , color : 'white' , fontSize : '30px' ,  marginTop : '5%'}}
                                                 margin="normal"
                                                 id="date-picker-inline"
                                                 label=""
@@ -293,7 +294,7 @@ class Trip extends Component {
                                         </MuiPickersUtilsProvider>
                     </Grid>
                     <Grid  item xs={12} sm={12} md={6} lg={4}>
-                     <div>Time</div> 
+                     <div style={{fontSize : '22px', marginBottom : '3%'}}>Time</div> 
                             <MuiPickersUtilsProvider utils={DateFnsUtils} >
                                         <KeyboardTimePicker
                                             margin="normal"
@@ -309,60 +310,37 @@ class Trip extends Component {
                                             KeyboardButtonProps={{
                                                 'aria-label': 'change time',
                                             }}
-                                            style={{ color: 'white', backgroundColor: 'white', borderRadius: '10px', width: '300px' , height : '56px'}}
+                                            style={{ color: '#f6f6f6', backgroundColor: '#f6f6f6', borderRadius: '10px', width: '300px' , height : '56px' , marginTop : '5%'}}
                                         />
                                         </MuiPickersUtilsProvider>
                     </Grid>
-                    <Grid   item xs={12} sm={6} md={4} lg={4} style={{display : this.state.windowWidth >= 700 ? 'block' : 'none' }}>
-                     {/* <div>Choose vehicle</div> <KarudaSelectField 
-                                            lebel=''
-                                            backgroundColor = 'white'
-                                            borderRadius= '10px'
-                                            width = '300px'
-                                            // width={ this.state.windowWidth >= 700 ? '370px' : '190px' }
-                                            height = '60px'
-                                            value={this.state.vehicle}
-                                            menuData={carListItem}
-                                            onChange={(e) => {
-                                                console.log(e)
-
-
-                                                this.setState({
-                                                    vehicle: e.target.value
-                                                })
-                                              
-                                            }}
-                                            /> */}
-                        {/* <ThemeProvider theme={theme}>
-                            <Button variant="contained" color="primary" style={{marginTop:'6%', color:'White',width:'300px'}} onClick={this.storeMail} >
-                            Search
-                            </Button>
-                        </ThemeProvider> */}
-                        <button style={{color:'white',backgroundColor:'#A5032E',marginTop:'6%',width:'300px',height:'40px',fontFamily:'sans-serif',fontSize:'20px'}} onClick={this.showCar} >Search</button>
+                    <Grid   item xs={12} sm={6} md={4} lg={4} style={{display : this.state.windowWidth >= 700 ? 'none' : 'none' }}>
+                        <Button variant="outlined" style={{color:'white',backgroundColor:'#55bde3',marginTop:'6%',width:'300px',height:'62px',fontFamily:'sans-serif',fontSize:'20px' , }} onClick={this.showCar} >Search</Button>
                     </Grid>
-                </Grid>
-                <Grid style={{marginTop : '2%'}} container xs={12} sm={12} md={12} lg={12}>
                     <Grid  item xs={12} sm={12} md={6} lg={4}>
-                     <div>Start Destination</div> <TextField value={this.state.startDestination} id="outlined-basic" onChange={(e) => {
+                     <div style={{fontSize : '22px', marginBottom : '3%'}}>Start Destination</div> <TextField value={this.state.startDestination} id="outlined-basic" onChange={(e) => {
                                             this.setState({
                                                 startDestination: e.target.value
                                             })
                                         }} style={{width : '300px' , }} id="outlined-basic"  variant="outlined" />
                     </Grid>
+                </Grid>
+                <Grid style={{marginTop : '2%',marginLeft: this.state.windowWidth >= 700 ? '0%' : '10%'}} container xs={12} sm={12} md={12} lg={12}>
+                    
                     <Grid  item xs={12} sm={12} md={6} lg={4}>
-                     <div>End Destination</div>  <TextField  value={this.state.endDestination} onChange={(e) => {
+                     <div style={{fontSize : '22px', marginBottom : '3%',  }}>End Destination</div>  <TextField  style={{height :'17px' }} value={this.state.endDestination} onChange={(e) => {
                                             this.setState({
                                                 endDestination: e.target.value
                                             })
                                         }} style={{width : '300px' , }} id="outlined-basic"  variant="outlined" />
                     </Grid>
-                    <Grid  item xs={12} sm={12} md={6} lg={4} style={{display : this.state.windowWidth > 700 ? 'none' : 'block' }}>
+                    <Grid  item xs={12} sm={12} md={6} lg={4} style={{display : this.state.windowWidth > 700 ? 'block' : 'block' }}>
                         {/* <ThemeProvider theme={theme}>
                             <Button variant="contained" color="primary" style={{marginTop:'5%', color:'White',width:'300px'}} onClick={this.storeMail} >
                             Search
                             </Button>
                         </ThemeProvider> */}
-                        <button style={{color:'white',backgroundColor:'#A5032E',marginTop:'6%',width:'300px',height:'40px',fontFamily:'sans-serif',fontSize:'20px'}} onClick={this.showCar} >Search</button>
+                        <Button variant="outlined" style={{color:'white',backgroundColor:'#55bde3',marginTop:'9%',width:'300px',height:'62px',fontFamily:'sans-serif',fontSize:'20px'}} onClick={this.showCar} >Search</Button>
 
                     </Grid>
                 </Grid>

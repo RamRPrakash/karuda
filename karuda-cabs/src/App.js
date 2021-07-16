@@ -56,20 +56,36 @@ function App() {
           <div> <img style={{marginTop : '2%'}}src={instagram1} width="20px" height="30px" alt="Sample" /></div>
           <div> <img style={{marginTop : '2%'}}src={twitter1} width="20px" height="30px" alt="Sample" /></div>
         </div> */}
-        <div className='web-ui' style={{marginTop : '45%' , position : 'fixed' , marginLeft : '2%'}}>
+        <div className='web-ui' style={{marginTop : '43%' , position : 'fixed' , marginLeft : '2%' , zIndex : 1}}>
           <div>
-          <ReactWhatsapp number="919384841107" message="Chat with karuda cabs!!!" style={{ backgroundColor : 'white' , border : '0'}} >
+          <ReactWhatsapp number="919384841107" message="Chat with karuda cabs!!!" style={{ backgroundColor : 'transparent' , border : '0'}} >
 
-            <WhatsAppIcon style={{width:'70px',height:'40px' , color : 'green'}}></WhatsAppIcon>
+            <WhatsAppIcon style={{width:'70px',height:'80px' , color : 'green'}}></WhatsAppIcon>
             </ReactWhatsapp>
           </div>
           
         </div>
-        <div className='web-ui' style={{marginTop : '45%' , position : 'fixed' , marginLeft : '94%'}}>  
+        <div className='web-ui' style={{marginTop : '44%' , position : 'fixed' , marginLeft : '94%' , zIndex : 1}}>  
           <div>
-          <a href="tel:91   9384841107"> <PhoneIcon style={{width:'70px',height:'40px',justifyContent:'flex-end' ,  color : 'blue'}}/></a>
+          <a href="tel:91   9384841107"> <PhoneIcon style={{width:'70px',height:'60px',justifyContent:'flex-end' ,  color : 'blue'}}/></a>
           </div>
         </div>
+
+        <div className='mobile-ui' style={{marginTop : '143%' , position : 'fixed' , marginLeft : '2%' , zIndex : 1}}>
+          <div>
+          <ReactWhatsapp number="919384841107" message="Chat with karuda cabs!!!" style={{ backgroundColor : 'transparent' , border : '0'}} >
+
+            <WhatsAppIcon style={{width:'30px',height:'80px' , color : 'green'}}></WhatsAppIcon>
+            </ReactWhatsapp>
+          </div>
+          
+        </div>
+        <div className='mobile-ui' style={{marginTop : '143%' , position : 'fixed' , marginLeft : '88%' , zIndex : 1}}>  
+          <div>
+          <a href="tel:91   9384841107"> <PhoneIcon style={{width:'30px',height:'60px',justifyContent:'flex-end' ,  color : 'blue'}}/></a>
+          </div>
+        </div>
+
         </div>
         <div>
           <Switch>

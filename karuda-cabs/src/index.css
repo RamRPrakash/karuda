@@ -11,7 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.MuiInputBase-input{
+    font-size: 18px !important;
+}
+::-webkit-scrollbar {
+    width: 0px; 
+    }
 
+.karudaFooter{
+    background-color:#55bde3;
+}
+.karudaCopyRights{
+    background-color: #283340;
+}
+.karudaBackGround{
+    background-color: #f6f6f6;
+}
 @media screen and (max-width: 800px) {
     .web-ui{
         display: block!important;

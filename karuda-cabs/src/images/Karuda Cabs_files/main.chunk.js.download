@@ -480,7 +480,7 @@ function ImageAvatars() {
       },
       children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("h1", {
         style: {
-          color: '#A5032E'
+          color: '#55bde3'
         },
         children: "Popular cities"
       }, void 0, false, {
@@ -1949,7 +1949,7 @@ function NewAppBar() {
     },
     children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
       style: {
-        backgroundColor: '#A5032E'
+        backgroundColor: '#55bde3'
       },
       position: "fixed",
       children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2039,7 +2039,7 @@ function NewAppBar() {
     }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
       style: {
         backgroundColor: 'white',
-        color: '#A5032E',
+        color: '#55bde3',
         marginTop: windowWidth && windowWidth.width > 700 ? '4%' : '17%'
       },
       position: "fixed",
@@ -2139,7 +2139,7 @@ function NewAppBar() {
               children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
                 variant: "contained",
                 style: {
-                  backgroundColor: '#A5032E',
+                  backgroundColor: '#55bde3',
                   color: 'white'
                 },
                 children: "Book Now"
@@ -12679,7 +12679,7 @@ class NewHome extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
           lg: 12,
           children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
             style: {
-              backgroundColor: '#A5032E',
+              backgroundColor: '#55bde3',
               borderStyle: 'ridge',
               textAlign: 'center',
               color: 'white'
@@ -12702,7 +12702,7 @@ class NewHome extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
             columnNumber: 21
           }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
             style: {
-              backgroundColor: '#A5032E',
+              backgroundColor: '#55bde3',
               borderStyle: 'ridge',
               textAlign: 'center',
               color: 'white'
@@ -12725,7 +12725,7 @@ class NewHome extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
             columnNumber: 21
           }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
             style: {
-              backgroundColor: '#A5032E',
+              backgroundColor: '#55bde3',
               borderStyle: 'ridge',
               textAlign: 'center',
               color: 'white'
@@ -13050,7 +13050,7 @@ class NewHome extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("h1", {
           style: {
             paddingLeft: '2%',
-            color: '#A5032E'
+            color: '#55bde3'
           },
           children: " Additional charges details"
         }, void 0, false, {
@@ -15310,7 +15310,7 @@ class Trip extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
               variant: "outlined",
               style: {
                 width: '50%',
-                backgroundColor: '#A5032E',
+                backgroundColor: '#55bde3',
                 color: 'white'
               },
               children: "One Way"

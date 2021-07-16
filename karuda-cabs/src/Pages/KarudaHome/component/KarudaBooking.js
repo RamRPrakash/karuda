@@ -127,7 +127,7 @@ class KarudaBooking extends Component {
                         </div>
                         <div style={{ width: '50%' }}>
                             <div style={{ height: '50px' }}><h3>24/7 Customer Support</h3></div>
-                            <div style={{ height: '50px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
+                            <div style={{ height: '50px', marginTop : this.state.windowWidth >= 700 ? '-8%': '-2%',fontSize : this.state.windowWidth >= 700 ? '20px': '18px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
                         </div>
                     </div>
                 </Grid>
@@ -138,7 +138,7 @@ class KarudaBooking extends Component {
                         </div>
                         <div style={{ width: '50%' }}>
                             <div style={{ height: '50px' }}><h3>Fully A/C Cabs</h3></div>
-                            <div style={{ height: '50px' }}><p>All our cabs are fully equipped with Air conditioner.</p></div>
+                            <div style={{ height: '50px', marginTop : this.state.windowWidth >= 700 ? '-8%': '-2%',fontSize:this.state.windowWidth >= 700 ? '20px': '18px' }}><p>All our cabs are fully equipped with Air conditioner.</p></div>
                         </div>
                     </div>
                 </Grid>
@@ -149,7 +149,7 @@ class KarudaBooking extends Component {
                         </div>
                         <div style={{ width: '50%' }}>
                             <div style={{ height: '50px' }}><h3>24/7 Customer Support</h3></div>
-                            <div style={{ height: '50px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
+                            <div style={{ height: '50px', marginTop : this.state.windowWidth >= 700 ? '-8%': '-2%',fontSize:this.state.windowWidth >= 700 ? '20px': '18px' }}><p>You can call  9384841107 anytime for quick booking.</p></div>
                         </div>
                     </div>
                 </Grid>

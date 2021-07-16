@@ -3,6 +3,8 @@ import Grid from '@material-ui/core/Grid';
 import KarudaAppBar from '../../../Component/KarudaAppBar'
 import KarudaTariff from '../component/KarudaTariff'
 import NewAppBar from '../../../Component/NewAppBar';
+import Card from '@material-ui/core/Card';
+
 class Tariff extends Component {
     constructor(props) {
         super(props);
@@ -19,9 +21,9 @@ class Tariff extends Component {
     }
     render() { 
         return (
-
-            <Grid container >
-                <NewAppBar/>
+           
+            <div >
+                <NewAppBar />
                 {/* <KarudaAppBar props={this.props} /> */}
                 {/* <div style={{ width: '100%', height: '70px', backgroundColor: '#ffeb3b', marginTop: this.state.windowWidth >= 700 ? '8%' : ''}}>
                     <marquee behavior="scroll" direction="left">
@@ -29,7 +31,8 @@ class Tariff extends Component {
                     </marquee>
                 </div> */}
                 <KarudaTariff props={this.props}/>
-            </Grid>
+            </div>
+           
         );
     }
 }

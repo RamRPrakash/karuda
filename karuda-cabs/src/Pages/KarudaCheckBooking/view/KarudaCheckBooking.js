@@ -3,6 +3,8 @@ import Grid from '@material-ui/core/Grid';
 import KarudaAppBar from '../../../Component/KarudaAppBar'
 import BookingDetails from '../component/BookingDetails'
 import NewAppBar from '../../../Component/NewAppBar';
+import Card from '@material-ui/core/Card';
+
 class KarudaCheckBooking extends Component {
     constructor(props) {
         super(props);
@@ -22,7 +24,7 @@ class KarudaCheckBooking extends Component {
     }
     render() { 
         return (
-
+          
             <Grid container >
                 <NewAppBar/>
                 {/* <KarudaAppBar props={this.props} /> */}
@@ -33,6 +35,7 @@ class KarudaCheckBooking extends Component {
                 </div> */}
                 <BookingDetails props={this.props}/>
             </Grid>
+           
         );
     }
 }

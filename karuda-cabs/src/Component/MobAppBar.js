@@ -44,8 +44,8 @@ class MobAppBar extends Component {
     }
     render() { 
         return ( 
-            <div className='mobile-ui' style={{ width: '100%', backgroundColor: '#A5032E' , position : 'fixed' , zIndex : 100}}>
-                    <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%', backgroundColor: '#A5032E' }}>
+            <div className='mobile-ui' style={{ width: '100%', backgroundColor: '#55bde3' , position : 'fixed' , zIndex : 100}}>
+                    <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%', backgroundColor: '#55bde3' }}>
                         <ListIcon style={{ fontSize: '70px', color: '#ff9800' , marginTop : '6%'}} onClick={()=>{
                             this.setState({
                                 open : !this.state.open
@@ -53,7 +53,7 @@ class MobAppBar extends Component {
                         }} />
                         <img style={{ width: '200px', height: '90px'}} src={karudaLogo} alt="Karuda Cabs"></img>
                         </div>
-                    <div style={{ background: '#A5032E', height: '70px', lineHeight: '42px',width: '80%' , marginTop : '3%' , marginLeft : '10%' }}>
+                    <div style={{ background: '#55bde3', height: '70px', lineHeight: '42px',width: '80%' , marginTop : '3%' , marginLeft : '10%' }}>
                         <div style={{ borderRadius: '25px', background: '#cc0021' , display : 'flex' }}>
                             <div style={{ marginTop: '3%', color: 'white', marginLeft: '18%' , fontSize : '20px' }}>
                                 <PhoneIcon  style={{fontSize : '25px'}} />
@@ -71,11 +71,31 @@ class MobAppBar extends Component {
                             }}>
                                 {/* 'HOME', 'CARS', 'ONLINE BOOKING', 'TARIFF CHART', 'CONTACT US', 'MOBILE' */}
                             <MenuList autoFocusItem={this.state.open} id="menu-list-grow" >
-                                    <MenuItem onClick={() => { this.handleClose('HOME')  }}>HOME</MenuItem>
+                                    <MenuItem onClick={() => { 
+                                        window.scrollTo({
+                                            top: 0,
+                                            behavior: "smooth"
+                                        });
+                                        this.handleClose('HOME')  }}>HOME</MenuItem>
                                     {/* <MenuItem onClick={() => { this.handleClose('CARS') }}>CARS</MenuItem> */}
-                                    <MenuItem onClick={() => { this.handleClose('ONLINE BOOKING') }}>ONLINE BOOKING</MenuItem>
-                                    <MenuItem onClick={() => { this.handleClose('TARIFF CHART') }}>TARIFF CHART</MenuItem>
-                                    <MenuItem onClick={() => { this.handleClose('CONTACT US') }}>CONTACT US</MenuItem>
+                                    <MenuItem onClick={() => {
+                                        window.scrollTo({
+                                            top: 0,
+                                            behavior: "smooth"
+                                        });
+                                        this.handleClose('ONLINE BOOKING') }}>ONLINE BOOKING</MenuItem>
+                                    <MenuItem onClick={() => {
+                                        window.scrollTo({
+                                            top: 0,
+                                            behavior: "smooth"
+                                        });
+                                        this.handleClose('TARIFF CHART') }}>TARIFF CHART</MenuItem>
+                                    <MenuItem onClick={() => { 
+                                        window.scrollTo({
+                                            top: 0,
+                                            behavior: "smooth"
+                                        });
+                                        this.handleClose('CONTACT US') }}>CONTACT US</MenuItem>
                                     {/* <MenuItem onClick={() => { this.handleClose('MOBILE') }}>MOBILE</MenuItem> */}
                             </MenuList>
                         </ClickAwayListener>

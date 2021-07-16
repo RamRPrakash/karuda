@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(-1),
   },
   title: {
     flexGrow: 1,
@@ -51,19 +51,19 @@ export default function NewAppBar(props) {
  console.log({windowWidth})
   return (
     <div className={classes.root} style={{width : '100%' , display : 'flex' , direction : 'row'}}>
-      <AppBar style={{backgroundColor : '#A5032E' , display :windowWidth && windowWidth.width > 700 ? 'block' : 'none' }} position="fixed">
-        <Toolbar>
+      <AppBar style={{backgroundColor : '#55bde3' , display :windowWidth && windowWidth.width > 700 ? 'block' : 'none' }} position="fixed">
+        <Toolbar >
            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
            <SmartphoneIcon/>
           </IconButton>
-          <Typography variant="h7">
-          9384841107 | 9940035922
+          <Typography variant="h7" style={{verticalAlign : 'middle' ,  marginLeft : '0.2%'}}>
+          <span>9384841107</span>  <span style={{marginLeft : '7px'}}>|</span>  <span style={{marginLeft : '7px'}}>9940035922</span>
         </Typography>
-        <IconButton edge="start" className={`${classes.menuButton} `} style={{marginLeft : '3%'}} color="inherit" aria-label="menu">
+        <IconButton edge="start" className={`${classes.menuButton} `} style={{marginLeft : '3%', verticalAlign : 'middle' , fontSize : '32px'}} color="inherit" aria-label="menu">
            <MailOutlineIcon/>
         </IconButton>
-        <Typography variant="h7" className={classes.title}>
-             karudaCabs@gmail.com
+        <Typography variant="h7" className={classes.title} style={{verticalAlign : 'middle' , marginLeft : '0.5%'}}>
+                karudaCabs@gmail.com
         </Typography>
 
 
@@ -77,17 +77,21 @@ export default function NewAppBar(props) {
           {/* <Button color="inherit">Login</Button> */}
         </Toolbar>
       </AppBar>
-      <AppBar style={{ display :windowWidth && windowWidth.width > 700 ?'block' : 'none' , backgroundColor : 'white' , color : '#A5032E' , marginTop : windowWidth && windowWidth.width > 700 ?'4%' :'17%'}} position="fixed" >
-        <Toolbar>
+      <AppBar style={{ display :windowWidth && windowWidth.width > 700 ?'block' : 'none' , backgroundColor : 'white' , color : '#55bde3' , marginTop : windowWidth && windowWidth.width > 700 ?'4%' :'17%'}} position="fixed" >
+        <Toolbar style={{paddingTop : '0%' , paddingBottom : '0%' , paddingRight : '0%'}}>
           <Box>
-            <img src="karuda.png" style={{height:'80px',width:'40% '}}/>
+            <img src="karuda.png" style={{height:'70px',width:'40% '}}/>
           </Box>
           <Typography variant="h6" className={classes.title}>
-            <Box display="flex" justifyContent="flex-end" m={1} p={1} bgcolor="background.paper" style={{cursor : 'pointer'}}>
+            <Box display="flex" justifyContent="space-between" m={1} p={1} bgcolor="background.paper" style={{cursor : 'pointer' , marginLeft : '18%'}}>
               <Box p={1} onClick={()=>{
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth"
+              });
                 history.push('/NewHome')
               }} >
-               <b> HOME</b>
+               <b style={{lineHeight:'60px' , position : 'relative' , top : '3px'}}> Home</b>
               </Box>
               {/* <Box p={1} onClick={()=>{
                 history.push('/KarudaCar')
@@ -95,26 +99,42 @@ export default function NewAppBar(props) {
                <b> ABOUT US </b>
               </Box> */}
               <Box p={1} onClick={()=>{
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth"
+              });
                 history.push('/KarudaOnlineBooking')
               }}>
-               <b> ONLINE BOOKING </b>
+               <b style={{lineHeight:'60px', position : 'relative' , top : '3px'}}> Online Booking </b>
               </Box>
               <Box p={1} onClick={()=>{
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth"
+              });
                 history.push('/Tariff')
               }}>
-               <b> TARIFF </b>
+               <b style={{lineHeight:'60px', position : 'relative' , top : '3px'}}> Tariff </b>
               </Box>
               <Box p={1} onClick={()=>{
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth"
+              });
                 history.push('/KarudaCheckBooking')
               }}>
-               <b> CONTACT US </b>
+               <b style={{lineHeight:'60px', position : 'relative' , top : '3px'}}> Contact Us </b>
               </Box>
-              <Box p={1} >
-              <Button variant="contained" style={{backgroundColor : '#A5032E' , color : 'white'}} onClick={()=>{
+              <Box p={1} style={{marginTop : '0.5%'}} >
+              <Button variant="contained" style={{backgroundColor : '#55bde3' , color : 'white' ,marginTop:'0.5%' , height : '46px' }} onClick={()=>{
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth"
+              });
                 history.push('/KarudaOnlineBooking')
               }}>
-        Book Now
-      </Button>
+                Book Now
+              </Button>
               </Box>
             </Box>  
           </Typography>
